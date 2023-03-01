@@ -6,7 +6,11 @@
 
 package org.evolution.pixel.PixelParts;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -60,6 +64,12 @@ public class PixelParts extends PreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.main);
+
+        SharedPreferences prefs = getActivity().getSharedPreferences("main",
+                Activity.MODE_PRIVATE);
+        if (savedInstanceState == null && !prefs.getBoolean("first_warning_shown", false)) {
+            showWarning();
+        }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
@@ -239,5 +249,29 @@ public class PixelParts extends PreferenceFragment
                 Integer.parseInt(Utils.getFileValue(NODE_SPEAKER_GAIN, SPEAKER_GAIN_DEFAULT)));
             Utils.writeValue(NODE_SPEAKER_GAIN, String.valueOf(value));
         }
+    }
+
+    public static class WarningDialogFragment extends DialogFragment {
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.pixel_parts_warning_title)
+                    .setMessage(R.string.pixel_parts_warning_text)
+                    .setNegativeButton(R.string.pixel_parts_dialog, (dialog, which) -> dialog.cancel())
+                    .create();
+        }
+
+        @Override
+        public void onCancel(DialogInterface dialog) {
+            getActivity().getSharedPreferences("main", Activity.MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("first_warning_shown", true)
+                    .commit();
+        }
+    }
+
+    private void showWarning() {
+        WarningDialogFragment fragment = new WarningDialogFragment();
+        fragment.show(getFragmentManager(), "warning_dialog");
     }
 }

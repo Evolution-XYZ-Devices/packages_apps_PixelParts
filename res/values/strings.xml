@@ -9,6 +9,9 @@
     <!-- PixelParts -->
     <string name="pixel_parts_title">Pixel Parts</string>
     <string name="pixel_parts_summary">Adjust device specific settings</string>
+    <string name="pixel_parts_warning_title">Warning</string>
+    <string name="pixel_parts_warning_text">These features rely on specific kernel nodes in order to function. When flashing a custom kernel, you risk the possibility of losing access to some of these features. You have been warned!</string>
+    <string name="pixel_parts_dialog">OK</string>
 
     <!-- CPU -->
     <string name="category_cpu">CPU</string>
