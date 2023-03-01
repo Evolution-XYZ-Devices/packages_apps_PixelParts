@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:settings="http://schemas.android.com/apk/res/org.evolution.pixel.PixelExtras">
+
+    <PreferenceCategory
+        android:key="adjustable_values"
+        android:title="@string/kcal_values">
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="red"
+            android:title="@string/red_title"
+            android:persistent="true"
+            android:max="256"
+            android:min="0"
+            android:defaultValue="256" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="green"
+            android:title="@string/green_title"
+            android:persistent="true"
+            android:max="256"
+            android:min="0"
+            android:defaultValue="256" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="blue"
+            android:title="@string/blue_title"
+            android:persistent="true"
+            android:max="256"
+            android:min="0"
+            android:defaultValue="256" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="saturation"
+            android:title="@string/saturation_title"
+            android:persistent="true"
+            android:max="255"
+            android:min="0"
+            android:defaultValue="255" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="contrast"
+            android:title="@string/contrast_title"
+            android:persistent="true"
+            android:max="255"
+            android:min="0"
+            android:defaultValue="255" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="hue"
+            android:title="@string/hue_title"
+            android:persistent="true"
+            android:max="255"
+            android:min="0"
+            android:defaultValue="0" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="value"
+            android:title="@string/value_title"
+            android:persistent="true"
+            android:max="255"
+            android:min="0"
+            android:defaultValue="255" />
+    </PreferenceCategory>
+</PreferenceScreen>
