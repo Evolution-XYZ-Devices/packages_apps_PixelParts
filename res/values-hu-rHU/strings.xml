@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel-részek</string>
+    <string name="pixel_parts_summary">Itt állíthat be Pixel specifikációkat</string>
+    <string name="pixel_parts_warning_title">Figyelmeztetés</string>
+    <string name="pixel_parts_warning_text">Ezen funkciók helyes működéséhez meghatározott kernelbázisok szükségesek. Amennyiben Ön egyéni kernelt flessel, azt kockáztatja, hogy elveszíti a hozzáférést bizonyos funkciókhoz. Mi szóltunk előre!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">Processzor</string>
+    <string name="power_efficient_workqueue_title">Energiahatékony feladat-sorrendbeállítás</string>
+    <string name="power_efficient_workqueue_summary">Energiát takarít meg azáltal, hogy átütemezi a munkát egy olyan processzormagra, amely már ébren van</string>
+    <!-- Display -->
+    <string name="category_display">Képernyő</string>
+    <string name="hbm_title">Magas fényerejű mód</string>
+    <string name="hbm_summary">Csúcsfényerő-engedélyezés</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Kijelzőkalibrálás Kcal-lal</string>
+    <string name="kcal_values">Állítható értékek</string>
+    <string name="red_title">Vörös</string>
+    <string name="green_title">Zöld</string>
+    <string name="blue_title">Kék</string>
+    <string name="saturation_title">Telítettség</string>
+    <string name="contrast_title">Kontraszt</string>
+    <string name="hue_title">Színárnyalat</string>
+    <string name="value_title">Érték</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Fájlrendszer</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">fsync ki/be</string>
+    <string name="fsync_info">Az fsync letiltása felgyorsíthatja a teljesítményt, de a rendszer-összeomlás és az adatvesztés kockázata fennáll</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Gyorstöltés</string>
+    <string name="usb2_fc_summary">Kényszerítse a gyors töltést 900mA-ig USB 2.0 módban</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Hangvezérlő</string>
+    <string name="mic_gain_title">Mikrofon erősítés</string>
+    <string name="mic_gain_summary">Itt állíthatja be a mikrofon intenzitását</string>
+    <string name="speaker_gain_title">Hangszóró erősítés</string>
+    <string name="speaker_gain_summary">Itt állíthatja be a hangszóró intenzitását</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value"><xliff:g id="v">%s</xliff:g> értékű</string>
+    <string name="custom_seekbar_default_value">alapértelmezés szerint</string>
+    <string name="custom_seekbar_default_value_to_set">Alapértelmezetten <xliff:g id="v">%s</xliff:g> értékű\nNyomja meg hosszan a beállításhoz</string>
+    <string name="custom_seekbar_default_value_is_set">Az alapértelmezett érték beállítva</string>
+</resources>
