@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Customisation Pixel</string>
+    <string name="pixel_parts_summary">Ajuster les paramètres spécifiques à l\'appareil</string>
+    <string name="pixel_parts_warning_title">Avertissement</string>
+    <string name="pixel_parts_warning_text">La plupart de ces fonctionnalités s\'appuient sur des nœuds spécifiques du noyau pour fonctionner. En installant un noyau personnalisé, vous risquez de perdre l\'accès à certaines fonctionnalités. Vous avez été averti !</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">File de puissance efficace</string>
+    <string name="power_efficient_workqueue_summary">Économisez de l\'énergie en replanifiant le travail vers un cœur déjà éveillé</string>
+    <!-- Display -->
+    <string name="category_display">Affichage</string>
+    <string name="hbm_title">Mode haute luminosité</string>
+    <string name="hbm_summary">Activer la haute luminosité</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Calibrer l\'écran via Kcal</string>
+    <string name="kcal_values">Valeurs ajustables</string>
+    <string name="red_title">Rouge</string>
+    <string name="green_title">Vert</string>
+    <string name="blue_title">Bleu</string>
+    <string name="saturation_title">Saturation</string>
+    <string name="contrast_title">Contraste</string>
+    <string name="hue_title">Teinte</string>
+    <string name="value_title">Valeur</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Système de fichiers</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">fsync désactivé/activé</string>
+    <string name="fsync_info">La désactivation de fsync peut accélérer les performances au risque d\'une perte de données potentielle en cas de crash du système</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Charge Rapide</string>
+    <string name="usb2_fc_summary">Forcer le chargement rapide jusqu\'à 900mA en mode USB 2.0</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Contrôle audio</string>
+    <string name="mic_gain_title">Gain du microphone</string>
+    <string name="mic_gain_summary">Définir le gain du microphone</string>
+    <string name="speaker_gain_title">Gain du Haut-Parleur</string>
+    <string name="speaker_gain_summary">Définir le gain du Haut-Parleur</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valeur : <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">par défaut</string>
+    <string name="custom_seekbar_default_value_to_set">Valeur par défaut : <xliff:g id="v">%s</xliff:g>\nRester appuyer pour définir</string>
+    <string name="custom_seekbar_default_value_is_set">Valeur par défaut définie</string>
+</resources>
