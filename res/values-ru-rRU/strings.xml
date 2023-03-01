@@ -19,6 +19,10 @@
     <string name="category_display">Экран</string>
     <string name="hbm_title">Режим высокой яркости</string>
     <string name="hbm_summary">Включить пиковую яркость</string>
+    <string name="hbm_info">Длительное использование режима высокой яркости может привести к повреждению вашего дисплея</string>
+    <string name="auto_hbm_title">Автоматический режим высокой яркости</string>
+    <string name="auto_hbm_summary">Включать пиковую яркость на солнце</string>
+    <string name="auto_hbm_threshold_summary">порог (люкс)</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Откалибруйте дисплей с помощью Kcal</string>
     <string name="kcal_values">Регулируемые значения</string>
