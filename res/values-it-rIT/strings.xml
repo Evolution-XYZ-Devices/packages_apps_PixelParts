@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel Parts</string>
+    <string name="pixel_parts_summary">Impostazioni specifiche del dispositivo</string>
+    <string name="pixel_parts_warning_title">Attenzione</string>
+    <string name="pixel_parts_warning_text">Queste funzionalità si basano su specifici nodi del kernel per funzionare. Quando installi un kernel personalizzato, rischi di perdere l\'accesso ad alcune di queste funzionalità. Sei stato avvisato!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">Coda di lavoro efficiente</string>
+    <string name="power_efficient_workqueue_summary">Risparmia energia riprogrammando il lavoro su un core già sveglio</string>
+    <!-- Display -->
+    <string name="category_display">Display</string>
+    <string name="hbm_title">Modalità alta luminosità</string>
+    <string name="hbm_summary">Abilita la massima luminosità</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Calibra il display tramite Kcal</string>
+    <string name="kcal_values">Valori regolabili</string>
+    <string name="red_title">Rosso</string>
+    <string name="green_title">Verde</string>
+    <string name="blue_title">Blu</string>
+    <string name="saturation_title">Saturazione</string>
+    <string name="contrast_title">Contrasto</string>
+    <string name="hue_title">Tinta</string>
+    <string name="value_title">Valore</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Filesystem</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">FSync spento/acceso</string>
+    <string name="fsync_info">Disabilitare FSync può accelerare le prestazioni a rischio di una perdita di dati in caso di crash di sistema</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Ricarica rapida</string>
+    <string name="usb2_fc_summary">Forza la ricarica rapida fino a 900mA in modalità USB 2.0</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Controllo del suono</string>
+    <string name="mic_gain_title">Guadagno microfono</string>
+    <string name="mic_gain_summary">Imposta il guadagno del microfono</string>
+    <string name="speaker_gain_title">Guadagno altoparlante</string>
+    <string name="speaker_gain_summary">Imposta il guadagno dell\'altoparlante</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valore: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">valore predefinito</string>
+    <string name="custom_seekbar_default_value_to_set">Valore predefinito: <xliff:g id="v">%s</xliff:g>\nTieni premuto per impostare</string>
+    <string name="custom_seekbar_default_value_is_set">Valore predefinito impostato</string>
+</resources>
