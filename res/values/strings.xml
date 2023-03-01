@@ -20,6 +20,8 @@
 
     <!-- Display -->
     <string name="category_display">Display</string>
+    <string name="hbm_title">High brightness mode</string>
+    <string name="hbm_summary">Enable peak luminance</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Calibrate display via Kcal</string>
     <string name="kcal_values">Adjustable values</string>

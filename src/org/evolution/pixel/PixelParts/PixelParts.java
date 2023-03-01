@@ -34,6 +34,9 @@ public class PixelParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = PixelParts.class.getSimpleName();
 
+    private static final String KEY_HBM = "hbm";
+    private static final String NODE_HBM = "/sys/devices/virtual/graphics/fb0/hbm";
+
     private static final String KEY_POWER_EFFICIENT_WORKQUEUE = "power_efficient_workqueue";
     private static final String NODE_POWER_EFFICIENT_WORKQUEUE = "/sys/module/workqueue/parameters/power_efficient";
 
@@ -54,6 +57,7 @@ public class PixelParts extends PreferenceFragment
 
     private Preference mFSyncInfo;
 
+    private SwitchPreference mHBMModeSwitch;
     private SwitchPreference mPowerEfficientWorkqueueModeSwitch;
     private SwitchPreference mFSyncModeSwitch;
     private SwitchPreference mUSB2FastChargeModeSwitch;
@@ -72,6 +76,17 @@ public class PixelParts extends PreferenceFragment
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+        // High brightness mode switch
+        mHBMModeSwitch = (SwitchPreference) findPreference(KEY_HBM);
+        if (Utils.fileWritable(NODE_HBM)) {
+            mHBMModeSwitch.setEnabled(true);
+            mHBMModeSwitch.setChecked(sharedPrefs.getBoolean(KEY_HBM,
+                Utils.getFileValueAsBoolean(NODE_HBM, false)));
+            mHBMModeSwitch.setOnPreferenceChangeListener(this);
+        } else {
+            mPowerHBMModeSwitch.setEnabled(false);
+        }
 
         // Power efficient workqueue switch
         mPowerEfficientWorkqueueModeSwitch = (SwitchPreference) findPreference(KEY_POWER_EFFICIENT_WORKQUEUE);
@@ -161,7 +176,13 @@ public class PixelParts extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPowerEfficientWorkqueueModeSwitch) {
+        if (preference == mHBMModeSwitch) {
+            boolean enabled = (Boolean) newValue;
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            sharedPrefs.edit().putBoolean(KEY_HBM, enabled).commit();
+            Utils.writeValue(NODE_HBM, enabled ? "1" : "0");
+            return true;
+        } else if  (preference == mPowerEfficientWorkqueueModeSwitch) {
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
             sharedPrefs.edit().putBoolean(KEY_POWER_EFFICIENT_WORKQUEUE, enabled).commit();
@@ -199,6 +220,16 @@ public class PixelParts extends PreferenceFragment
     @Override
     public void addPreferencesFromResource(int preferencesResId) {
         super.addPreferencesFromResource(preferencesResId);
+    }
+
+    // Hight brightness mode switch
+    public static void restoreHBMSetting(Context context) {
+        if (Utils.fileWritable(NODE_HBM)) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+            boolean value = sharedPrefs.getBoolean(KEY_HBM,
+                Utils.getFileValueAsBoolean(NODE_HBM, false));
+            Utils.writeValue(NODE_HBM, value ? "0" : "1");
+        }
     }
 
     // Power efficient workqueue switch

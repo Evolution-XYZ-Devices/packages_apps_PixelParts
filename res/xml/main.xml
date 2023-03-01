@@ -10,6 +10,11 @@
         android:key="display"
         android:title="@string/category_display">
 
+        <SwitchPreference
+            android:key="hbm"
+            android:title="@string/hbm_title"
+            android:summary="@string/hbm_summary" />
+
         <Preference
             android:key="kcal"
             android:title="@string/kcal_title"
