@@ -14,7 +14,7 @@
     <!-- CPU -->
     <string name="category_cpu">ЦП</string>
     <string name="power_efficient_workqueue_title">Энергоэффективная рабочая очередь</string>
-    <string name="power_efficient_workqueue_summary">Экономьте электроэнергию, перенося работу на ядро, которое уже активно</string>
+    <string name="power_efficient_workqueue_summary">Экономит электроэнергию, перенося работу на ядро, которое уже активно</string>
     <!-- Display -->
     <string name="category_display">Экран</string>
     <string name="hbm_title">Режим высокой яркости</string>
