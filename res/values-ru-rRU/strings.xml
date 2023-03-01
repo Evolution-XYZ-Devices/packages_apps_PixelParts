@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel Parts</string>
+    <string name="pixel_parts_summary">Специфические настройки устройства</string>
+    <string name="pixel_parts_warning_title">Предупреждение</string>
+    <string name="pixel_parts_warning_text">Для функционирования этих функций требуются определенные узлы ядра. При прошивке стороннего ядра, вы рискуете потерять доступ к некоторым из этих функций. Вы были предупреждены!</string>
+    <string name="pixel_parts_dialog">ОК</string>
+    <!-- CPU -->
+    <string name="category_cpu">ЦП</string>
+    <string name="power_efficient_workqueue_title">Энергоэффективная рабочая очередь</string>
+    <string name="power_efficient_workqueue_summary">Экономьте электроэнергию, перенося работу на ядро, которое уже активно</string>
+    <!-- Display -->
+    <string name="category_display">Экран</string>
+    <string name="hbm_title">Режим высокой яркости</string>
+    <string name="hbm_summary">Включить пиковую яркость</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Откалибруйте дисплей с помощью Kcal</string>
+    <string name="kcal_values">Регулируемые значения</string>
+    <string name="red_title">Красный</string>
+    <string name="green_title">Зеленый</string>
+    <string name="blue_title">Синий</string>
+    <string name="saturation_title">Насыщение</string>
+    <string name="contrast_title">Контраст</string>
+    <string name="hue_title">Оттенок</string>
+    <string name="value_title">Значение</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Файловая система</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">fsync выкл/вкл</string>
+    <string name="fsync_info">Отключение fsync может повысить производительность, но есть риск потери данных в случае сбоя системы</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Быстрая зарядка</string>
+    <string name="usb2_fc_summary">Принудительная быстрая зарядка до 900 мА в режиме USB 2.0</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Управление звуком</string>
+    <string name="mic_gain_title">Усиление микрофона</string>
+    <string name="mic_gain_summary">Задайте значение усиления микрофона</string>
+    <string name="speaker_gain_title">Усиление динамика</string>
+    <string name="speaker_gain_summary">Задайте значение усиления динамика</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">по умолчанию</string>
+    <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nУдерживайте для установки</string>
+    <string name="custom_seekbar_default_value_is_set">Установлено значение по умолчанию</string>
+</resources>
