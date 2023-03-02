@@ -19,6 +19,10 @@
     <string name="category_display">Anzeige</string>
     <string name="hbm_title">Hohe Helligkeit</string>
     <string name="hbm_summary">Maximale Helligkeit aktivieren</string>
+    <string name="hbm_info">Eine lange Nutzung des hohen Helligkeitsmodus kann das Display schädigen</string>
+    <string name="auto_hbm_title">Automatischer Helligkeitsmodus</string>
+    <string name="auto_hbm_summary">Beleuchtungsspitzen basierend auf Sonnenlicht aktivieren</string>
+    <string name="auto_hbm_threshold_summary">Schwellenwert (lux)</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Anzeige über Kcal kalibrieren</string>
     <string name="kcal_values">Einstellbare Werte</string>
