@@ -19,6 +19,10 @@
     <string name="category_display">Tela</string>
     <string name="hbm_title">Modo de brilho alto</string>
     <string name="hbm_summary">Ativar pico de luz</string>
+    <string name="hbm_info">Usar o modo de brilho máximo por muito tempo pode danificar sua tela</string>
+    <string name="auto_hbm_title">Modo automático para o brilho máximo</string>
+    <string name="auto_hbm_summary">Ativar o pico de luz quando exposto à luz solar</string>
+    <string name="auto_hbm_threshold_summary">limiar (lux)</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Calibrar cores da tela via Kcal</string>
     <string name="kcal_values">Valores ajustáveis</string>
