@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:settings="http://schemas.android.com/apk/res/org.evolution.pixel.PixelExtras">
+
+    <PreferenceCategory
+        android:key="display"
+        android:title="@string/category_display">
+
+        <SwitchPreference
+            android:key="hbm"
+            android:title="@string/hbm_title"
+            android:summary="@string/hbm_summary" />
+
+        <Preference
+            android:key="hbm_info"
+            android:icon="@drawable/ic_info_outline"
+            android:summary="@string/hbm_info" 
+            android:persistent="false" />
+
+        <Preference
+            android:key="kcal"
+            android:title="@string/kcal_title"
+            android:summary="@string/kcal_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.evolution.pixel.PixelParts"
+                    android:targetClass="org.evolution.pixel.PixelParts.kcal.KcalActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cpu"
+        android:title="@string/category_cpu">
+
+        <SwitchPreference
+            android:key="power_efficient_workqueue"
+            android:title="@string/power_efficient_workqueue_title"
+            android:summary="@string/power_efficient_workqueue_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="filesystem"
+        android:title="@string/category_filesystem">
+
+        <SwitchPreference
+            android:key="fsync"
+            android:title="@string/fsync_title"
+            android:summary="@string/fsync_summary" 
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="fsync_info"
+            android:icon="@drawable/ic_info_outline"
+            android:summary="@string/fsync_info"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_sound_control"
+        android:title="@string/category_sound_control">
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="mic_gain"
+            android:title="@string/mic_gain_title"
+            android:summary="@string/mic_gain_summary"
+            android:persistent="true"
+            android:max="20"
+            android:min="0"
+            android:defaultValue="0" />
+
+        <org.evolution.pixel.PixelParts.CustomSeekBarPreference
+            android:key="speaker_gain"
+            android:title="@string/speaker_gain_title"
+            android:summary="@string/speaker_gain_summary"
+            android:persistent="true"
+            android:max="8"
+            android:min="0"
+            android:defaultValue="0" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="usb"
+        android:title="@string/category_usb">
+
+        <SwitchPreference
+            android:key="usb2_fast_charge"
+            android:title="@string/usb2_fc_title"
+            android:summary="@string/usb2_fc_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

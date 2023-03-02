@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel Araçları</string>
+    <string name="pixel_parts_summary">Cihaza özel seçenekleri ayarlayın</string>
+    <string name="pixel_parts_warning_title">Uyarı</string>
+    <string name="pixel_parts_warning_text">Bu özelliklerin çoğu özel kernel parametreleri gerektirir. Özel bir kernel yüklerseniz bazı özellikleri kaybetme riskiniz olur. Dikkatli olun!</string>
+    <string name="pixel_parts_dialog">Tamam</string>
+    <!-- CPU -->
+    <string name="category_cpu">İşlemci</string>
+    <string name="power_efficient_workqueue_title">Güç verimli iş sırası</string>
+    <string name="power_efficient_workqueue_summary">İş sırasını yeniden planlayarak zaten uyanık olan bir çekirdeğe aktararak güç tasarrufu yapın</string>
+    <!-- Display -->
+    <string name="category_display">Ekran</string>
+    <string name="hbm_title">Yüksek parlaklık modu</string>
+    <string name="hbm_summary">En yüksek parlaklığı etkinleştir</string>
+    <string name="hbm_info">Yüksek parlaklık modunun uzun süre kullanımı ekranınıza zarar verebilir</string>
+    <string name="auto_hbm_title">Otomatik yüksek parlaklık modu</string>
+    <string name="auto_hbm_summary">Gün ışığına bağlı olarak yüksek parlaklığı etkinleştir</string>
+    <string name="auto_hbm_threshold_summary">eşik (lux)</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Kcal ile görüntüyü kalibre et</string>
+    <string name="kcal_values">Ayarlanabilir değerler</string>
+    <string name="red_title">Kırmızı</string>
+    <string name="green_title">Yeşil</string>
+    <string name="blue_title">Mavi</string>
+    <string name="saturation_title">Doygunluk</string>
+    <string name="contrast_title">Kontrast</string>
+    <string name="hue_title">Ton</string>
+    <string name="value_title">Değer</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Dosya sistemi</string>
+    <string name="fsync_title">Fsync</string>
+    <string name="fsync_summary">fsync kapalı/açık</string>
+    <string name="fsync_info">Fsync kapatılması performansı arttırabilir fakat sistem çökmesi olayında veri kaybı riski vardır</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Hızlı Şarj</string>
+    <string name="usb2_fc_summary">USB 2.0 modunda 900mA hızlı şarj etmeye zorla</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Ses Kontrolü</string>
+    <string name="mic_gain_title">Mikrofon yükseltme</string>
+    <string name="mic_gain_summary">Mikrofon şiddetini tanımlayın</string>
+    <string name="speaker_gain_title">Hoparlör Yükseltmesi</string>
+    <string name="speaker_gain_summary">Hoparlör şiddetini tanımlayın</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Değer: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">varsayılan olarak</string>
+    <string name="custom_seekbar_default_value_to_set">Varsayılan değer: <xliff:g id="v">%s</xliff:g>\nAyarlamak için uzun dokunun</string>
+    <string name="custom_seekbar_default_value_is_set">Varsayılan değer ayarlandı</string>
+</resources>

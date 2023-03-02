@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixelteile</string>
+    <string name="pixel_parts_summary">Gerätespezifische Einstellungen anpassen</string>
+    <string name="pixel_parts_warning_title">Warnung</string>
+    <string name="pixel_parts_warning_text">Die meisten dieser Funktionen sind auf bestimmte Kerneleigenschaften angewiesen, um zu funktionieren. Wenn Sie einen benutzerdefinierten Kernel flashen, riskieren Sie, dass Sie den Zugang zu einigen Funktionen verlieren!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">Energie effiziente Arbeitswarteschlange</string>
+    <string name="power_efficient_workqueue_summary">Sparen Sie Energie durch Umschichtung der Arbeit in einen Kern, der bereits wach ist</string>
+    <!-- Display -->
+    <string name="category_display">Anzeige</string>
+    <string name="hbm_title">Hohe Helligkeit</string>
+    <string name="hbm_summary">Maximale Helligkeit aktivieren</string>
+    <string name="hbm_info">Eine lange Nutzung des hohen Helligkeitsmodus kann das Display schädigen</string>
+    <string name="auto_hbm_title">Automatischer Helligkeitsmodus</string>
+    <string name="auto_hbm_summary">Beleuchtungsspitzen basierend auf Sonnenlicht aktivieren</string>
+    <string name="auto_hbm_threshold_summary">Schwellenwert (lux)</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Anzeige über Kcal kalibrieren</string>
+    <string name="kcal_values">Einstellbare Werte</string>
+    <string name="red_title">Rot</string>
+    <string name="green_title">Grün</string>
+    <string name="blue_title">Blau</string>
+    <string name="saturation_title">Sättigung</string>
+    <string name="contrast_title">Kontrast</string>
+    <string name="hue_title">Farbton</string>
+    <string name="value_title">Wert</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Dateisystem</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">fSync aus/an</string>
+    <string name="fsync_info">Die Deaktivierung von Fsync kann die Leistung beschleunigen, birgt aber das Risiko eines möglichen Datenverlusts im Falle eines Systemabsturzes</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Schnelles Laden</string>
+    <string name="usb2_fc_summary">Schnelles Laden von bis zu 900mA im USB 2.0 Modus erzwingen</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Lautstärken-Kontrolle</string>
+    <string name="mic_gain_title">Mikrofon-Verstärkung</string>
+    <string name="mic_gain_summary">Definiere die Amplitude des Mikrofons</string>
+    <string name="speaker_gain_title">Lautsprecher Verstärker</string>
+    <string name="speaker_gain_summary">Definiere die Amplitude des Mikrofons</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">standardmäßig</string>
+    <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen lange gedrückt halten</string>
+    <string name="custom_seekbar_default_value_is_set">Standardwert ist gesetzt</string>
+</resources>
