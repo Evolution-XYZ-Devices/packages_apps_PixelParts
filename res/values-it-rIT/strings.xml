@@ -19,6 +19,10 @@
     <string name="category_display">Display</string>
     <string name="hbm_title">Modalità alta luminosità</string>
     <string name="hbm_summary">Abilita la massima luminosità</string>
+    <string name="hbm_info">L\'utilizzo prolungato della modalità Alta luminosità può danneggiare il display</string>
+    <string name="auto_hbm_title">Modalità alta luminosità automatica</string>
+    <string name="auto_hbm_summary">Abilita alta luminosità in base alla luce solare</string>
+    <string name="auto_hbm_threshold_summary">soglia (lux)</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Calibra il display tramite Kcal</string>
     <string name="kcal_values">Valori regolabili</string>
