@@ -20,9 +20,6 @@
     <string name="hbm_title">Yüksek parlaklık modu</string>
     <string name="hbm_summary">En yüksek parlaklığı etkinleştir</string>
     <string name="hbm_info">Yüksek parlaklık modunun uzun süre kullanımı ekranınıza zarar verebilir</string>
-    <string name="auto_hbm_title">Otomatik yüksek parlaklık modu</string>
-    <string name="auto_hbm_summary">Gün ışığına bağlı olarak yüksek parlaklığı etkinleştir</string>
-    <string name="auto_hbm_threshold_summary">eşik (lux)</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Kcal ile görüntüyü kalibre et</string>
     <string name="kcal_values">Ayarlanabilir değerler</string>
