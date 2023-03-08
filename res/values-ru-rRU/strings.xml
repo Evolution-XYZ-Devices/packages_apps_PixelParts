@@ -9,16 +9,17 @@
     <string name="pixel_parts_title">Pixel Parts</string>
     <string name="pixel_parts_summary">Специфические настройки устройства</string>
     <string name="pixel_parts_warning_title">Предупреждение</string>
-    <string name="pixel_parts_warning_text">Для функционирования этих функций требуются определенные узлы ядра. При прошивке стороннего ядра, вы рискуете потерять доступ к некоторым из этих функций. Вы были предупреждены!</string>
+    <string name="pixel_parts_warning_text">Для функционирования этих функций требуются определенные модули ядра. При прошивке стороннего ядра, вы рискуете потерять доступ к некоторым из этих функций. Вы были предупреждены!</string>
     <string name="pixel_parts_dialog">ОК</string>
     <!-- CPU -->
-    <string name="category_cpu">ЦП</string>
+    <string name="category_cpu">Процессор</string>
     <string name="power_efficient_workqueue_title">Энергоэффективная рабочая очередь</string>
     <string name="power_efficient_workqueue_summary">Экономит электроэнергию, перенося работу на ядро, которое уже активно</string>
     <!-- Display -->
     <string name="category_display">Экран</string>
     <string name="hbm_title">Режим высокой яркости</string>
     <string name="hbm_summary">Включить пиковую яркость</string>
+    <string name="hbm_info">Длительное использование режима высокой яркости может повредить дисплей</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Откалибруйте дисплей с помощью Kcal</string>
     <string name="kcal_values">Регулируемые значения</string>

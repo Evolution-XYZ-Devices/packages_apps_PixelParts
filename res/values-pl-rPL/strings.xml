@@ -20,9 +20,6 @@
     <string name="hbm_title">Tryb wysokiej jasności</string>
     <string name="hbm_summary">Włącz szczytową luminancję</string>
     <string name="hbm_info">Długie użycie trybu wysokiej jasności może uszkodzić wyświetlacz</string>
-    <string name="auto_hbm_title">Automatyczny tryb wysokiej jasności</string>
-    <string name="auto_hbm_summary">Włącz szczytową luminancję w oparciu o światło słoneczne</string>
-    <string name="auto_hbm_threshold_summary">próg (lux)</string>
     <string name="kcal_title">Kcal</string>
     <string name="kcal_summary">Kalibracja wyświetlacza za pomocą Kcal</string>
     <string name="kcal_values">Modyfikowalne wartości</string>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel Parts</string>
+    <string name="pixel_parts_summary">Upravte konkrétní nastavení zařízení</string>
+    <string name="pixel_parts_warning_title">Varování</string>
+    <string name="pixel_parts_warning_text">Většina těchto funkcí je pro svou funkci závislá na konkrétních uzlech jádra. Při instalaci vlastního jádra riskujete, že ztratíte přístup k některým funkcím. Byli jste varováni!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">Energetický úsporná pracovní fronta</string>
+    <string name="power_efficient_workqueue_summary">Úspora energie přeplánováním práce na jádro, které je již probuzeno</string>
+    <!-- Display -->
+    <string name="category_display">Displej</string>
+    <string name="hbm_title">Režim vysokého jasu</string>
+    <string name="hbm_summary">Povolit maximální svítivost</string>
+    <string name="hbm_info">Dlouhodobé používání režimu vysokého jasu může poškodit displej</string>
+    <string name="kcal_title">Kcal</string>
+    <string name="kcal_summary">Kalibrace displeje prostřednictvím Kcal</string>
+    <string name="kcal_values">Nastavitelné hodnoty</string>
+    <string name="red_title">Červená</string>
+    <string name="green_title">Zelená</string>
+    <string name="blue_title">Modrá</string>
+    <string name="saturation_title">Sytost</string>
+    <string name="contrast_title">Kontrast</string>
+    <string name="hue_title">Odstín</string>
+    <string name="value_title">Hodnota</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Souborový systém</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">fsync vyp./zap.</string>
+    <string name="fsync_info">Vypnutím funkce fsync lze urychlit výkon s rizikem možné ztráty dat v případě pádu systému</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Rychlé Nabíjení</string>
+    <string name="usb2_fc_summary">Vynutit rychlé nabíjení do 900 mA v režimu USB 2.0</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Ovládání zvuku</string>
+    <string name="mic_gain_title">Zesílení mikrofonu</string>
+    <string name="mic_gain_summary">Definice zesílení mikrofonu</string>
+    <string name="speaker_gain_title">Zesílení reproduktoru</string>
+    <string name="speaker_gain_summary">Definice zesílení reproduktoru</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">výchozí hodnota</string>
+    <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouhým klepnutím ji nastavíte</string>
+    <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
+</resources>

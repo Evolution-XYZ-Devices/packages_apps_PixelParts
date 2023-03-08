@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel パーツ</string>
+    <string name="pixel_parts_summary">端末固有の設定を調整する</string>
+    <string name="pixel_parts_warning_title">警告</string>
+    <string name="pixel_parts_warning_text">これらは機能させるために特定のカーネルノードを必要とします。カスタムカーネルをフラッシュすると、一部の機能へのアクセスを失う可能性があります。注意して下さい!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">電力効率の高いワークキュー</string>
+    <string name="power_efficient_workqueue_summary">既に起動したコアへの指示を再スケジュールして電力を節約する</string>
+    <!-- Display -->
+    <string name="category_display">ディスプレイ</string>
+    <string name="hbm_title">高輝度モード</string>
+    <string name="hbm_summary">最高輝度を有効にする</string>
+    <string name="hbm_info">長時間の高輝度モードの使用は画面にダメージを与える可能性があります</string>
+    <string name="kcal_title">KCAL</string>
+    <string name="kcal_summary">KCAL による画面のキャリブレーションを行う</string>
+    <string name="kcal_values">調整可能な値</string>
+    <string name="red_title">赤</string>
+    <string name="green_title">緑</string>
+    <string name="blue_title">青</string>
+    <string name="saturation_title">彩度</string>
+    <string name="contrast_title">コントラスト</string>
+    <string name="hue_title">色相</string>
+    <string name="value_title">明度</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">ファイルシステム</string>
+    <string name="fsync_title">FSync</string>
+    <string name="fsync_summary">FSync OFF/ON</string>
+    <string name="fsync_info">FSync を無効にするとシステムがクラッシュした時にデータが失われる危険がありますが、パフォーマンスの高速化を期待できます。</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">急速充電</string>
+    <string name="usb2_fc_summary">USB 2.0モードで最大900mAの急速充電を強制使用する</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">音声コントロール</string>
+    <string name="mic_gain_title">マイクゲイン</string>
+    <string name="mic_gain_summary">マイクのゲインを設定する</string>
+    <string name="speaker_gain_title">スピーカーゲイン</string>
+    <string name="speaker_gain_summary">スピーカーのゲインを設定する</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">既定</string>
+    <string name="custom_seekbar_default_value_to_set">既定値: <xliff:g id="v">%s</xliff:g>\n長押しで設定</string>
+    <string name="custom_seekbar_default_value_is_set">既定値が設定されています</string>
+</resources>
