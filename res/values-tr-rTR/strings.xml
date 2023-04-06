@@ -37,13 +37,13 @@
     <string name="fsync_info">Fsync kapatılması performansı arttırabilir fakat sistem çökmesi olayında veri kaybı riski vardır</string>
     <!-- USB 2.0 Force FastCharge -->
     <string name="category_usb">USB</string>
-    <string name="usb2_fc_title">Hızlı Şarj</string>
+    <string name="usb2_fc_title">Hızlı şarj</string>
     <string name="usb2_fc_summary">USB 2.0 modunda 900mA hızlı şarj etmeye zorla</string>
     <!-- Sound control -->
-    <string name="category_sound_control">Ses Kontrolü</string>
+    <string name="category_sound_control">Ses kontrolü</string>
     <string name="mic_gain_title">Mikrofon yükseltme</string>
     <string name="mic_gain_summary">Mikrofon şiddetini tanımlayın</string>
-    <string name="speaker_gain_title">Hoparlör Yükseltmesi</string>
+    <string name="speaker_gain_title">Hoparlör yükseltmesi</string>
     <string name="speaker_gain_summary">Hoparlör şiddetini tanımlayın</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Değer: <xliff:g id="v">%s</xliff:g></string>
