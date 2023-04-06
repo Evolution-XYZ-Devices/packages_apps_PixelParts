@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
+                   2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Частини пікселів</string>
+    <string name="pixel_parts_summary">Налаштувати специфічні параметри пристрою</string>
+    <string name="pixel_parts_warning_title">Попередження</string>
+    <string name="pixel_parts_warning_text">Ці функції залежать від конкретних вузлів ядра для функціонування. При прошивці особливого ядра, ви ризикуєте втратити доступ до деяких з цих функцій. Ви попередили!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <!-- CPU -->
+    <string name="category_cpu">Процессор</string>
+    <string name="power_efficient_workqueue_title">Енергоефективна робоча черга</string>
+    <string name="power_efficient_workqueue_summary">Заощаджуйте енергію шляхом перепланування роботи з ядром, що вже не працює</string>
+    <!-- Display -->
+    <string name="category_display">Дисплей</string>
+    <string name="hbm_title">Режим високої яскравості</string>
+    <string name="hbm_summary">Ввімкнути максимальну яскравість</string>
+    <string name="hbm_info">Тривале використання режиму високої яскравості може призвести до пошкодження дисплея</string>
+    <string name="kcal_title">Ккал</string>
+    <string name="kcal_summary">Калібрування дисплею через Kcal</string>
+    <string name="kcal_values">Регульовані значення</string>
+    <string name="red_title">Червоний</string>
+    <string name="green_title">Зелений</string>
+    <string name="blue_title">Синій</string>
+    <string name="saturation_title">Насиченість</string>
+    <string name="contrast_title">Контрастність</string>
+    <string name="hue_title">Відтінок</string>
+    <string name="value_title">Значення</string>
+    <!-- Filesystem -->
+    <string name="category_filesystem">Файлова система</string>
+    <string name="fsync_title">Fsync</string>
+    <string name="fsync_summary">fsync вимкнути/увімкнути</string>
+    <string name="fsync_info">Вимкнення fsync може пришвидшити продуктивність ризику, внаслідок виникнення потенційних втрат даних у разі краху системи</string>
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fc_title">Швидке заряджання</string>
+    <string name="usb2_fc_summary">Примусове швидке заряджання до 900mA в режимі USB 2.0</string>
+    <!-- Sound control -->
+    <string name="category_sound_control">Управління звуком</string>
+    <string name="mic_gain_title">Підсилення мікрофону</string>
+    <string name="mic_gain_summary">Визначте амплітуду підсилення мікрофона</string>
+    <string name="speaker_gain_title">Підсилення динаміка</string>
+    <string name="speaker_gain_summary">Визначте амплітуду підсилення динаміка</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">за замовчуванням</string>
+    <string name="custom_seekbar_default_value_to_set">Значення за замовчуванням: <xliff:g id="v">%s</xliff:g>\nУтримуйте для встановлення</string>
+    <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
+</resources>
