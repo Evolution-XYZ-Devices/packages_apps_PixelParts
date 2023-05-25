@@ -62,4 +62,9 @@
         android:key="cycle_count"
         android:title="@string/cycle_count_title"
         android:selectable="false" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="battery_info_footer"
+        android:title="@string/battery_cycle_count_footer"
+        android:selectable="false" />
 </PreferenceScreen>

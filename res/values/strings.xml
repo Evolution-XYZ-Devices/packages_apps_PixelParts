@@ -60,6 +60,7 @@
     <string name="health_cool">Cool</string>
     <string name="health_hot">Hot</string>
     <string name="cycle_count_title">Cycle count</string>
+    <string name="battery_cycle_count_footer">Due to quality inspections before shipping, the cycle count may not be zero on first use</string>
 
     <!-- Charge control -->
     <string name="charge_control_title">Charge control</string>
