@@ -53,6 +53,8 @@ public class AutoHBMService extends Service {
     }
 
     SensorEventListener mSensorEventListener = new SensorEventListener() {
+        private boolean mCrossedThreshold = false;
+        private long mCrossedThresholdTime = 0;
         private long mLastTriggerTime = 0;
 
         @Override
@@ -62,15 +64,24 @@ public class AutoHBMService extends Service {
                     (KeyguardManager) getSystemService(getApplicationContext().KEYGUARD_SERVICE);
             boolean keyguardShowing = km.inKeyguardRestrictedInputMode();
             float luxThreshold = Float.parseFloat(mSharedPrefs.getString(Constants.KEY_AUTO_HBM_THRESHOLD, "20000"));
+            long timeToEnableHBM = Long.parseLong(mSharedPrefs.getString(Constants.KEY_HBM_ENABLE_TIME, "0"));
             long timeToDisableHBM = Long.parseLong(mSharedPrefs.getString(Constants.KEY_HBM_DISABLE_TIME, "1"));
 
             if (lux > luxThreshold) {
-                if ((!mAutoHBMActive || !isCurrentlyEnabled()) && !keyguardShowing) {
-                    mAutoHBMActive = true;
-                    enableHBM(true);
-                    mLastTriggerTime = System.currentTimeMillis();
+                if (!mCrossedThreshold) {
+                    mCrossedThreshold = true;
+                    mCrossedThresholdTime = System.currentTimeMillis();
+                } else {
+                    long currentTime = System.currentTimeMillis();
+                    if (currentTime - mCrossedThresholdTime >= timeToEnableHBM * 1000 && (!mAutoHBMActive || !isCurrentlyEnabled()) && !keyguardShowing) {
+                        mAutoHBMActive = true;
+                        enableHBM(true);
+                        mLastTriggerTime = currentTime;
+                    }
                 }
             } else {
+                mCrossedThreshold = false;
+
                 if (mAutoHBMActive) {
                     long currentTime = System.currentTimeMillis();
                     if (currentTime - mLastTriggerTime >= timeToDisableHBM * 1000) {

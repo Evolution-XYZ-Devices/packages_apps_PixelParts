@@ -42,6 +42,12 @@
             android:title="@string/auto_hbm_threshold_title"
             android:summary="@string/auto_hbm_threshold_summary" />
 
+        <org.evolution.pixelparts.preferences.AutoHBMEnableTimePreference     
+            android:key="hbm_enable_time"
+            android:dependency="auto_hbm" 
+            android:title="@string/hbm_enable_time_title"
+            android:summary="@string/hbm_enable_time_summary" />
+
         <org.evolution.pixelparts.preferences.AutoHBMDisableTimePreference
             android:key="hbm_disable_time"
             android:dependency="auto_hbm"
