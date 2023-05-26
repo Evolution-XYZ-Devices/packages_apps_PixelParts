@@ -103,6 +103,18 @@
             </intent-filter>
         </service>
 
+        <!-- Auto HBM tile service -->
+        <service
+            android:name=".services.AutoHBMTileService"
+            android:label="@string/auto_hbm_title"
+            android:icon="@drawable/ic_hbm_tile"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
         <!-- USB 2.0 Fastcharge tile service -->
         <service
             android:name=".services.USB2FCTileService"
