@@ -26,6 +26,8 @@
     <string name="auto_hbm_summary">Enable peak luminance based on sunlight</string>
     <string name="auto_hbm_threshold_title"></string>
     <string name="auto_hbm_threshold_summary">threshold (lux)</string>
+    <string name="hbm_disable_time_title"></string>
+    <string name="hbm_disable_time_summary">disable after (seconds)</string>
     <string name="hbm_info">Long time usage of High brightness mode may damage your display!</string>
 
     <!-- UiBench -->
