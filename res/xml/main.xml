@@ -10,6 +10,17 @@
         android:key="pixel_parts_intro"
         android:title="@string/pixel_parts_summary"/>
 
+    <!-- Start of Camera category -->
+    <PreferenceCategory  
+        android:key="category_camera"
+        android:title="@string/category_camera">
+
+        <org.evolution.pixelparts.preferences.TorchStrengthPreference
+            android:key="torch_strength"  
+            android:title="@string/torch_strength_title"
+            android:summary="@string/torch_strength_summary" />
+    </PreferenceCategory>
+
     <!-- Start of CPU category -->
     <PreferenceCategory  
         android:key="category_cpu"

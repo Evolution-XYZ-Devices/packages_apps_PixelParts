@@ -11,6 +11,10 @@ public class Constants {
     public static final String KEY_POWER_EFFICIENT_WORKQUEUE = "power_efficient_workqueue";
     public static final String NODE_POWER_EFFICIENT_WORKQUEUE = "/sys/module/workqueue/parameters/power_efficient";
 
+    // Flashlight
+    public static final String KEY_TORCH_STRENGTH = "torch_strength";
+    public static final String KEY_TORCH_STATE = "torch_state";
+
     // High brightness mode switches
     public static final String KEY_HBM = "hbm";
     public static final String KEY_AUTO_HBM = "auto_hbm";

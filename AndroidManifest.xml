@@ -79,6 +79,18 @@
             </intent-filter>
         </activity>
 
+        <!-- Flashlight tile service -->
+        <service
+            android:name=".services.FlashlightTileService"
+            android:label="@string/flashlight_tile_title"
+            android:icon="@drawable/ic_flashlight_tile"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
         <!-- Power efficient workqueue tile service -->
         <service
             android:name=".services.PEWQTileSerice"
