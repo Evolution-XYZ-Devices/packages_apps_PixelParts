@@ -1,0 +1,33 @@
+type pixelparts_app, domain;
+typeattribute pixelparts_app mlstrustedsubject;
+
+app_domain(pixelparts_app)
+
+allow pixelparts_app {
+  activity_service
+  activity_task_service
+  audio_service
+  autofill_service
+  content_capture_service
+  game_service
+  gpu_service
+  hint_service
+  media_session_service
+  netstats_service
+  permission_checker_service
+  surfaceflinger_service
+}:service_manager find;
+
+allow pixelparts_app system_app_data_file:dir create_dir_perms;
+allow pixelparts_app system_app_data_file:{ file lnk_file } create_file_perms;
+allow pixelparts_app system_data_file:dir search;
+
+allow pixelparts_app {
+  sysfs_fastcharge
+  sysfs_leds
+  sysfs_workqueue
+}:file rw_file_perms;
+
+allow pixelparts_app {
+  sysfs_leds
+}:dir r_dir_perms;

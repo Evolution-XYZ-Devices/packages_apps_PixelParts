@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:settings="http://schemas.android.com/apk/res/org.evolution.pixelparts">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="pixel_parts_intro"
+        android:title="@string/pixel_parts_summary"/>
+
+    <!-- Start of CPU category -->
+    <PreferenceCategory  
+        android:key="category_cpu"
+        android:title="@string/category_cpu">
+
+        <SwitchPreference
+            android:key="power_efficient_workqueue"
+            android:title="@string/power_efficient_workqueue_title"
+            android:summary="@string/power_efficient_workqueue_summary" />
+    </PreferenceCategory>
+
+    <!-- Start of display category -->
+    <PreferenceCategory  
+        android:key="category_display"
+        android:title="@string/category_display">
+
+        <SwitchPreference
+            android:key="hbm"
+            android:title="@string/hbm_title"
+            android:summary="@string/hbm_summary" />
+
+        <SwitchPreference
+            android:key="auto_hbm"
+            android:title="@string/auto_hbm_title"
+            android:summary="@string/auto_hbm_summary" />
+
+        <org.evolution.pixelparts.preferences.AutoHBMThresholdPreference
+            android:key="auto_hbm_threshold"
+            android:dependency="auto_hbm"
+            android:title="@string/auto_hbm_threshold_title"
+            android:summary="@string/auto_hbm_threshold_summary" />
+
+        <Preference
+            android:key="hbm_info"
+            android:icon="@drawable/ic_info_outline"
+            android:summary="@string/hbm_info" 
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <!-- Start of UiBench Category -->
+    <PreferenceCategory
+        android:key="category_uibench"
+        android:title="@string/category_uibench">
+
+        <Preference
+            android:key="jitter"
+            android:title="@string/jitter_test_title"
+            android:summary="@string/jitter_test_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.evolution.pixelparts"
+                    android:targetClass="org.evolution.pixelparts.uibench.JitterTestActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <!-- Start of usb category -->
+    <PreferenceCategory
+        android:key="category_usb"
+        android:title="@string/category_usb">
+
+        <SwitchPreference
+            android:key="usb2_fast_charge"
+            android:title="@string/usb2_fast_charge_title"
+            android:summary="@string/usb2_fast_charge_summary" />
+
+        <Preference
+            android:key="usb2_fast_charge_info"
+            android:icon="@drawable/ic_info_outline"
+            android:summary="@string/usb2_fast_charge_info"
+            android:persistent="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,5 @@
+# USB 2.0 force fast charge
+type sysfs_fastcharge, fs_type, sysfs_type;
+
+# Workqueue
+type sysfs_workqueue, fs_type, sysfs_type;

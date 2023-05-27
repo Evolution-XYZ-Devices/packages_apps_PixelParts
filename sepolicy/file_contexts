@@ -1,0 +1,2 @@
+/sys/kernel/fast_charge/force_fast_charge           u:object_r:sysfs_fastcharge:s0
+/sys/module/workqueue/parameters/power_efficient    u:object_r:sysfs_workqueue:s0

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+                   2016-2022 crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel Parts</string>
+    <string name="pixel_parts_summary">Configure device specific settings</string>
+    <string name="pixel_parts_warning_title">Warning</string>
+    <string name="pixel_parts_warning_text">Most of these features rely on specific kernel nodes in order to function. When flashing a custom kernel, you risk the possibility of losing access to some of these features. You have been warned!</string>
+    <string name="pixel_parts_dialog">OK</string>
+
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">Power efficient workqueue</string>
+    <string name="power_efficient_workqueue_summary">Save power by rescheduling work to a core that is already awake</string>
+
+    <!-- Display -->
+    <string name="category_display">Display</string>
+    <string name="hbm_title">High brightness mode (HBM)</string>
+    <string name="hbm_summary">Enable peak luminance</string>
+    <string name="auto_hbm_title">Automatic HBM</string>
+    <string name="auto_hbm_summary">Enable peak luminance based on sunlight</string>
+    <string name="auto_hbm_threshold_title"></string>
+    <string name="auto_hbm_threshold_summary">threshold (lux)</string>
+    <string name="hbm_info">Long time usage of High brightness mode may damage your display!</string>
+
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">Calculate rendering jitter</string>
+
+    <!-- USB -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fast_charge_title">USB 2.0 fast charge</string>
+    <string name="usb2_fast_charge_summary">Enable CDP mode for fast charging on USB 2.0 ports</string>
+    <string name="usb2_fast_charge_info">Not all USB 2.0 ports support CDP mode, use with caution!</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+
+</resources>
