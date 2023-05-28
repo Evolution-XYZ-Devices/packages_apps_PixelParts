@@ -8,14 +8,20 @@ allow pixelparts_app {
   activity_task_service
   audio_service
   autofill_service
+  cameraserver_service
   content_capture_service
+  device_state_service
   game_service
   gpu_service
   hint_service
   media_session_service
   netstats_service
   permission_checker_service
+  sensorservice_service
   surfaceflinger_service
+  thermal_service
+  trust_service
+  voiceinteraction_service
 }:service_manager find;
 
 allow pixelparts_app system_app_data_file:dir create_dir_perms;
