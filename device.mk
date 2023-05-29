@@ -1,10 +1,16 @@
+#
+# Copyright (C) 2023 The Evolution X Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # PixelParts app
 PRODUCT_PACKAGES += \
     PixelParts
 
+# PixelParts init rc
+PRODUCT_PACKAGES += \
+    init.pixelparts.rc
+
 # PixelParts sepolicy
 BOARD_SEPOLICY_DIRS += packages/apps/PixelParts/sepolicy
-
-# PixelParts init rc
-PRODUCT_COPY_FILES += \
-    packages/apps/PixelParts/init/init.pixelparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pixelparts.rc

@@ -1,0 +1,11 @@
+//
+// Copyright (C) 2023 The Evolution X Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_etc {
+    name: "init.pixelparts.rc",
+    src: "init.pixelparts.rc",
+    sub_dir: "init",
+    vendor: true,
+}
