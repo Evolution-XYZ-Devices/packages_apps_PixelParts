@@ -10,6 +10,32 @@
         android:key="pixel_parts_intro"
         android:title="@string/pixel_parts_summary"/>
 
+    <!-- Start of Battery category -->
+    <PreferenceCategory  
+        android:key="category_battery"
+        android:title="@string/category_battery">
+
+        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
+            android:key="stop_charging"
+            android:title="@string/stop_charging_title"
+            android:summary="@string/stop_charging_summary"
+            android:persistent="true"
+            android:max="100"
+            android:min="1"
+            settings:units=""
+            android:defaultValue="100" />
+
+        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
+            android:key="start_charging"
+            android:title="@string/start_charging_title"
+            android:summary="@string/start_charging_summary"
+            android:persistent="true"
+            android:max="99"
+            android:min="0"
+            settings:units=""
+            android:defaultValue="0" />
+    </PreferenceCategory>
+
     <!-- Start of Camera category -->
     <PreferenceCategory  
         android:key="category_camera"

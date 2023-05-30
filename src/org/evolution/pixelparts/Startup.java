@@ -22,6 +22,8 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
             // PixelParts
+            PixelParts.restoreStopChargingSetting(context);
+            PixelParts.restoreStartChargingSetting(context);
             PixelParts.restorePowerEfficientWorkqueueSetting(context);
             PixelParts.restoreHBMSetting(context);
             PixelParts.restoreUSB2FastChargeSetting(context);

@@ -7,6 +7,14 @@ package org.evolution.pixelparts.misc;
 
 public class Constants {
 
+    // Stop/Start charging preferences
+    public static final String KEY_STOP_CHARGING = "stop_charging";
+    public static final String KEY_START_CHARGING = "start_charging";
+    public static final String NODE_STOP_CHARGING = "/sys/devices/platform/google,charger/charge_stop_level";
+    public static final String NODE_START_CHARGING = "/sys/devices/platform/google,charger/charge_start_level";
+    public static final String DEFAULT_STOP_CHARGING = "100";
+    public static final String DEFAULT_START_CHARGING = "0";
+
     // Power efficient workqueue switch
     public static final String KEY_POWER_EFFICIENT_WORKQUEUE = "power_efficient_workqueue";
     public static final String NODE_POWER_EFFICIENT_WORKQUEUE = "/sys/module/workqueue/parameters/power_efficient";

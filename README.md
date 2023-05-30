@@ -7,6 +7,7 @@ I created PixelParts as an alternative to Google's HbmSVManager, providing users
 
 | Category | Feature | Description | QS Tile | Required kernel changes |
 | --- | --- | --- | --- | --- |
+| **Battery** | `Start/Stop charging` | Start/stop charging at specific percentages | N/A | N/A |
 | **Camera** | `Torch strength` | Adjust the brightness of the PixelParts flashlight QS-Tile | PixelParts Flashlight QS | N/A |
 | **CPU** | `Power efficient workqueue` | Save power by rescheduling work to a core that is already awake. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/3a9c9c32cf09ba99024e3803f395249ecc19c87b) |
 | **Display** | `High brightness mode (HBM)` | Enable peak luminance. | Yes | N/A |

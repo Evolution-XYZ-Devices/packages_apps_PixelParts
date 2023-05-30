@@ -1,5 +1,11 @@
 on property:sys.boot_completed=1
 
+    # Stop/Start charging
+    chown system system /sys/devices/platform/google,charger/charge_stop_level
+    chmod 0666 /sys/devices/platform/google,charger/charge_stop_level
+    chown system system /sys/devices/platform/google,charger/charge_start_level
+    chmod 0666 /sys/devices/platform/google,charger/charge_start_level
+
     # Power Efficient Workqueue
     chown system system /sys/module/workqueue/parameters/power_efficient
     chmod 0666 /sys/module/workqueue/parameters/power_efficient

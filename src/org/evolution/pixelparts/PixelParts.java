@@ -16,12 +16,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 
 import org.evolution.pixelparts.misc.Constants;
+import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.services.HBMService;
 import org.evolution.pixelparts.utils.AutoHBMUtils;
@@ -33,6 +35,10 @@ public class PixelParts extends PreferenceFragment
 
     // Power efficient workqueue switch
     private SwitchPreference mPowerEfficientWorkqueueModeSwitch;
+
+    // Stop/Start charging preferences
+    private CustomSeekBarPreference mStopChargingPreference;
+    private CustomSeekBarPreference mStartChargingPreference;
 
     // High brightness mode switches
     private SwitchPreference mHBMSwitch;
@@ -52,6 +58,26 @@ public class PixelParts extends PreferenceFragment
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         Context context = getContext();
+
+        // Stop charging preference
+        mStopChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_STOP_CHARGING);
+        if (Utils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
+            mStopChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
+                    Integer.parseInt(Utils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING))));
+            mStopChargingPreference.setOnPreferenceChangeListener(this);
+        } else {
+            mStopChargingPreference.setEnabled(false);
+        }
+
+        // Start charging preference
+        mStartChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_START_CHARGING);
+        if (Utils.isFileWritable(Constants.NODE_START_CHARGING)) {
+            mStartChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_START_CHARGING,
+                    Integer.parseInt(Utils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING))));
+            mStartChargingPreference.setOnPreferenceChangeListener(this);
+        } else {
+            mStartChargingPreference.setEnabled(false);
+        }
 
         // Power efficient workqueue switch
         mPowerEfficientWorkqueueModeSwitch = (SwitchPreference) findPreference(Constants.KEY_POWER_EFFICIENT_WORKQUEUE);
@@ -90,14 +116,46 @@ public class PixelParts extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        // Power efficient workqueue switch
-        if (preference == mPowerEfficientWorkqueueModeSwitch) {
+        // Stop charging preference
+        if (preference == mStopChargingPreference) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            int value = Integer.parseInt(newValue.toString());
+            int stopLevel = Integer.parseInt(newValue.toString());
+            int startLevel = sharedPrefs.getInt(Constants.KEY_START_CHARGING, 0);
+            if (startLevel >= stopLevel) {
+                startLevel = stopLevel - 1;
+                sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, startLevel).commit();
+                Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(startLevel));
+                mStartChargingPreference.refresh(startLevel);
+                Toast.makeText(getContext(), R.string.stop_below_start_error, Toast.LENGTH_SHORT).show();
+            }
+            sharedPrefs.edit().putInt(Constants.KEY_STOP_CHARGING, value).commit();
+            Utils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
+            return true;
+          // Start charging preference
+        } else if (preference == mStartChargingPreference) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            int value = Integer.parseInt(newValue.toString());
+            int startLevel = Integer.parseInt(newValue.toString());
+            int stopLevel = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING, 100);
+            if (stopLevel <= startLevel) {
+                stopLevel = startLevel + 1;
+                sharedPrefs.edit().putInt(Constants.KEY_STOP_CHARGING, stopLevel).commit();
+                Utils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(stopLevel));
+                mStopChargingPreference.refresh(stopLevel);
+                Toast.makeText(getContext(), R.string.start_above_stop_error, Toast.LENGTH_SHORT).show();
+            }
+            sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, value).commit();
+            Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
+            return true;
+          // Power efficient workqueue switch
+        } else if (preference == mPowerEfficientWorkqueueModeSwitch) {
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
             sharedPrefs.edit().putBoolean(Constants.KEY_POWER_EFFICIENT_WORKQUEUE, enabled).commit();
             Utils.writeValue(Constants.NODE_POWER_EFFICIENT_WORKQUEUE, enabled ? "1" : "0");
             return true;
-        // High brightness mode switch
+          // High brightness mode switch
         } else if (preference == mHBMSwitch) {
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -110,14 +168,14 @@ public class PixelParts extends PreferenceFragment
                 this.getContext().stopService(hbmServiceIntent);
             }
             return true;
-        // Auto HBM switch
+          // Auto HBM switch
         } else if (preference == mAutoHBMSwitch) {
             Boolean enabled = (Boolean) newValue;
             SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             prefChange.putBoolean(Constants.KEY_AUTO_HBM, enabled).commit();
             AutoHBMUtils.enableAutoHBM(getContext());
             return true;
-        // USB 2.0 fast charge switch
+          // USB 2.0 fast charge switch
         } else if (preference == mUSB2FastChargeSwitch) {
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -131,6 +189,26 @@ public class PixelParts extends PreferenceFragment
 
     public static boolean isAutoHBMEnabled(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(Constants.KEY_AUTO_HBM, false);
+    }
+
+    // Stop charging preference
+    public static void restoreStopChargingSetting(Context context) {
+        if (Utils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+            int value = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
+                    Integer.parseInt(Utils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING)));
+            Utils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
+        }
+    }
+
+    // Start charging preference
+    public static void restoreStartChargingSetting(Context context) {
+        if (Utils.isFileWritable(Constants.NODE_START_CHARGING)) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+            int value = sharedPrefs.getInt(Constants.KEY_START_CHARGING,
+                    Integer.parseInt(Utils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING)));
+            Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
+        }
     }
 
     // Power efficient workqueue switch
