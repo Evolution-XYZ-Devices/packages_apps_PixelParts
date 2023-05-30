@@ -54,8 +54,8 @@ public class FlashlightTileService extends TileService
             String[] cameraIds = cameraManager.getCameraIdList();
             if (cameraIds.length > 0) {
                 String cameraId = cameraIds[0];
-                String torchStrengthString = sharedPrefs.getString(Constants.KEY_TORCH_STRENGTH, "45");
-                int torchStrength = Integer.parseInt(torchStrengthString);
+                int torchStrength = sharedPrefs.getInt(Constants.KEY_TORCH_STRENGTH, 45);
+
                 if (torchStrength > 0) {
                     cameraManager.turnOnTorchWithStrengthLevel(cameraId, torchStrength);
                     isTorchOn = true;

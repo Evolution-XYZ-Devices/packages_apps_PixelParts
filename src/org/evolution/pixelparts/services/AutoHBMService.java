@@ -72,9 +72,9 @@ public class AutoHBMService extends Service {
             KeyguardManager km =
                     (KeyguardManager) getSystemService(getApplicationContext().KEYGUARD_SERVICE);
             boolean keyguardShowing = km.inKeyguardRestrictedInputMode();
-            float luxThreshold = Float.parseFloat(mSharedPrefs.getString(Constants.KEY_AUTO_HBM_THRESHOLD, "20000"));
-            long timeToEnableHBM = Long.parseLong(mSharedPrefs.getString(Constants.KEY_HBM_ENABLE_TIME, "0"));
-            long timeToDisableHBM = Long.parseLong(mSharedPrefs.getString(Constants.KEY_HBM_DISABLE_TIME, "1"));
+            int luxThreshold = mSharedPrefs.getInt(Constants.KEY_AUTO_HBM_THRESHOLD, 20000);
+            int timeToEnableHBM = mSharedPrefs.getInt(Constants.KEY_HBM_ENABLE_TIME, 0);
+            int timeToDisableHBM = mSharedPrefs.getInt(Constants.KEY_HBM_DISABLE_TIME, 1);
 
             if (lux > luxThreshold) {
                 if (!mCrossedThreshold) {
