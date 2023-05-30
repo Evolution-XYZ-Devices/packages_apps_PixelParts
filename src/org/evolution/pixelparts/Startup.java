@@ -12,6 +12,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
+import org.evolution.pixelparts.utils.AutoHBMUtils;
+
 public class Startup extends BroadcastReceiver {
 
     private static final String TAG = Startup.class.getSimpleName();
@@ -23,5 +25,6 @@ public class Startup extends BroadcastReceiver {
             PixelParts.restorePowerEfficientWorkqueueSetting(context);
             PixelParts.restoreHBMSetting(context);
             PixelParts.restoreUSB2FastChargeSetting(context);
+            AutoHBMUtils.enableAutoHBM(context);
     }
 }
