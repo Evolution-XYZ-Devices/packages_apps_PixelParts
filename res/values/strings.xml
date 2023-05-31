@@ -15,6 +15,21 @@
 
     <!-- Battery -->
     <string name="category_battery">Battery</string>
+    <string name="battery_info_title">Battery info</string>
+    <string name="battery_info_summary">View various battery information</string>
+    <string name="battery_info_refresh_summary">refresh info after (seconds)</string>
+    <string name="category_battery_info">Available info</string>
+    <string name="technology_title">Technology</string>
+    <string name="status_title">Status</string>
+    <string name="temperature_title">Temperature</string>
+    <string name="capacity_title">Capacity now</string>
+    <string name="capacity_level_title">Capacity level</string>
+    <string name="current_title">Current</string>
+    <string name="voltage_title">Voltage</string>
+    <string name="wattage_title">Wattage</string>
+    <string name="health_title">Health</string>
+    <string name="cycle_count_title">Cycle count</string>
+    <string name="node_not_readable_error">Failed to read</string>
     <string name="stop_charging_title">Stop charging level</string>
     <string name="stop_charging_summary">Prevent the device from charging over a specific percentage</string>
     <string name="start_charging_title">Start charging level</string>

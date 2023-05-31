@@ -15,6 +15,16 @@
         android:key="category_battery"
         android:title="@string/category_battery">
 
+        <Preference
+            android:key="battery_info"
+            android:title="@string/battery_info_title"
+            android:summary="@string/battery_info_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.evolution.pixelparts"
+                    android:targetClass="org.evolution.pixelparts.batteryinfo.BatteryInfoActivity" />
+        </Preference>
+
         <org.evolution.pixelparts.preferences.CustomSeekBarPreference
             android:key="stop_charging"
             android:title="@string/stop_charging_title"
