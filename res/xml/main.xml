@@ -114,7 +114,8 @@
         <Preference
             android:key="hbm_info"
             android:icon="@drawable/ic_info_outline"
-            android:summary="@string/hbm_info" 
+            android:summary="@string/hbm_info"
+            android:selectable="false"
             android:persistent="false" />
     </PreferenceCategory>
 
@@ -148,6 +149,7 @@
             android:key="usb2_fast_charge_info"
             android:icon="@drawable/ic_info_outline"
             android:summary="@string/usb2_fast_charge_info"
+            android:selectable="false"   
             android:persistent="false" />
     </PreferenceCategory>
 </PreferenceScreen>
