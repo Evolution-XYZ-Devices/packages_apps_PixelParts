@@ -66,6 +66,7 @@ public class PixelParts extends PreferenceFragment
                     Integer.parseInt(Utils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING))));
             mStopChargingPreference.setOnPreferenceChangeListener(this);
         } else {
+            mStopChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStopChargingPreference.setEnabled(false);
         }
 
@@ -76,6 +77,7 @@ public class PixelParts extends PreferenceFragment
                     Integer.parseInt(Utils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING))));
             mStartChargingPreference.setOnPreferenceChangeListener(this);
         } else {
+            mStartChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStartChargingPreference.setEnabled(false);
         }
 
@@ -86,6 +88,7 @@ public class PixelParts extends PreferenceFragment
             mPowerEfficientWorkqueueModeSwitch.setChecked(sharedPrefs.getBoolean(Constants.KEY_POWER_EFFICIENT_WORKQUEUE, false));
             mPowerEfficientWorkqueueModeSwitch.setOnPreferenceChangeListener(this);
         } else {
+            mPowerEfficientWorkqueueModeSwitch.setSummary(getString(R.string.kernel_node_access_error));
             mPowerEfficientWorkqueueModeSwitch.setEnabled(false);
         }
 
@@ -99,6 +102,8 @@ public class PixelParts extends PreferenceFragment
             mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(Constants.KEY_AUTO_HBM, false));
             mAutoHBMSwitch.setOnPreferenceChangeListener(this);
         } else {
+            mHBMSwitch.setSummary(getString(R.string.kernel_node_access_error));
+            mAutoHBMSwitch.setSummary(getString(R.string.kernel_node_access_error));
             mHBMSwitch.setEnabled(false);
             mAutoHBMSwitch.setEnabled(false);
         }
@@ -110,6 +115,7 @@ public class PixelParts extends PreferenceFragment
             mUSB2FastChargeSwitch.setChecked(sharedPrefs.getBoolean(Constants.KEY_USB2_FAST_CHARGE, false));
             mUSB2FastChargeSwitch.setOnPreferenceChangeListener(this);
         } else {
+            mUSB2FastChargeSwitch.setSummary(getString(R.string.kernel_node_access_error));
             mUSB2FastChargeSwitch.setEnabled(false);
         }
     }

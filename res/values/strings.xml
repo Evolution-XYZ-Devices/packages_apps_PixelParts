@@ -12,6 +12,7 @@
     <string name="pixel_parts_warning_title">Warning</string>
     <string name="pixel_parts_warning_text">Most of these features rely on specific kernel nodes in order to function. When flashing a custom kernel, you risk the possibility of losing access to some of these features. You have been warned!</string>
     <string name="pixel_parts_dialog">OK</string>
+    <string name="kernel_node_access_error">Kernel node access failed! Please ensure the provided path to the sysfs or procfs attribute is accurate, that it has appropriate permissions, and the SELinux policies are properly configured.</string>
 
     <!-- Battery -->
     <string name="category_battery">Battery</string>
@@ -29,7 +30,6 @@
     <string name="wattage_title">Wattage</string>
     <string name="health_title">Health</string>
     <string name="cycle_count_title">Cycle count</string>
-    <string name="node_not_readable_error">Failed to read</string>
     <string name="stop_charging_title">Stop charging level</string>
     <string name="stop_charging_summary">Prevent the device from charging over a specific percentage</string>
     <string name="start_charging_title">Start charging level</string>

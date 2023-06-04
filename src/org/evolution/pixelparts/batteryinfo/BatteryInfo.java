@@ -98,7 +98,7 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_TECHNOLOGY, null);
             mTechnologyPreference.setSummary(fileValue);
         } else {
-            mTechnologyPreference.setSummary(getString(R.string.node_not_readable_error));
+            mTechnologyPreference.setSummary(getString(R.string.kernel_node_access_error));
             mTechnologyPreference.setEnabled(false);
         }
 
@@ -107,7 +107,7 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_STATUS, null);
             mStatusPreference.setSummary(fileValue);
         } else {
-            mStatusPreference.setSummary(getString(R.string.node_not_readable_error));
+            mStatusPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStatusPreference.setEnabled(false);
         }
 
@@ -118,7 +118,7 @@ public class BatteryInfo extends PreferenceFragment
             float temperatureCelsius = temperature / 10.0f;
             mTemperaturePreference.setSummary(temperatureCelsius + "°C");
         } else {
-            mTemperaturePreference.setSummary(getString(R.string.node_not_readable_error));
+            mTemperaturePreference.setSummary(getString(R.string.kernel_node_access_error));
             mTemperaturePreference.setEnabled(false);
         }
 
@@ -127,7 +127,7 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY, null);
             mCapacityPreference.setSummary(fileValue + "%");
         } else {
-            mCapacityPreference.setSummary(getString(R.string.node_not_readable_error));
+            mCapacityPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCapacityPreference.setEnabled(false);
         }
 
@@ -136,7 +136,7 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY_LEVEL, null);
             mCapacityLevelPreference.setSummary(fileValue);
         } else {
-            mCapacityLevelPreference.setSummary(getString(R.string.node_not_readable_error));
+            mCapacityLevelPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCapacityLevelPreference.setEnabled(false);
         }
 
@@ -148,7 +148,7 @@ public class BatteryInfo extends PreferenceFragment
             String formattedChargingCurrent = (absoluteChargingCurrent / 1000) + "mA";
             mCurrentPreference.setSummary(formattedChargingCurrent);
         } else {
-            mCurrentPreference.setSummary(getString(R.string.node_not_readable_error));
+            mCurrentPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCurrentPreference.setEnabled(false);
         }
 
@@ -159,7 +159,7 @@ public class BatteryInfo extends PreferenceFragment
             String formattedChargingVoltage = String.format("%.1f", (chargingVoltage / 1000000)) + "V";
             mVoltagePreference.setSummary(formattedChargingVoltage);
         } else {
-            mVoltagePreference.setSummary(getString(R.string.node_not_readable_error));
+            mVoltagePreference.setSummary(getString(R.string.kernel_node_access_error));
             mVoltagePreference.setEnabled(false);
         }
 
@@ -174,7 +174,7 @@ public class BatteryInfo extends PreferenceFragment
             String formattedWattage = String.format("%.1f", absoluteWattage) + "W";
             mWattagePreference.setSummary(formattedWattage);
         } else {
-            mWattagePreference.setSummary(getString(R.string.node_not_readable_error));
+            mWattagePreference.setSummary(getString(R.string.kernel_node_access_error));
             mWattagePreference.setEnabled(false);
         }
 
@@ -183,7 +183,7 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_HEALTH, null);
             mHealthPreference.setSummary(fileValue);
         } else {
-            mHealthPreference.setSummary(getString(R.string.node_not_readable_error));
+            mHealthPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHealthPreference.setEnabled(false);
         }
 
@@ -192,7 +192,7 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_CYCLE_COUNT, null);
             mCycleCountPreference.setSummary(fileValue);
         } else {
-            mCycleCountPreference.setSummary(getString(R.string.node_not_readable_error));
+            mCycleCountPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCycleCountPreference.setEnabled(false);
         }
     }
