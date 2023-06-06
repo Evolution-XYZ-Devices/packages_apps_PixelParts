@@ -7,7 +7,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- PixelParts -->
     <string name="pixel_parts_title">Pixel Parts</string>
-    <string name="pixel_parts_summary">Настройка специфических параметров устройства</string>
+    <string name="pixel_parts_summary">Настроить специфические параметры устройства</string>
     <string name="pixel_parts_warning_title">Предупреждение</string>
     <string name="pixel_parts_warning_text">Большинство этих функций для своей работы зависят от определенных узлов ядра. При прошивке пользовательского ядра вы рискуете потерять доступ к некоторым из этих функций. Вы были предупреждены!</string>
     <string name="pixel_parts_dialog">ОК</string>
