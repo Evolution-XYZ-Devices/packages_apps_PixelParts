@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+                   2016-2022 crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Customisation Pixel</string>
+    <string name="pixel_parts_summary">Configurer les paramètres spécifiques à l\'appareil</string>
+    <string name="pixel_parts_warning_title">Avertissement</string>
+    <string name="pixel_parts_warning_text">La plupart de ces fonctions dépendent de nœuds spécifiques du noyau pour fonctionner. Lorsque vous flashez un noyau personnalisé, vous risquez de perdre l\'accès à certaines de ces fonctionnalités. Vous êtes prévenu !</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <string name="kernel_node_access_error">L\'accès au nœud du noyau a échoué ! Veuillez vous assurer que le chemin fourni vers l\'attribut sysfs ou procfs est exact, qu\'il dispose des autorisations appropriées et que les politiques SELinux sont correctement configurées.</string>
+    <!-- Battery -->
+    <string name="category_battery">Batterie</string>
+    <string name="battery_info_title">Informations sur la batterie</string>
+    <string name="battery_info_summary">Affichage de diverses informations sur la batterie</string>
+    <string name="battery_info_refresh_summary">rafraîchir les informations après (secondes)</string>
+    <string name="category_battery_info">Informations disponibles</string>
+    <string name="technology_title">Technologie</string>
+    <string name="status_title">Statut</string>
+    <string name="temperature_title">Température</string>
+    <string name="capacity_title">Capacité actuelle</string>
+    <string name="capacity_level_title">Niveau de capacité</string>
+    <string name="current_title">Actuel</string>
+    <string name="voltage_title">Tension</string>
+    <string name="wattage_title">Puissance</string>
+    <string name="health_title">Santé</string>
+    <string name="cycle_count_title">Nombre de cycles</string>
+    <string name="stop_charging_title">Niveau de charge d\'arrêt</string>
+    <string name="stop_charging_summary">Empêcher l\'appareil de se recharger au-delà d\'un certain pourcentage</string>
+    <string name="start_charging_title">Niveau de charge de départ</string>
+    <string name="start_charging_summary">Reprise de la charge à un pourcentage spécifique</string>
+    <string name="stop_below_start_error">Le niveau d\'arrêt doit être supérieur au niveau de départ !</string>
+    <string name="start_above_stop_error">Le niveau de départ doit être inférieur au niveau d\'arrêt !</string>
+    <!-- Camera -->
+    <string name="category_camera">Appareil photo</string>
+    <string name="flashlight_tile_title">Lampe-torche</string>
+    <string name="torch_strength_title">Puissance de la torche</string>
+    <string name="torch_strength_summary">Régler la luminosité de la lampe de poche QS-Tile de Customisation Pixel</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">File de puissance efficace</string>
+    <string name="power_efficient_workqueue_summary">Économiser de l\'énergie en reprogrammant le travail sur un noyau déjà éveillé</string>
+    <!-- Display -->
+    <string name="category_display">Affichage</string>
+    <string name="hbm_title">Mode haute luminosité (HBM)</string>
+    <string name="hbm_summary">Activer la haute luminosité</string>
+    <string name="auto_hbm_title">HBM automatique</string>
+    <string name="auto_hbm_summary">Activer la luminosité maximale en fonction de la lumière du soleil</string>
+    <string name="auto_hbm_threshold_summary">Seuil (lux)</string>
+    <string name="hbm_enable_time_summary">activer après (secondes)</string>
+    <string name="hbm_disable_time_summary">désactivation après (secondes)</string>
+    <string name="hbm_info">L\'utilisation prolongée du mode haute luminosité peut endommager l\'écran !</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">Calculer l\'instabilité du rendu</string>
+    <!-- USB -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fast_charge_title">Charge rapide USB 2.0</string>
+    <string name="usb2_fast_charge_summary">Activer le mode CDP pour la charge rapide sur les ports USB 2.0</string>
+    <string name="usb2_fast_charge_info">Tous les ports USB 2.0 ne prennent pas en charge le mode CDP, à utiliser avec précaution !</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valeur : <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">par défaut</string>
+    <string name="custom_seekbar_default_value_to_set">Valeur par défaut : <xliff:g id="v">%s</xliff:g>\nRester appuyer pour définir</string>
+    <string name="custom_seekbar_default_value_is_set">Valeur par défaut définie</string>
+</resources>
