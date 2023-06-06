@@ -105,7 +105,8 @@ public class BatteryInfo extends PreferenceFragment
         // Status preference
         if (Utils.isFileReadable(Constants.NODE_STATUS)) {
             String fileValue = Utils.getFileValue(Constants.NODE_STATUS, null);
-            mStatusPreference.setSummary(fileValue);
+            int statusStringResourceId = getStatusStringResourceId(fileValue);
+            mStatusPreference.setSummary(getString(statusStringResourceId));
         } else {
             mStatusPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStatusPreference.setEnabled(false);
@@ -134,7 +135,8 @@ public class BatteryInfo extends PreferenceFragment
         // Capacity level preference
         if (Utils.isFileReadable(Constants.NODE_CAPACITY_LEVEL)) {
             String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY_LEVEL, null);
-            mCapacityLevelPreference.setSummary(fileValue);
+            int capacityLevelStringResourceId = geCapacityLevelStringResourceId(fileValue);
+            mCapacityLevelPreference.setSummary(getString(capacityLevelStringResourceId));
         } else {
             mCapacityLevelPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCapacityLevelPreference.setEnabled(false);
@@ -181,7 +183,8 @@ public class BatteryInfo extends PreferenceFragment
         // Health preference
         if (Utils.isFileReadable(Constants.NODE_HEALTH)) {
             String fileValue = Utils.getFileValue(Constants.NODE_HEALTH, null);
-            mHealthPreference.setSummary(fileValue);
+            int healthStringResourceId = getHealthStringResourceId(fileValue);
+            mHealthPreference.setSummary(getString(healthStringResourceId));
         } else {
             mHealthPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHealthPreference.setEnabled(false);
@@ -194,6 +197,80 @@ public class BatteryInfo extends PreferenceFragment
         } else {
             mCycleCountPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCycleCountPreference.setEnabled(false);
+        }
+    }
+
+    // Status preference strings
+    private int getStatusStringResourceId(String status) {
+        switch (status) {
+            case "Unknown":
+                return R.string.status_unknown;
+            case "Charging":
+                return R.string.status_charging;
+            case "Discharging":
+                return R.string.status_discharging;
+            case "Not charging":
+                return R.string.status_not_charging;
+            case "Full":
+                return R.string.status_full;
+            default:
+                return R.string.kernel_node_access_error;
+        }
+    }
+
+    // Capacity level preference strings
+    private int geCapacityLevelStringResourceId(String capacitylevel) {
+        switch (capacitylevel) {
+            case "Unknown":
+                return R.string.capacity_level_unknown;
+            case "Critical":
+                return R.string.capacity_level_critical;
+            case "Low":
+                return R.string.capacity_level_low;
+            case "Normal":
+                return R.string.capacity_level_normal;
+            case "High":
+                return R.string.capacity_level_high;
+            case "Full":
+                return R.string.capacity_level_full;
+            default:
+                return R.string.kernel_node_access_error;
+        }
+    }
+
+    // Health preference strings
+    private int getHealthStringResourceId(String health) {
+        switch (health) {
+            case "Unknown":
+                return R.string.health_unknown;
+            case "Good":
+                return R.string.health_good;
+            case "Overheat":
+                return R.string.health_overheat;
+            case "Dead":
+                return R.string.health_dead;
+            case "Over voltage":
+                return R.string.health_over_voltage;
+            case "Unspecified failure":
+                return R.string.health_unspecified_failure;
+            case "Cold":
+                return R.string.health_cold;
+            case "Watchdog timer expire":
+                return R.string.health_watchdog_timer_expire;
+            case "Safety timer expire":
+                return R.string.health_safety_timer_expire;
+            case "Over current":
+                return R.string.health_over_current;
+            case "Calibration required":
+                return R.string.health_calibration_required;
+            case "Warm":
+                return R.string.health_warm;
+            case "Cool":
+                return R.string.health_cool;
+            case "Hot":
+                return R.string.health_hot;
+            default:
+                return R.string.kernel_node_access_error;
         }
     }
 
