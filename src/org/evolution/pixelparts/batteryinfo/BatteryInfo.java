@@ -102,10 +102,27 @@ public class BatteryInfo extends PreferenceFragment
             mTechnologyPreference.setEnabled(false);
         }
 
+        // Status preference strings
+        private int getStatusStringResourceId(String status) {
+            switch (status) {
+                case "Unknown":
+                    return R.string.status_unknown;
+                case "Charging":
+                    return R.string.status_charging;
+                case "Discharging":
+                    return R.string.status_discharging;
+                case "Not charging":
+                    return R.string.status_not_charging;
+                case "Full":
+                    return R.string.status_full;
+            }
+        }
+
         // Status preference
         if (Utils.isFileReadable(Constants.NODE_STATUS)) {
             String fileValue = Utils.getFileValue(Constants.NODE_STATUS, null);
-            mStatusPreference.setSummary(fileValue);
+            int statusStringResourceId = getStatusStringResourceId(fileValue);
+            mStatusPreference.setSummary(getString(statusStringResourceId));
         } else {
             mStatusPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStatusPreference.setEnabled(false);
@@ -178,10 +195,45 @@ public class BatteryInfo extends PreferenceFragment
             mWattagePreference.setEnabled(false);
         }
 
+        // Health preference strings
+        private int getHealthStringResourceId(String health) {
+            switch (health) {
+                case "Unknown":
+                    return R.string.health_unknown;
+                case "Good":
+                    return R.string.health_good;
+                case "Overheat":
+                    return R.string.health_overheat;
+                case "Dead":
+                    return R.string.health_dead;
+                case "Over voltage":
+                    return R.string.health_over_voltage;
+                case "Unspecified failure":
+                    return R.string.health_unspecified_failure;
+                case "Cold":
+                    return R.string.health_cold;
+                case "Watchdog timer expire":
+                    return R.string.health_watchdog_timer_expire;
+                case "Safety timer expire":
+                    return R.string.health_safety_timer_expire;
+                case "Over current":
+                    return R.string.health_over_current;
+                case "Calibration required":
+                    return R.string.health_calibration_required;
+                case "Warm":
+                    return R.string.health_warm;
+                case "Cool":
+                    return R.string.health_cool;
+                case "Hot":
+                    return R.string.health_hot;
+            }
+        }
+
         // Health preference
         if (Utils.isFileReadable(Constants.NODE_HEALTH)) {
             String fileValue = Utils.getFileValue(Constants.NODE_HEALTH, null);
-            mHealthPreference.setSummary(fileValue);
+            int healthStringResourceId = geHealthStringResourceId(fileValue);
+            mHealthPreference.setSummary(getString(healthStringResourceId));
         } else {
             mHealthPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHealthPreference.setEnabled(false);
