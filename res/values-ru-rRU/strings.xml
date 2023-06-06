@@ -55,8 +55,8 @@
     <string name="hbm_info">Длительное использование режима повышенной яркости может привести к повреждению дисплея!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
-    <string name="jitter_test_title">Jitter</string>
-    <string name="jitter_test_summary">Рассчитать рендеринг jitter</string>
+    <string name="jitter_test_title">Дрожание</string>
+    <string name="jitter_test_summary">Рассчитать визуализацию дрожания</string>
     <!-- USB -->
     <string name="category_usb">USB</string>
     <string name="usb2_fast_charge_title">Быстрая зарядка USB 2.0</string>
