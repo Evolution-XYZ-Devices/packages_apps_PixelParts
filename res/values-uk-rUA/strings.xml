@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+                   2016-2022 crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Частини пікселів</string>
+    <string name="pixel_parts_summary">Налаштувати конкретні параметри пристрою</string>
+    <string name="pixel_parts_warning_title">Попередження</string>
+    <string name="pixel_parts_warning_text">Більшість цих функцій покладаються на особливі вузли ядра для функціонування. Встановляючи користувацьке ядро, ви ризикуєте втратити доступ до деяких функцій. Ви попереджені!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <string name="kernel_node_access_error">Не вдалося отримати доступ до вузла ядра! Будь ласка, переконайтеся, що наданий шлях до атрибуту sysfs або procfs є точним, що він має відповідні дозволи, і правила SELinux належним чином налаштовані.</string>
+    <!-- Battery -->
+    <string name="category_battery">Акумулятор</string>
+    <string name="battery_info_title">Інформація про акумулятор</string>
+    <string name="battery_info_summary">Перегляд інформації про акумулятор</string>
+    <string name="battery_info_refresh_title">Інтервал оновлення</string>
+    <string name="battery_info_refresh_summary">Задати інтервал для оновлення інформації про заряд акумулятора (у секундах)</string>
+    <string name="category_battery_info">Доступна інформація</string>
+    <string name="technology_title">Технологія</string>
+    <string name="status_title">Статус</string>
+    <string name="status_unknown">Невідомо</string>
+    <string name="status_charging">Заряджається</string>
+    <string name="status_discharging">Розряджається</string>
+    <string name="status_not_charging">Не заряджається</string>
+    <string name="status_full">Повний</string>
+    <string name="temperature_title">Температура батареї</string>
+    <string name="temperature_unit_title">Одиниці виміру температури</string>
+    <string name="temperature_unit_summary">Показувати температуру акумулятора в Фаренгейті (після наступного оновлення)</string>
+    <string name="capacity_title">Тепер Ємність</string>
+    <string name="capacity_level_title">Рівень потужності</string>
+    <string name="capacity_level_unknown">Невідомо</string>
+    <string name="capacity_level_critical">Критичний</string>
+    <string name="capacity_level_low">Низька</string>
+    <string name="capacity_level_normal">Нормальна</string>
+    <string name="capacity_level_high">Висока</string>
+    <string name="capacity_level_full">Повний</string>
+    <string name="current_title">Поточний</string>
+    <string name="voltage_title">Напруга</string>
+    <string name="wattage_title">Потужність</string>
+    <string name="health_title">Здоров\'я</string>
+    <string name="health_unknown">Невідомо</string>
+    <string name="health_good">Добре</string>
+    <string name="health_overheat">Перегрів</string>
+    <string name="health_dead">Вийшов з ладу</string>
+    <string name="health_over_voltage">Перевищення напруги</string>
+    <string name="health_unspecified_failure">Невизначена помилка</string>
+    <string name="health_cold">Холодний</string>
+    <string name="health_watchdog_timer_expire">Час очікування для перегляду минає</string>
+    <string name="health_safety_timer_expire">Час безпеки закінчується</string>
+    <string name="health_over_current">Перевищено струм</string>
+    <string name="health_calibration_required">Потрібне калібрування</string>
+    <string name="health_warm">Теплий</string>
+    <string name="health_cool">Холодний</string>
+    <string name="health_hot">Гарячий</string>
+    <string name="cycle_count_title">Кількість циклів</string>
+    <string name="stop_charging_title">Рівень зупинки зарядки</string>
+    <string name="stop_charging_summary">Запобігайте зарядці пристрою понад певний відсоток</string>
+    <string name="start_charging_title">Почати заряджання</string>
+    <string name="start_charging_summary">Відновити зарядку на певному відсотку</string>
+    <string name="stop_below_start_error">Рівень зупинки повинен бути вище початкового рівня!</string>
+    <string name="start_above_stop_error">Початковий рівень повинен бути нижче рівня зупинки!</string>
+    <!-- Camera -->
+    <string name="category_camera">Камера</string>
+    <string name="flashlight_tile_title">Ліхтарик</string>
+    <string name="torch_strength_title">Сила факела</string>
+    <string name="torch_strength_summary">Налаштуйте яскравість ліхтарика PixelParts QS-Tile</string>
+    <!-- CPU -->
+    <string name="category_cpu">Процессор</string>
+    <string name="power_efficient_workqueue_title">Енергоефективна робоча черга</string>
+    <string name="power_efficient_workqueue_summary">Заощаджуйте енергію шляхом перепланування роботи з ядром, що вже не працює</string>
+    <!-- Display -->
+    <string name="category_display">Дисплей</string>
+    <string name="hbm_title">Режим високої яскравості (HBM)</string>
+    <string name="hbm_summary">Ввімкнути максимальну яскравість</string>
+    <string name="auto_hbm_title">Автоматична HBM</string>
+    <string name="auto_hbm_summary">Увімкнути максимальну яскравість на основі сонячного світла</string>
+    <string name="auto_hbm_threshold_summary">поріг (lux)</string>
+    <string name="hbm_enable_time_summary">включити після (секунд)</string>
+    <string name="hbm_disable_time_summary">відключити після (сек)</string>
+    <string name="hbm_info">Тривале використання режиму високої яскравості може пошкодити ваш дисплей!</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Тремтіння</string>
+    <string name="jitter_test_summary">Розрахувати тремтіння візуалізації</string>
+    <!-- USB -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fast_charge_title">Швидке заряджання USB 2.0</string>
+    <string name="usb2_fast_charge_summary">Увімкнути режим CDP для швидкого заряджання на USB-портах 2.0</string>
+    <string name="usb2_fast_charge_info">Не всі порти USB 2.0 підтримують режим CDP, будьте обережні!</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">за замовчуванням</string>
+    <string name="custom_seekbar_default_value_to_set">Значення за замовчуванням: <xliff:g id="v">%s</xliff:g>\nУтримуйте для встановлення</string>
+    <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
+</resources>
