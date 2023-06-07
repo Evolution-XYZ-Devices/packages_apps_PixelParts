@@ -89,6 +89,9 @@
     <string name="hbm_disable_time_title"></string>
     <string name="hbm_disable_time_summary">disable after (seconds)</string>
     <string name="hbm_info">Long time usage of High brightness mode may damage your display!</string>
+    <string name="saturation_title">Saturation</string>
+    <string name="saturation_summary">Control the saturation level of the display</string>
+    <string name="saturation_info">Changing the color mode in display settings will override the saturation level, requiring it to be reapplied.</string>
 
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>

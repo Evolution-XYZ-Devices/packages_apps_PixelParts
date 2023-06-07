@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 
 import org.evolution.pixelparts.utils.AutoHBMUtils;
+import org.evolution.pixelparts.saturation.Saturation;
 
 public class Startup extends BroadcastReceiver {
 
@@ -28,5 +29,6 @@ public class Startup extends BroadcastReceiver {
             PixelParts.restoreHBMSetting(context);
             PixelParts.restoreUSB2FastChargeSetting(context);
             AutoHBMUtils.enableAutoHBM(context);
+            Saturation.restoreSaturationSetting(context);
     }
 }

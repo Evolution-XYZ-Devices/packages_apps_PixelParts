@@ -127,6 +127,16 @@
             android:summary="@string/hbm_info"
             android:selectable="false"
             android:persistent="false" />
+
+        <Preference
+            android:key="saturation_settings"
+            android:title="@string/saturation_title"
+            android:summary="@string/saturation_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.evolution.pixelparts"
+                    android:targetClass="org.evolution.pixelparts.saturation.SaturationActivity" />
+        </Preference>
     </PreferenceCategory>
 
     <!-- Start of UiBench Category -->

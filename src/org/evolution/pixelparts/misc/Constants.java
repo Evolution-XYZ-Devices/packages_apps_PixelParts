@@ -54,6 +54,9 @@ public class Constants {
     public static final String KEY_HBM_DISABLE_TIME = "hbm_disable_time";
     public static final String NODE_HBM = "/sys/class/backlight/panel0-backlight/hbm_mode";
 
+    // Saturation preference
+    public static final String KEY_SATURATION = "saturation";
+
     // USB 2.0 fast charge switch
     public static final String KEY_USB2_FAST_CHARGE = "usb2_fast_charge";
     public static final String NODE_USB2_FAST_CHARGE = "/sys/kernel/fast_charge/force_fast_charge";

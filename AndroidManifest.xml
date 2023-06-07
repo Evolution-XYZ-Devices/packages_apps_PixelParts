@@ -90,6 +90,18 @@
             </intent-filter>
         </activity>
 
+        <!-- Saturation activity -->
+        <activity
+            android:name=".saturation.SaturationActivity"
+            android:label="@string/saturation_title"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Flashlight tile service -->
         <service
             android:name=".services.FlashlightTileService"

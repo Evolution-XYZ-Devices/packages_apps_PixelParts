@@ -13,6 +13,7 @@ I created PixelParts as an alternative to Google's HbmSVManager, providing users
 | **CPU** | `Power efficient workqueue` | Save power by rescheduling work to a core that is already awake. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/3a9c9c32cf09ba99024e3803f395249ecc19c87b) |
 | **Display** | `High brightness mode (HBM)` | Enable peak luminance. | Yes | N/A |
 |  | `Automatic HBM` | Enable peak luminance based on sunlight | Yes | N/A |
+|  | `Saturation` | Control the saturation level of the display | N/A | N/A |
 | **Ui-Bench** | `Jitter` | Calculate rendering jitter. | N/A | N/A |
 | **USB** | `USB 2.0 fast charge` | Enable CDP mode for faster charging on USB 2.0 ports. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/a594c64a588e307bc8156d75ee62ea64afae5c94) |
 
