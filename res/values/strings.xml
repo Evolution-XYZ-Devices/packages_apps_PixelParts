@@ -18,7 +18,8 @@
     <string name="category_battery">Battery</string>
     <string name="battery_info_title">Battery info</string>
     <string name="battery_info_summary">View various battery information</string>
-    <string name="battery_info_refresh_summary">refresh info after (seconds)</string>
+    <string name="battery_info_refresh_title">Refresh interval</string>
+    <string name="battery_info_refresh_summary">Set the interval for updating battery information (in seconds)</string>
     <string name="category_battery_info">Available info</string>
     <string name="technology_title">Technology</string>
     <string name="status_title">Status</string>
@@ -28,6 +29,8 @@
     <string name="status_not_charging">Not charging</string>
     <string name="status_full">Full</string>
     <string name="temperature_title">Temperature</string>
+    <string name="temperature_unit_title">Temperature unit</string>
+    <string name="temperature_unit_summary">Display battery temperature in Fahrenheit (upon next refresh)</string>
     <string name="capacity_title">Capacity now</string>
     <string name="capacity_level_title">Capacity level</string>
     <string name="capacity_level_unknown">Unknown</string>

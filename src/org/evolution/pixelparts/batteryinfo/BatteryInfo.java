@@ -14,6 +14,7 @@ import android.util.Log;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
 
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.R;
@@ -37,6 +38,7 @@ public class BatteryInfo extends PreferenceFragment
     private Preference mWattagePreference;
     private Preference mHealthPreference;
     private Preference mCycleCountPreference;
+    private SwitchPreference mTemperatureUnitSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -67,6 +69,7 @@ public class BatteryInfo extends PreferenceFragment
         mWattagePreference = findPreference(Constants.KEY_WATTAGE);
         mHealthPreference = findPreference(Constants.KEY_HEALTH);
         mCycleCountPreference = findPreference(Constants.KEY_CYCLE_COUNT);
+        mTemperatureUnitSwitch = findPreference(Constants.KEY_TEMPERATURE_UNIT);
 
         updatePreferenceSummaries();
         mHandler.postDelayed(mUpdateRunnable,
@@ -117,7 +120,14 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_TEMPERATURE, null);
             int temperature = Integer.parseInt(fileValue);
             float temperatureCelsius = temperature / 10.0f;
-            mTemperaturePreference.setSummary(temperatureCelsius + "°C");
+            float temperatureFahrenheit = temperatureCelsius * 1.8f + 32;
+            if (mTemperatureUnitSwitch.isChecked()) {
+                float roundedTemperatureFahrenheit = Math.round(temperatureFahrenheit * 10) / 10.0f;
+                mTemperaturePreference.setSummary(roundedTemperatureFahrenheit + "°F");
+            } else {
+               float roundedTemperatureCelsius = Math.round(temperatureCelsius * 10) / 10.0f;
+               mTemperaturePreference.setSummary(roundedTemperatureCelsius + "°C");
+            }
         } else {
             mTemperaturePreference.setSummary(getString(R.string.kernel_node_access_error));
             mTemperaturePreference.setEnabled(false);

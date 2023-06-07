@@ -12,6 +12,7 @@ public class Constants {
     public static final String KEY_TECHNOLOGY = "technology";
     public static final String KEY_STATUS = "status";
     public static final String KEY_TEMPERATURE = "temperature";
+    public static final String KEY_TEMPERATURE_UNIT = "temperature_unit";
     public static final String KEY_CAPACITY = "capacity";
     public static final String KEY_CAPACITY_LEVEL = "capacity_level";
     public static final String KEY_CURRENT = "current";
