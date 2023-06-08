@@ -81,6 +81,9 @@
     <string name="hbm_enable_time_summary">включить через (секунд)</string>
     <string name="hbm_disable_time_summary">выключить через (секунд)</string>
     <string name="hbm_info">Длительное использование режима повышенной яркости может привести к повреждению дисплея!</string>
+    <string name="saturation_title">Насыщенность</string>
+    <string name="saturation_summary">Контролировать уровень насыщенности дисплея</string>
+    <string name="saturation_info">Изменение режима цвета в настройках дисплея переопределит уровень насыщенности, что потребует повторного применения.</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Дрожание</string>
