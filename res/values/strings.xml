@@ -67,9 +67,11 @@
 
     <!-- Camera -->
     <string name="category_camera">Camera</string>
-    <string name="flashlight_tile_title">Flashlight</string>
+    <string name="pixeltorch_tile_title">Pixel Torch</string>
+    <string name="pixeltorch_tile_on">On</string>
+    <string name="pixeltorch_tile_off">Off</string>
     <string name="torch_strength_title">Torch strength</string>
-    <string name="torch_strength_summary">Adjust the brightness of the PixelParts flashlight QS-Tile</string>
+    <string name="torch_strength_summary">Adjust the brightness of the Pixel Torch QS-Tile</string>
 
     <!-- CPU -->
     <string name="category_cpu">CPU</string>

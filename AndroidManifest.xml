@@ -102,11 +102,11 @@
             </intent-filter>
         </activity>
 
-        <!-- Flashlight tile service -->
+        <!-- PixelTorch tile service -->
         <service
-            android:name=".services.FlashlightTileService"
-            android:label="@string/flashlight_tile_title"
-            android:icon="@drawable/ic_flashlight_tile"
+            android:name=".services.PixelTorchTileService"
+            android:label="@string/pixeltorch_tile_title"
+            android:icon="@drawable/ic_pixeltorch_tile"
             android:exported="true"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
