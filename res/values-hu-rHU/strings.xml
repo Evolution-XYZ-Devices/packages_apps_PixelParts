@@ -81,6 +81,9 @@
     <string name="hbm_enable_time_summary">Ennyi másodperc múlva bekapcsol</string>
     <string name="hbm_disable_time_summary">Ennyi másodperc múlva kikapcsol</string>
     <string name="hbm_info">A \'Magas fényerejű mód\' hosszú idejű használata tönkreteheti a kijelzőjét!</string>
+    <string name="saturation_title">Telítettség</string>
+    <string name="saturation_summary">Itt vezérelheti a képrnyő telítettségét</string>
+    <string name="saturation_info">A színmód megváltoztatása a megjelenítési beállításokban felülírja a telítettségi szintet, amit újra kell alkalmazni.</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
