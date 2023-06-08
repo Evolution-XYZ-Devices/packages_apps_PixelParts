@@ -81,6 +81,9 @@
     <string name="hbm_enable_time_summary">включити після (секунд)</string>
     <string name="hbm_disable_time_summary">відключити після (сек)</string>
     <string name="hbm_info">Тривале використання режиму високої яскравості може пошкодити ваш дисплей!</string>
+    <string name="saturation_title">Насиченість</string>
+    <string name="saturation_summary">Керування насиченістю дисплею</string>
+    <string name="saturation_info">Зміна режиму кольору в налаштуваннях екрану призведе до перевизначення рівня насиченості, що вимагає перезастосування.</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Тремтіння</string>
