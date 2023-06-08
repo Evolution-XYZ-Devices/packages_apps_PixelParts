@@ -81,6 +81,9 @@
     <string name="hbm_enable_time_summary">activer après (secondes)</string>
     <string name="hbm_disable_time_summary">désactivation après (secondes)</string>
     <string name="hbm_info">L\'utilisation prolongée du mode haute luminosité peut endommager l\'écran !</string>
+    <string name="saturation_title">Saturation</string>
+    <string name="saturation_summary">Contrôler le niveau de saturation de l\'écran</string>
+    <string name="saturation_info">La modification du mode couleur dans les paramètres d\'affichage remplacera le niveau de saturation, ce qui nécessitera sa réapplication.</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
