@@ -11,6 +11,7 @@ import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
 import org.evolution.pixelparts.misc.Constants;
+import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.AutoHBMUtils;
 
 public class AutoHBMTileService extends TileService {
@@ -18,6 +19,8 @@ public class AutoHBMTileService extends TileService {
     private void updateTile(boolean enabled) {
         final Tile tile = getQsTile();
         tile.setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+        String subtitle = enabled ? getString(R.string.tile_on) : getString(R.string.tile_off);
+        tile.setSubtitle(subtitle);
         tile.updateTile();
     }
 

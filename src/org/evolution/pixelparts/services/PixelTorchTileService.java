@@ -92,8 +92,8 @@ public class PixelTorchTileService extends TileService {
         if (qsTile != null) {
             qsTile.setState(state);
             String subtitle = state == Tile.STATE_ACTIVE ?
-                    getString(R.string.pixeltorch_tile_on) :
-                    getString(R.string.pixeltorch_tile_off);
+                    getString(R.string.tile_on) :
+                    getString(R.string.tile_off);
             qsTile.setSubtitle(subtitle);
             qsTile.updateTile();
         }
