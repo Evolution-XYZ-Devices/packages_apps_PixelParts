@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+                   2016-2022 crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- PixelParts -->
+    <string name="pixel_parts_title">Pixel Parts</string>
+    <string name="pixel_parts_summary">Configura impostazioni specifiche del dispositivo</string>
+    <string name="pixel_parts_warning_title">Attenzione</string>
+    <string name="pixel_parts_warning_text">La maggior parte di queste funzionalità si basano su specifici nodi del kernel per funzionare. Quando installi un kernel personalizzato, rischi di perdere l\'accesso ad alcune di queste funzionalità. Sei stato avvisato!</string>
+    <string name="pixel_parts_dialog">OK</string>
+    <string name="kernel_node_access_error">Accesso al nodo kernel fallito! Assicurati che il percorso fornito per l\'attributo sysfs o procfs sia accurato, che abbia le autorizzazioni appropriate e che le politiche SELinux siano configurate correttamente.</string>
+    <string name="tile_on">Abilitato</string>
+    <string name="tile_off">Disabilitato</string>
+    <!-- Battery -->
+    <string name="category_battery">Batteria</string>
+    <string name="battery_info_title">Informazioni batteria</string>
+    <string name="battery_info_summary">Visualizza varie informazioni sulla batteria</string>
+    <string name="battery_info_refresh_title">Intervallo di aggiornamento</string>
+    <string name="battery_info_refresh_summary">Imposta l\'intervallo per aggiornare le informazioni della batteria (in secondi)</string>
+    <string name="category_battery_info">Informazioni disponibili</string>
+    <string name="technology_title">Tecnologia</string>
+    <string name="status_title">Stato</string>
+    <string name="status_unknown">Sconosciuto</string>
+    <string name="status_charging">In carica</string>
+    <string name="status_discharging">In uso</string>
+    <string name="status_not_charging">Non in carica</string>
+    <string name="status_full">Piena</string>
+    <string name="temperature_title">Temperatura</string>
+    <string name="temperature_unit_title">Unità della temperatura</string>
+    <string name="temperature_unit_summary">Visualizza la temperatura della batteria in Fahrenheit (al prossimo aggiornamento)</string>
+    <string name="capacity_title">Capacità attuale</string>
+    <string name="capacity_level_title">Livello di capacità</string>
+    <string name="capacity_level_unknown">Sconosciuto</string>
+    <string name="capacity_level_critical">Critico</string>
+    <string name="capacity_level_low">Bassa</string>
+    <string name="capacity_level_normal">Normale</string>
+    <string name="capacity_level_high">Elevata</string>
+    <string name="capacity_level_full">Intera</string>
+    <string name="current_title">Attuale</string>
+    <string name="voltage_title">Tensione</string>
+    <string name="wattage_title">Potenza</string>
+    <string name="health_title">Salute</string>
+    <string name="health_unknown">Sconosciuto</string>
+    <string name="health_good">Buona</string>
+    <string name="health_overheat">Surriscaldata</string>
+    <string name="health_dead">Morta</string>
+    <string name="health_over_voltage">Sovratensione</string>
+    <string name="health_unspecified_failure">Errore non specificato</string>
+    <string name="health_cold">Fredda</string>
+    <string name="health_watchdog_timer_expire">Scadenza del timer watchdog</string>
+    <string name="health_safety_timer_expire">Scadenza del timer di sicurezza</string>
+    <string name="health_over_current">Sovraccarica</string>
+    <string name="health_calibration_required">Calibrazione richiesta</string>
+    <string name="health_warm">Calda</string>
+    <string name="health_cool">Fresca</string>
+    <string name="health_hot">Bollente</string>
+    <string name="cycle_count_title">Cicli di ricarica</string>
+    <string name="stop_charging_title">Livello di arresto ricarica</string>
+    <string name="stop_charging_summary">Impedisce al dispositivo di ricaricare oltre una percentuale specifica</string>
+    <string name="start_charging_title">Livello di inizio ricarica</string>
+    <string name="start_charging_summary">Riprende la ricarica ad una percentuale specifica</string>
+    <string name="stop_below_start_error">Il livello di arresto deve essere superiore al livello di avvio!</string>
+    <string name="start_above_stop_error">Il livello di avvio deve essere inferiore al livello di arresto!</string>
+    <!-- Camera -->
+    <string name="category_camera">Fotocamera</string>
+    <string name="pixeltorch_tile_title">Torcia Pixel</string>
+    <string name="torch_strength_title">Potenza della torcia</string>
+    <string name="torch_strength_summary">Regola la luminosità della Torcia Pixel nelle impostazioni rapide</string>
+    <!-- CPU -->
+    <string name="category_cpu">CPU</string>
+    <string name="power_efficient_workqueue_title">Coda di lavoro efficiente</string>
+    <string name="power_efficient_workqueue_summary">Risparmia energia riprogrammando il lavoro su un core già sveglio</string>
+    <!-- Display -->
+    <string name="category_display">Display</string>
+    <string name="hbm_title">Modalità alta luminosità (HBM)</string>
+    <string name="hbm_summary">Abilita la massima luminosità</string>
+    <string name="auto_hbm_title">HBM automatica</string>
+    <string name="auto_hbm_summary">Abilita la luminosità massima in base alla luce solare</string>
+    <string name="auto_hbm_threshold_summary">soglia (lux)</string>
+    <string name="hbm_enable_time_summary">abilita dopo (secondi)</string>
+    <string name="hbm_disable_time_summary">disabilita dopo (secondi)</string>
+    <string name="hbm_info">L\'utilizzo prolungato della modalità alta luminosità può danneggiare il display!</string>
+    <string name="saturation_title">Saturazione</string>
+    <string name="saturation_summary">Controlla il livello di saturazione del display</string>
+    <string name="saturation_info">La modifica della modalità colore nelle impostazioni schermo annulla il livello di saturazione e richiede una riapplicazione.</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">Calcola il jitter di rendering</string>
+    <!-- USB -->
+    <string name="category_usb">USB</string>
+    <string name="usb2_fast_charge_title">Ricarica rapida USB 2.0</string>
+    <string name="usb2_fast_charge_summary">Abilita la modalità CDP per la ricarica rapida sulle porte USB 2.0</string>
+    <string name="usb2_fast_charge_info">Non tutte le porte USB 2.0 supportano la modalità CDP, usala con cautela!</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valore: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">valore predefinito</string>
+    <string name="custom_seekbar_default_value_to_set">Valore predefinito: <xliff:g id="v">%s</xliff:g>\nTieni premuto per impostare</string>
+    <string name="custom_seekbar_default_value_is_set">Valore predefinito impostato</string>
+</resources>
