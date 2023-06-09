@@ -12,6 +12,8 @@
     <string name="pixel_parts_warning_text">Bu özelliklerin çoğu özel kernel parametreleri gerektirir. Özel bir kernel yüklerseniz bazı özellikleri kaybetme riskiniz olur. Dikkatli olun!</string>
     <string name="pixel_parts_dialog">Tamam</string>
     <string name="kernel_node_access_error">Kernel devresine erişim başarısız oldu! Lütfen sysfs veya procfs yolunun doğru olup olmadığını, gerekli izinlere sahip olup olmadığını ve SELinux durumunun doğru ayarlanıp ayarlanmadığını kontrol edin.</string>
+    <string name="tile_on">Açık</string>
+    <string name="tile_off">Kapalı</string>
     <!-- Battery -->
     <string name="category_battery">Pil</string>
     <string name="battery_info_title">Pil bilgisi</string>
@@ -65,8 +67,6 @@
     <!-- Camera -->
     <string name="category_camera">Kamera</string>
     <string name="pixeltorch_tile_title">Pixel El Feneri</string>
-    <string name="pixeltorch_tile_on">Açık</string>
-    <string name="pixeltorch_tile_off">Kapalı</string>
     <string name="torch_strength_title">El feneri gücü</string>
     <string name="torch_strength_summary">Pixel El Fenerinin parlaklığını ayarlayın</string>
     <!-- CPU -->
