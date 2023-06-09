@@ -12,6 +12,8 @@
     <string name="pixel_parts_warning_text">Більшість цих функцій покладаються на особливі вузли ядра для функціонування. Встановляючи користувацьке ядро, ви ризикуєте втратити доступ до деяких функцій. Ви попереджені!</string>
     <string name="pixel_parts_dialog">OK</string>
     <string name="kernel_node_access_error">Не вдалося отримати доступ до вузла ядра! Будь ласка, переконайтеся, що наданий шлях до атрибуту sysfs або procfs є точним, що він має відповідні дозволи, і правила SELinux належним чином налаштовані.</string>
+    <string name="tile_on">Увімкнено</string>
+    <string name="tile_off">Вимкнено</string>
     <!-- Battery -->
     <string name="category_battery">Акумулятор</string>
     <string name="battery_info_title">Інформація про акумулятор</string>
@@ -64,9 +66,9 @@
     <string name="start_above_stop_error">Початковий рівень повинен бути нижче рівня зупинки!</string>
     <!-- Camera -->
     <string name="category_camera">Камера</string>
-    <string name="flashlight_tile_title">Ліхтарик</string>
+    <string name="pixeltorch_tile_title">Піксельний факел</string>
     <string name="torch_strength_title">Сила факела</string>
-    <string name="torch_strength_summary">Налаштуйте яскравість ліхтарика PixelParts QS-Tile</string>
+    <string name="torch_strength_summary">Відрегулюйте яскравість Pixel Torch QS-Tile</string>
     <!-- CPU -->
     <string name="category_cpu">Процессор</string>
     <string name="power_efficient_workqueue_title">Енергоефективна робоча черга</string>
