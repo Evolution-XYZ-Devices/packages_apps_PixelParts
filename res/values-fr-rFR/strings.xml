@@ -12,6 +12,8 @@
     <string name="pixel_parts_warning_text">La plupart de ces fonctions dépendent de nœuds spécifiques du noyau pour fonctionner. Lorsque vous flashez un noyau personnalisé, vous risquez de perdre l\'accès à certaines de ces fonctionnalités. Vous êtes prévenu !</string>
     <string name="pixel_parts_dialog">OK</string>
     <string name="kernel_node_access_error">L\'accès au nœud du noyau a échoué ! Veuillez vous assurer que le chemin fourni vers l\'attribut sysfs ou procfs est exact, qu\'il dispose des autorisations appropriées et que les politiques SELinux sont correctement configurées.</string>
+    <string name="tile_on">Activé</string>
+    <string name="tile_off">Désactivé</string>
     <!-- Battery -->
     <string name="category_battery">Batterie</string>
     <string name="battery_info_title">Informations sur la batterie</string>
@@ -64,9 +66,9 @@
     <string name="start_above_stop_error">Le niveau de départ doit être inférieur au niveau d\'arrêt !</string>
     <!-- Camera -->
     <string name="category_camera">Appareil photo</string>
-    <string name="flashlight_tile_title">Lampe-torche</string>
+    <string name="pixeltorch_tile_title">Torche Pixel</string>
     <string name="torch_strength_title">Puissance de la torche</string>
-    <string name="torch_strength_summary">Régler la luminosité de la lampe de poche QS-Tile de Customisation Pixel</string>
+    <string name="torch_strength_summary">Régler la luminosité de la torche Pixel dans les réglages rapides</string>
     <!-- CPU -->
     <string name="category_cpu">CPU</string>
     <string name="power_efficient_workqueue_title">File de puissance efficace</string>
