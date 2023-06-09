@@ -12,21 +12,51 @@
     <string name="pixel_parts_warning_text">A maioria destes recursos são atribuídas ao kernel stock. Ao instalar um kernel personalizado, você está sujeito a perder algumas funções. Você foi avisado!</string>
     <string name="pixel_parts_dialog">OK</string>
     <string name="kernel_node_access_error">Falha ao acessar os componentes do kernel! Certifique-se de que o caminho fornecido para o atributo sysfs ou procfs seja preciso, que tenha as permissões apropriadas e que as políticas do SELinux estejam configuradas corretamente.</string>
+    <string name="tile_on">Ativado</string>
+    <string name="tile_off">Desativado</string>
     <!-- Battery -->
     <string name="category_battery">Bateria</string>
     <string name="battery_info_title">Informações da bateria</string>
     <string name="battery_info_summary">Ver várias informações da bateria</string>
-    <string name="battery_info_refresh_summary">atualizar informação após (segundos)</string>
+    <string name="battery_info_refresh_title">Intervalo de atualização</string>
+    <string name="battery_info_refresh_summary">Definir o intervalo para atualizar a informação da bateria (em segundos)</string>
     <string name="category_battery_info">Informações disponíveis</string>
     <string name="technology_title">Tecnologia</string>
     <string name="status_title">Status</string>
+    <string name="status_unknown">Desconhecido</string>
+    <string name="status_charging">Carregando</string>
+    <string name="status_discharging">Descarregando</string>
+    <string name="status_not_charging">Não está carregando</string>
+    <string name="status_full">Completo</string>
     <string name="temperature_title">Temperatura</string>
+    <string name="temperature_unit_title">Unidade de temperatura</string>
+    <string name="temperature_unit_summary">Exibir a temperatura da bateria em Fahrenheit (após a próxima atualização)</string>
     <string name="capacity_title">Capacidade atual</string>
     <string name="capacity_level_title">Nível de capacidade</string>
+    <string name="capacity_level_unknown">Desconhecido</string>
+    <string name="capacity_level_critical">Crítico</string>
+    <string name="capacity_level_low">Baixa</string>
+    <string name="capacity_level_normal">Normal</string>
+    <string name="capacity_level_high">Alta</string>
+    <string name="capacity_level_full">Máximo</string>
     <string name="current_title">Atual</string>
     <string name="voltage_title">Tensão</string>
     <string name="wattage_title">Potência</string>
     <string name="health_title">Saúde</string>
+    <string name="health_unknown">Desconhecido</string>
+    <string name="health_good">Bom</string>
+    <string name="health_overheat">Superaquecimento</string>
+    <string name="health_dead">Ruim</string>
+    <string name="health_over_voltage">Alta tensão</string>
+    <string name="health_unspecified_failure">Falha não especificada</string>
+    <string name="health_cold">Frio</string>
+    <string name="health_watchdog_timer_expire">Timer do Watchdog expirada</string>
+    <string name="health_safety_timer_expire">Temporizador de segurança expirado</string>
+    <string name="health_over_current">Sobre o atual</string>
+    <string name="health_calibration_required">Calibração necessária</string>
+    <string name="health_warm">Morno</string>
+    <string name="health_cool">Frio</string>
+    <string name="health_hot">Quente</string>
     <string name="cycle_count_title">Ciclos de carga</string>
     <string name="stop_charging_title">Nível para interromper o carregamento</string>
     <string name="stop_charging_summary">Impedir que o dispositivo carregue acima da porcentagem definida</string>
@@ -36,9 +66,9 @@
     <string name="start_above_stop_error">O nível para retomar o carregamento deve ser menor que o nível para interromper!</string>
     <!-- Camera -->
     <string name="category_camera">Câmera</string>
-    <string name="flashlight_tile_title">Lanterna</string>
+    <string name="pixeltorch_tile_title">Lanterna Pixel</string>
     <string name="torch_strength_title">Intensidade da lanterna</string>
-    <string name="torch_strength_summary">Ajusta a intensidade da luz pelo bloco da lanterna nas configurações rápidas</string>
+    <string name="torch_strength_summary">Ajustar o brilho da Lanterna Pixel nas configurações rápidas</string>
     <!-- CPU -->
     <string name="category_cpu">CPU</string>
     <string name="power_efficient_workqueue_title">Eficiência energética na fila de trabalho</string>
@@ -53,6 +83,9 @@
     <string name="hbm_enable_time_summary">ativar após (segundos)</string>
     <string name="hbm_disable_time_summary">desativar após (segundos)</string>
     <string name="hbm_info">Usar o modo de brilho máximo por muito tempo pode danificar sua tela!</string>
+    <string name="saturation_title">Saturação</string>
+    <string name="saturation_summary">Controlar o nível de saturação da tela</string>
+    <string name="saturation_info">Alterar o modo de cor nas configurações de exibição vai substituir o nível de saturação, exigindo que ele seja reaplicado.</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
