@@ -12,6 +12,8 @@
     <string name="pixel_parts_warning_text">Ezen funkciók legtöbbjének a helyes működéséhez meghatározott kernelbázisok szükségesek. Amennyiben Ön egyéni kernelt flessel, azt kockáztatja, hogy elveszíti a hozzáférést bizonyos funkciókhoz. Mi szóltunk előre!</string>
     <string name="pixel_parts_dialog">OK</string>
     <string name="kernel_node_access_error">A kernelhez való hozzáférés nem sikerült!  Győződjön meg arról, hogy a sysf vagy procfs attribútum megadott elérési útja pontos, megfelelő jogosultságokkal rendelkezik, és a SELinux-szabályok megfelelőek.</string>
+    <string name="tile_on">Be</string>
+    <string name="tile_off">Ki</string>
     <!-- Battery -->
     <string name="category_battery">Akkumulátor</string>
     <string name="battery_info_title">Akkuinformáció</string>
@@ -64,7 +66,7 @@
     <string name="start_above_stop_error">A kezdési szintnek a leállítási szint alatt kell lennie!</string>
     <!-- Camera -->
     <string name="category_camera">Kamera</string>
-    <string name="flashlight_tile_title">Lámpa</string>
+    <string name="pixeltorch_tile_title">Pixel Lámpa</string>
     <string name="torch_strength_title">A zseblámpa erőssége</string>
     <string name="torch_strength_summary">Itt állíthatja be a csempék fényerősségét</string>
     <!-- CPU -->
