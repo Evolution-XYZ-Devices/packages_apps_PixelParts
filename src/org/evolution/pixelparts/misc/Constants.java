@@ -11,6 +11,7 @@ public class Constants {
     public static final String KEY_BATTERY_INFO_REFRESH = "battery_info_refresh";
     public static final String KEY_TECHNOLOGY = "technology";
     public static final String KEY_STATUS = "status";
+    public static final String KEY_USB_TYPE = "usb_type";
     public static final String KEY_TEMPERATURE = "temperature";
     public static final String KEY_TEMPERATURE_UNIT = "temperature_unit";
     public static final String KEY_CAPACITY = "capacity";
@@ -22,6 +23,7 @@ public class Constants {
     public static final String KEY_CYCLE_COUNT = "cycle_count";
     public static final String NODE_TECHNOLOGY = "/sys/class/power_supply/battery/technology";
     public static final String NODE_STATUS = "/sys/class/power_supply/battery/status";
+    public static final String NODE_USB_TYPE = "/sys/class/power_supply/usb/usb_type";
     public static final String NODE_TEMPERATURE = "/sys/class/power_supply/battery/temp";
     public static final String NODE_CAPACITY = "/sys/class/power_supply/battery/capacity";
     public static final String NODE_CAPACITY_LEVEL = "/sys/class/power_supply/battery/capacity_level";

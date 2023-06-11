@@ -24,6 +24,12 @@
             android:persistent="false" />
 
         <Preference
+            android:key="usb_type"
+            android:title="@string/usb_type_title"
+            android:selectable="false"
+            android:persistent="false" />
+
+        <Preference
             android:key="temperature"
             android:title="@string/temperature_title"
             android:selectable="false"

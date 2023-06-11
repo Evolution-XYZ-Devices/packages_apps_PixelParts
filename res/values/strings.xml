@@ -30,6 +30,11 @@
     <string name="status_discharging">Discharging</string>
     <string name="status_not_charging">Not charging</string>
     <string name="status_full">Full</string>
+    <string name="usb_type_title">USB type</string>
+    <string name="usb_type_unknown_or_not_connected">Not connected or unknown</string>
+    <string name="usb_type_standard_downstream_port">Standard Downstream Port (SDP)</string>
+    <string name="usb_type_charging_downstream_port">Charging Downstream Port (CDP)</string>
+    <string name="usb_type_dedicated_charging_port">Dedicated Charging Port (DCP)</string>
     <string name="temperature_title">Temperature</string>
     <string name="temperature_unit_title">Temperature unit</string>
     <string name="temperature_unit_summary">Display battery temperature in Fahrenheit (upon next refresh)</string>

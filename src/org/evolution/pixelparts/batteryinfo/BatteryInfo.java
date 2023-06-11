@@ -30,6 +30,7 @@ public class BatteryInfo extends PreferenceFragment
     // Battery info
     private Preference mTechnologyPreference;
     private Preference mStatusPreference;
+    private Preference mUSBTypePreference;
     private Preference mTemperaturePreference;
     private Preference mCapacityPreference;
     private Preference mCapacityLevelPreference;
@@ -61,6 +62,7 @@ public class BatteryInfo extends PreferenceFragment
 
         mTechnologyPreference = findPreference(Constants.KEY_TECHNOLOGY);
         mStatusPreference = findPreference(Constants.KEY_STATUS);
+        mUSBTypePreference = findPreference(Constants.KEY_USB_TYPE);
         mTemperaturePreference = findPreference(Constants.KEY_TEMPERATURE);
         mCapacityPreference = findPreference(Constants.KEY_CAPACITY);
         mCapacityLevelPreference = findPreference(Constants.KEY_CAPACITY_LEVEL);
@@ -113,6 +115,16 @@ public class BatteryInfo extends PreferenceFragment
         } else {
             mStatusPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStatusPreference.setEnabled(false);
+        }
+
+        // USB type preference
+        if (Utils.isFileReadable(Constants.NODE_USB_TYPE)) {
+            String fileValue = Utils.getFileValue(Constants.NODE_USB_TYPE, null);
+            int usbTypeStringResourceId = getUSBTypeStringResourceId(fileValue);
+            mUSBTypePreference.setSummary(getString(usbTypeStringResourceId));
+        } else {
+            mUSBTypePreference.setSummary(getString(R.string.kernel_node_access_error));
+            mUSBTypePreference.setEnabled(false);
         }
 
         // Temperature preference
@@ -225,6 +237,21 @@ public class BatteryInfo extends PreferenceFragment
                 return R.string.status_full;
             default:
                 return R.string.kernel_node_access_error;
+        }
+    }
+
+    // USB type preference strings
+    private int getUSBTypeStringResourceId(String usbType) {
+        if (usbType.contains("[Unknown]")) {
+            return R.string.usb_type_unknown_or_not_connected;
+        } else if (usbType.contains("[SDP]")) {
+            return R.string.usb_type_standard_downstream_port;
+        } else if (usbType.contains("[CDP]")) {
+            return R.string.usb_type_charging_downstream_port;
+        } else if (usbType.contains("[DCP]")) {
+            return R.string.usb_type_dedicated_charging_port;
+        } else {
+            return R.string.kernel_node_access_error;
         }
     }
 
