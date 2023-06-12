@@ -11,6 +11,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
@@ -102,6 +104,19 @@ public class BatteryInfo extends PreferenceFragment
         if (Utils.isFileReadable(Constants.NODE_TECHNOLOGY)) {
             String fileValue = Utils.getFileValue(Constants.NODE_TECHNOLOGY, null);
             mTechnologyPreference.setSummary(fileValue);
+
+            mTechnologyPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.technology_info_title))
+                            .setMessage(getString(R.string.technology_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mTechnologyPreference.setSummary(getString(R.string.kernel_node_access_error));
             mTechnologyPreference.setEnabled(false);
@@ -112,6 +127,19 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_STATUS, null);
             int statusStringResourceId = getStatusStringResourceId(fileValue);
             mStatusPreference.setSummary(getString(statusStringResourceId));
+
+            mStatusPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.status_info_title))
+                            .setMessage(getString(R.string.status_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mStatusPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStatusPreference.setEnabled(false);
@@ -122,6 +150,19 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_USB_TYPE, null);
             int usbTypeStringResourceId = getUSBTypeStringResourceId(fileValue);
             mUSBTypePreference.setSummary(getString(usbTypeStringResourceId));
+
+            mUSBTypePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.usb_type_info_title))
+                            .setMessage(getString(R.string.usb_type_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mUSBTypePreference.setSummary(getString(R.string.kernel_node_access_error));
             mUSBTypePreference.setEnabled(false);
@@ -140,6 +181,19 @@ public class BatteryInfo extends PreferenceFragment
                float roundedTemperatureCelsius = Math.round(temperatureCelsius * 10) / 10.0f;
                mTemperaturePreference.setSummary(roundedTemperatureCelsius + "°C");
             }
+
+            mTemperaturePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.temperature_info_title))
+                            .setMessage(getString(R.string.temperature_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mTemperaturePreference.setSummary(getString(R.string.kernel_node_access_error));
             mTemperaturePreference.setEnabled(false);
@@ -149,6 +203,19 @@ public class BatteryInfo extends PreferenceFragment
         if (Utils.isFileReadable(Constants.NODE_CAPACITY)) {
             String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY, null);
             mCapacityPreference.setSummary(fileValue + "%");
+
+            mCapacityPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.capacity_info_title))
+                            .setMessage(getString(R.string.capacity_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mCapacityPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCapacityPreference.setEnabled(false);
@@ -159,6 +226,19 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY_LEVEL, null);
             int capacityLevelStringResourceId = geCapacityLevelStringResourceId(fileValue);
             mCapacityLevelPreference.setSummary(getString(capacityLevelStringResourceId));
+
+            mCapacityLevelPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.capacity_level_info_title))
+                            .setMessage(getString(R.string.capacity_level_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mCapacityLevelPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCapacityLevelPreference.setEnabled(false);
@@ -171,6 +251,19 @@ public class BatteryInfo extends PreferenceFragment
             int absoluteChargingCurrent = Math.abs(chargingCurrent);
             String formattedChargingCurrent = (absoluteChargingCurrent / 1000) + "mA";
             mCurrentPreference.setSummary(formattedChargingCurrent);
+
+            mCurrentPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.current_info_title))
+                            .setMessage(getString(R.string.current_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mCurrentPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCurrentPreference.setEnabled(false);
@@ -182,6 +275,19 @@ public class BatteryInfo extends PreferenceFragment
             float chargingVoltage = Float.parseFloat(fileValue);
             String formattedChargingVoltage = String.format("%.1f", (chargingVoltage / 1000000)) + "V";
             mVoltagePreference.setSummary(formattedChargingVoltage);
+
+            mVoltagePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.voltage_info_title))
+                            .setMessage(getString(R.string.voltage_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mVoltagePreference.setSummary(getString(R.string.kernel_node_access_error));
             mVoltagePreference.setEnabled(false);
@@ -197,6 +303,19 @@ public class BatteryInfo extends PreferenceFragment
             float absoluteWattage = Math.abs(wattage);
             String formattedWattage = String.format("%.1f", absoluteWattage) + "W";
             mWattagePreference.setSummary(formattedWattage);
+
+            mWattagePreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.wattage_info_title))
+                            .setMessage(getString(R.string.wattage_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mWattagePreference.setSummary(getString(R.string.kernel_node_access_error));
             mWattagePreference.setEnabled(false);
@@ -207,6 +326,19 @@ public class BatteryInfo extends PreferenceFragment
             String fileValue = Utils.getFileValue(Constants.NODE_HEALTH, null);
             int healthStringResourceId = getHealthStringResourceId(fileValue);
             mHealthPreference.setSummary(getString(healthStringResourceId));
+
+            mHealthPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.health_info_title))
+                            .setMessage(getString(R.string.health_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mHealthPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHealthPreference.setEnabled(false);
@@ -216,6 +348,19 @@ public class BatteryInfo extends PreferenceFragment
         if (Utils.isFileReadable(Constants.NODE_CYCLE_COUNT)) {
             String fileValue = Utils.getFileValue(Constants.NODE_CYCLE_COUNT, null);
             mCycleCountPreference.setSummary(fileValue);
+
+            mCycleCountPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.cycle_count_title))
+                            .setMessage(getString(R.string.cycle_count_info_message))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    return true;
+                }
+            });
+
         } else {
             mCycleCountPreference.setSummary(getString(R.string.kernel_node_access_error));
             mCycleCountPreference.setEnabled(false);
