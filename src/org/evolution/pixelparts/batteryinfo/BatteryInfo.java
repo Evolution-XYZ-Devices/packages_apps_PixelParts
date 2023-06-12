@@ -11,6 +11,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceFragment;
@@ -41,7 +44,6 @@ public class BatteryInfo extends PreferenceFragment
     private Preference mWattagePreference;
     private Preference mHealthPreference;
     private Preference mCycleCountPreference;
-    private SwitchPreference mTemperatureUnitSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -73,7 +75,6 @@ public class BatteryInfo extends PreferenceFragment
         mWattagePreference = findPreference(Constants.KEY_WATTAGE);
         mHealthPreference = findPreference(Constants.KEY_HEALTH);
         mCycleCountPreference = findPreference(Constants.KEY_CYCLE_COUNT);
-        mTemperatureUnitSwitch = findPreference(Constants.KEY_TEMPERATURE_UNIT);
 
         updatePreferenceSummaries();
         mHandler.postDelayed(mUpdateRunnable,
@@ -97,6 +98,28 @@ public class BatteryInfo extends PreferenceFragment
     public void onDestroy() {
         super.onDestroy();
         mHandler.removeCallbacks(mUpdateRunnable);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.batteryinfo_menu, menu);
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        menu.findItem(R.id.temperature_unit).setChecked(sharedPrefs.getBoolean(Constants.KEY_TEMPERATURE_UNIT, false));
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.temperature_unit) {
+            boolean isChecked = !item.isChecked();
+            item.setChecked(isChecked);
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            sharedPrefs.edit().putBoolean(Constants.KEY_TEMPERATURE_UNIT, isChecked).apply();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void updatePreferenceSummaries() {
@@ -174,7 +197,8 @@ public class BatteryInfo extends PreferenceFragment
             int temperature = Integer.parseInt(fileValue);
             float temperatureCelsius = temperature / 10.0f;
             float temperatureFahrenheit = temperatureCelsius * 1.8f + 32;
-            if (mTemperatureUnitSwitch.isChecked()) {
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+            if (sharedPrefs.getBoolean(Constants.KEY_TEMPERATURE_UNIT, false)) {
                 float roundedTemperatureFahrenheit = Math.round(temperatureFahrenheit * 10) / 10.0f;
                 mTemperaturePreference.setSummary(roundedTemperatureFahrenheit + "°F");
             } else {
