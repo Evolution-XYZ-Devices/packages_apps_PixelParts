@@ -163,7 +163,7 @@
     <string name="category_usb">USB</string>
     <string name="usb2_fast_charge_title">USB 2.0 fast charge</string>
     <string name="usb2_fast_charge_summary">Enable CDP mode for fast charging on USB 2.0 ports</string>
-    <string name="usb2_fast_charge_info">Not all USB 2.0 ports support CDP mode, use with caution!</string>
+    <string name="usb2_fast_charge_info">Caution: Not all USB 2.0 ports support CDP mode. For changes to take effect, disconnect and reconnect the device after enabling or disabling this mode.</string>
 
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
