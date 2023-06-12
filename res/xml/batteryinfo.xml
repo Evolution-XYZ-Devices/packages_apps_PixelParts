@@ -65,20 +65,5 @@
             android:key="cycle_count"
             android:title="@string/cycle_count_title"
             android:persistent="false" />
-
-        <SwitchPreference
-            android:key="temperature_unit"
-            android:title="@string/temperature_unit_title"
-            android:summary="@string/temperature_unit_summary" />
-
-        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
-            android:key="battery_info_refresh"
-            android:title="@string/battery_info_refresh_title"
-            android:summary="@string/battery_info_refresh_summary"
-            android:persistent="true"
-            android:max="5"
-            android:min="1"
-            settings:units=""
-            android:defaultValue="5" />
     </PreferenceCategory>
 </PreferenceScreen>

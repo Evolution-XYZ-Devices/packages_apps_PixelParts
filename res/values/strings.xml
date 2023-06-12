@@ -20,8 +20,7 @@
     <string name="category_battery">Battery</string>
     <string name="battery_info_title">Battery info</string>
     <string name="battery_info_summary">View various battery information</string>
-    <string name="battery_info_refresh_title">Refresh interval</string>
-    <string name="battery_info_refresh_summary">Set the interval for updating battery information (in seconds)</string>
+    <string name="battery_info_refresh_title">Refresh info every second</string>
     <string name="category_battery_info">Available info</string>
     <string name="technology_title">Technology</string>
     <string name="technology_info_title">Technology information</string>
@@ -61,8 +60,7 @@
     <string name="temperature_title">Temperature</string>
     <string name="temperature_info_title">Temperature information</string>
     <string name="temperature_info_message">Temperature refers to the degree of hotness or coldness, measured in Celsius (°C) or Fahrenheit (°F). High temperatures can impact device performance and lifespan. Recommended operating ranges for smartphones are typically between 0°C and 35°C (32°F and 95°F). Monitoring temperature ensures devices stay within the safe range, preventing overheating and damage. Maintaining suitable temperatures contributes to optimal performance and longevity.</string>
-    <string name="temperature_unit_title">Temperature unit</string>
-    <string name="temperature_unit_summary">Display battery temperature in Fahrenheit (upon next refresh)</string>
+    <string name="temperature_unit_title">Use °F for temperature</string>
     <string name="capacity_title">Capacity now</string>
     <string name="capacity_info_title">Capacity information</string>
     <string name="capacity_info_message">Capacity refers to the current charge level of the battery, represented as a percentage of its overall capacity. It indicates how much charge is currently available compared to the maximum capacity. Monitoring the capacity level in percentage helps estimate the remaining battery power and plan power usage accordingly.</string>
