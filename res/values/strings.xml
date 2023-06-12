@@ -21,6 +21,7 @@
     <string name="battery_info_title">Battery info</string>
     <string name="battery_info_summary">View various battery information</string>
     <string name="battery_info_refresh_title">Refresh info every second</string>
+    <string name="launch_battery_usage_title">Launch battery usage summary</string>
     <string name="category_battery_info">Available info</string>
     <string name="technology_title">Technology</string>
     <string name="technology_info_title">Technology information</string>

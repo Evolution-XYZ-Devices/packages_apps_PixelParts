@@ -7,6 +7,7 @@ package org.evolution.pixelparts.batteryinfo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -121,6 +122,10 @@ public class BatteryInfo extends PreferenceFragment
             return true;
         } else if (item.getItemId() == R.id.battery_info_refresh) {
             mSharedPrefs.edit().putBoolean(Constants.KEY_BATTERY_INFO_REFRESH, isChecked).apply();
+            return true;
+        } else if (item.getItemId() == R.id.launch_battery_usage) {
+            Intent intent = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY);
+            startActivity(intent);
             return true;
         } else {
             return super.onOptionsItemSelected(item);
