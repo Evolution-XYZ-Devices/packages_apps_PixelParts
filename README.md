@@ -2,7 +2,8 @@
 
 ## About the app
 
-I created PixelParts as an alternative to Google's HbmSVManager, providing users with both direct control and more fine-grained customization options for High Brightness Mode (HBM). Unlike the stock functionality, where HBM activation is limited to automatic brightness being enabled, and lux thresholds being predefined, PixelParts allows users to directly control the lux threshold, enable time, and disable time. This allows users to precisely adjust HBM settings according to their preferences, independent of ambient lighting conditions. While the app includes other features, this was its primary purpose from the outset.
+PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has evolved to include a detailed battery information panel, a display saturation level adjuster, charging limiter and more. The app now offers a wide range of features, transitioning from its original function as an HBM tool to a hub for device tweaks and stats on customs, with a lot more planned going forward.
+
 ## Current features
 
 | Category | Feature | Description | QS Tile | Required kernel changes |
@@ -15,7 +16,7 @@ I created PixelParts as an alternative to Google's HbmSVManager, providing users
 |  | `Automatic HBM` | Enable peak luminance based on sunlight | Yes | N/A |
 |  | `Saturation` | Control the saturation level of the display | N/A | N/A |
 | **Ui-Bench** | `Jitter` | Calculate rendering jitter. | N/A | N/A |
-| **USB** | `USB 2.0 fast charge` | Enable CDP mode for faster charging on USB 2.0 ports. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/a594c64a588e307bc8156d75ee62ea64afae5c94) |
+| **USB** | `USB 2.0 fast charge` | Enable CDP mode for faster charging on USB 2.0 ports. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/dcbfcd76bdc5d72e16f85fd8a48de6afa8804b61) |
 
 
 ## Including PixelParts
@@ -45,39 +46,28 @@ This line includes the [device.mk](https://github.com/Evolution-X-Devices/packag
 
 ## Testing changes
 
-- When testing new changes, it is much faster to compile the application itself rather than a full AOSP build. Please note that some changes may require you to chmod 0666 sysfs nodes and set selinux to permissive. When compiling a full AOSP build, this is not needed assuming the init cmds and sepolicies have been correctly set up.
+- When testing new changes, it is much faster to compile the application standalone and update it manually rather than running a full AOSP build. Please note that some changes may require you to chmod 0666 sysfs nodes and set selinux to permissive. When compiling a full AOSP build, this is not needed assuming the init cmds and sepolicies have been properly configured.
+
+Lunch your device and run the following cmd:
 
 ```
 m PixelParts
 ```
--  This also assumes you are already running an AOSP build including PixelParts as a priv-app in /system_ext.
+- This also assumes you are already running an AOSP build including PixelParts as a priv-app in /system_ext.
 
 ## Screenshots
-![example](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/tiramisu/example.png)
+![screenshots_1](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/tiramisu/screenshots_1.png)
+
+![screenshots_2](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/tiramisu/screenshots_2.png)
+
 
 ## Credits
 
-#### Base preference fragment, boot receiver and CustomSeekbar preference
-
-[Neobuddy89](https://github.com/neobuddy89)
-
-#### Original AutoHBMService
-
-[Hikari-no-Tenshi](https://github.com/Hikari-no-Tenshi)
-
-[Maxwen](https://github.com/maxwen)
-
-#### ShakeUtils
-
-[AmeChanRain](https://github.com/AmeChanRain)
-
-#### First launch warning dialog
-
-[Ramisky](https://github.com/Ramisky)
-
-#### Leonids particle system
-[Plattysoft](https://github.com/plattysoft)
-
-#### Randomized color particle effect
-
-[LorDClockaN](https://github.com/LorDClockaN)
+| Work                                                        | Author                                                                     |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Base preference fragment & CustomSeekBar preference         | [Neobuddy89](https://forum.xda-developers.com/m/neobuddy89.3795148/)        |
+| Original AutoHBMService                                     | [Hikari no Tenshi](https://forum.xda-developers.com/m/hikari-no-tenshi.4337348/) & [maxwen](https://forum.xda-developers.com/m/maxwen.4683552/) |
+| ShakeUtils                                                  | [AmeChanRain](https://github.com/AmeChanRain)                               |
+| First launch warning dialog                                 | [Ramyski](https://forum.xda-developers.com/m/ramyski.8538037/)               |
+| Leonids particle system                                     | [Plattysoft](https://github.com/plattysoft)                                 |
+| Randomized color particle effect                            | [LorD ClockaN](https://forum.xda-developers.com/m/lord-clockan.1184673/)    |
