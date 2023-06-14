@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
+
+import com.android.settingslib.widget.TopIntroPreference;
 
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
@@ -32,6 +35,9 @@ import org.evolution.pixelparts.utils.Utils;
 public class PixelParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = PixelParts.class.getSimpleName();
+
+    // Device intro preference
+    private TopIntroPreference mIntroPreference;
 
     // Power efficient workqueue switch
     private SwitchPreference mPowerEfficientWorkqueueModeSwitch;
@@ -58,6 +64,13 @@ public class PixelParts extends PreferenceFragment
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         Context context = getContext();
+
+        // Device intro preference
+        String deviceManufacturer = Build.MANUFACTURER;
+        String deviceModel = Build.MODEL;
+        String deviceName = deviceManufacturer + " " + deviceModel;
+        mIntroPreference = findPreference(Constants.KEY_DEVICE_INTRO);
+        mIntroPreference.setTitle(deviceName);
 
         // Stop charging preference
         mStopChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_STOP_CHARGING);

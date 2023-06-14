@@ -7,6 +7,9 @@ package org.evolution.pixelparts.misc;
 
 public class Constants {
 
+    // Device intro preference
+    public static final String KEY_DEVICE_INTRO = "device_intro";
+
     // Battery info preferences
     public static final String KEY_BATTERY_INFO_REFRESH = "battery_info_refresh";
     public static final String KEY_TECHNOLOGY = "technology";
