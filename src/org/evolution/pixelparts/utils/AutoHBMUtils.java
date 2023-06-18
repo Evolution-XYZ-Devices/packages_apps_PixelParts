@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
 
+import org.evolution.pixelparts.autohbm.AutoHBM;
 import org.evolution.pixelparts.services.AutoHBMService;
-import org.evolution.pixelparts.PixelParts;
 
 public class AutoHBMUtils {
 
@@ -24,9 +24,9 @@ public class AutoHBMUtils {
     }
 
     public static void enableAutoHBM(Context context) {
-        if (PixelParts.isAutoHBMEnabled(context) && !mAutoHBMEnabled) {
+        if (AutoHBM.isAutoHBMEnabled(context) && !mAutoHBMEnabled) {
             startAutoHBM(context);
-        } else if (!PixelParts.isAutoHBMEnabled(context) && mAutoHBMEnabled) {
+        } else if (!AutoHBM.isAutoHBMEnabled(context) && mAutoHBMEnabled) {
             stopAutoHBM(context);
         }
     }

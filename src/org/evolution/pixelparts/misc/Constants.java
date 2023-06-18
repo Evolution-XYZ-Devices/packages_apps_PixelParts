@@ -51,12 +51,13 @@ public class Constants {
     public static final String KEY_TORCH_STRENGTH = "torch_strength";
     public static final String KEY_TORCH_STATE = "torch_state";
 
-    // High brightness mode switches
+    // High brightness mode preferences/switches
     public static final String KEY_HBM = "hbm";
+    public static final String KEY_AUTO_HBM_SETTINGS = "auto_hbm_settings";
     public static final String KEY_AUTO_HBM = "auto_hbm";
     public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
-    public static final String KEY_HBM_ENABLE_TIME = "hbm_enable_time";
-    public static final String KEY_HBM_DISABLE_TIME = "hbm_disable_time";
+    public static final String KEY_AUTO_HBM_ENABLE_TIME = "auto_hbm_enable_time";
+    public static final String KEY_AUTO_HBM_DISABLE_TIME = "auto_hbm_disable_time";
     public static final String NODE_HBM = "/sys/class/backlight/panel0-backlight/hbm_mode";
 
     // Saturation preference

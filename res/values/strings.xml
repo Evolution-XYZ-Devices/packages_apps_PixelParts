@@ -139,15 +139,16 @@
     <!-- Display -->
     <string name="category_display">Display</string>
     <string name="hbm_title">High brightness mode (HBM)</string>
-    <string name="hbm_summary">Enable peak luminance</string>
+    <string name="hbm_summary">Directly enable high brightness mode</string>
     <string name="auto_hbm_title">Automatic HBM</string>
-    <string name="auto_hbm_summary">Enable peak luminance based on sunlight</string>
-    <string name="auto_hbm_threshold_title"></string>
-    <string name="auto_hbm_threshold_summary">threshold (lux)</string>
-    <string name="hbm_enable_time_title"></string>
-    <string name="hbm_enable_time_summary">enable after (seconds)</string>
-    <string name="hbm_disable_time_title"></string>
-    <string name="hbm_disable_time_summary">disable after (seconds)</string>
+    <string name="auto_hbm_main_switch_title">Use automatic HBM</string>
+    <string name="auto_hbm_summary">Automatically enable high brightness mode based on sunlight intensity (lux)</string>
+    <string name="auto_hbm_threshold_title">Light threshold</string>
+    <string name="auto_hbm_threshold_summary">Define the light intensity threshold in lux units at which HBM is activated</string>
+    <string name="auto_hbm_enable_time_title">Enable time</string>
+    <string name="auto_hbm_enable_time_summary">Duration in seconds that the light threshold must be continuously met to activate HBM</string>
+    <string name="auto_hbm_disable_time_title">Disable time</string>
+    <string name="auto_hbm_disable_time_summary">Duration in seconds for which HBM is deactivated if the light threshold falls below the set level</string>
     <string name="hbm_info">Long time usage of High brightness mode may damage your display!</string>
     <string name="saturation_title">Saturation</string>
     <string name="saturation_summary">Control the saturation level of the display</string>

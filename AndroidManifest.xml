@@ -68,6 +68,17 @@
             android:name=".services.AutoHBMService"
             android:exported="false" />
 
+        <!-- Auto HBM activity -->
+        <activity
+            android:name=".autohbm.AutoHBMActivity"
+            android:label="@string/auto_hbm_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Battery info activity -->
         <activity
             android:name=".batteryinfo.BatteryInfoActivity"

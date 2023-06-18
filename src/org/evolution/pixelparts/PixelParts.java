@@ -29,7 +29,6 @@ import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.services.HBMService;
-import org.evolution.pixelparts.utils.AutoHBMUtils;
 import org.evolution.pixelparts.utils.Utils;
 
 public class PixelParts extends PreferenceFragment
@@ -46,9 +45,9 @@ public class PixelParts extends PreferenceFragment
     private CustomSeekBarPreference mStopChargingPreference;
     private CustomSeekBarPreference mStartChargingPreference;
 
-    // High brightness mode switches
+    // High brightness mode preferences/switches
+    private Preference mAutoHBMPreference;
     private SwitchPreference mHBMSwitch;
-    private SwitchPreference mAutoHBMSwitch;
 
     // USB 2.0 fast charge switch
     private SwitchPreference mUSB2FastChargeSwitch;
@@ -105,20 +104,19 @@ public class PixelParts extends PreferenceFragment
             mPowerEfficientWorkqueueModeSwitch.setEnabled(false);
         }
 
-        // High brightness mode switches
+        // High brightness mode preferences/switches
         mHBMSwitch = (SwitchPreference) findPreference(Constants.KEY_HBM);
-        mAutoHBMSwitch = (SwitchPreference) findPreference(Constants.KEY_AUTO_HBM);
+        mAutoHBMPreference = (Preference) findPreference(Constants.KEY_AUTO_HBM_SETTINGS);
         if (Utils.isFileWritable(Constants.NODE_HBM)) {
             mHBMSwitch.setEnabled(true);
+            mAutoHBMPreference.setEnabled(true);
             mHBMSwitch.setChecked(sharedPrefs.getBoolean(Constants.KEY_HBM, false));
             mHBMSwitch.setOnPreferenceChangeListener(this);
-            mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(Constants.KEY_AUTO_HBM, false));
-            mAutoHBMSwitch.setOnPreferenceChangeListener(this);
         } else {
             mHBMSwitch.setSummary(getString(R.string.kernel_node_access_error));
-            mAutoHBMSwitch.setSummary(getString(R.string.kernel_node_access_error));
+            mAutoHBMPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHBMSwitch.setEnabled(false);
-            mAutoHBMSwitch.setEnabled(false);
+            mAutoHBMPreference.setEnabled(false);
         }
 
         // USB 2.0 fast charge switch
@@ -187,13 +185,6 @@ public class PixelParts extends PreferenceFragment
                 this.getContext().stopService(hbmServiceIntent);
             }
             return true;
-          // Auto HBM switch
-        } else if (preference == mAutoHBMSwitch) {
-            Boolean enabled = (Boolean) newValue;
-            SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-            prefChange.putBoolean(Constants.KEY_AUTO_HBM, enabled).commit();
-            AutoHBMUtils.enableAutoHBM(getContext());
-            return true;
           // USB 2.0 fast charge switch
         } else if (preference == mUSB2FastChargeSwitch) {
             boolean enabled = (Boolean) newValue;
@@ -204,10 +195,6 @@ public class PixelParts extends PreferenceFragment
         }
 
         return false;
-    }
-
-    public static boolean isAutoHBMEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(Constants.KEY_AUTO_HBM, false);
     }
 
     // Stop charging preference
@@ -256,7 +243,6 @@ public class PixelParts extends PreferenceFragment
             Utils.writeValue(Constants.NODE_USB2_FAST_CHARGE, value ? "1" : "0");
         }
     }
-
 
     // First launch warning dialog
     public static class WarningDialogFragment extends DialogFragment {
