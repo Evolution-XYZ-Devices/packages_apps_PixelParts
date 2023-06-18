@@ -68,6 +68,17 @@
             android:name=".services.AutoHBMService"
             android:exported="false" />
 
+        <!-- About activity -->
+        <activity
+            android:name=".about.AboutActivity"
+            android:label="@string/pixel_parts_about_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Auto HBM activity -->
         <activity
             android:name=".autohbm.AutoHBMActivity"

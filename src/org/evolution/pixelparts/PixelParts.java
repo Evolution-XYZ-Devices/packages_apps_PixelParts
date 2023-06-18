@@ -17,6 +17,9 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
@@ -25,6 +28,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.settingslib.widget.TopIntroPreference;
 
+import org.evolution.pixelparts.about.AboutActivity;
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
@@ -63,6 +67,8 @@ public class PixelParts extends PreferenceFragment
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         Context context = getContext();
+
+        setHasOptionsMenu(true);
 
         // Device intro preference
         String deviceManufacturer = Build.MANUFACTURER;
@@ -128,6 +134,22 @@ public class PixelParts extends PreferenceFragment
         } else {
             mUSB2FastChargeSwitch.setSummary(getString(R.string.kernel_node_access_error));
             mUSB2FastChargeSwitch.setEnabled(false);
+        }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.pixel_parts_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.pixel_parts_about) {
+            Intent intent = new Intent(getActivity(), AboutActivity.class);
+            startActivity(intent);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 

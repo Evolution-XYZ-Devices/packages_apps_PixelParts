@@ -12,6 +12,16 @@
     <string name="pixel_parts_warning_title">Warning</string>
     <string name="pixel_parts_warning_text">Most of these features rely on specific kernel nodes in order to function. When flashing a custom kernel, you risk the possibility of losing access to some of these features. You have been warned!</string>
     <string name="pixel_parts_dialog">OK</string>
+    <string name="pixel_parts_about_title">About</string>
+    <string name="pixel_parts_about_summary">PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has evolved to include a detailed battery information panel, a display saturation level adjuster, charging limiter and more. The app now offers a wide range of features, transitioning from its original function as an HBM tool to a hub for device tweaks and stats on customs, with a lot more planned going forward</string>   
+    <string name="about_category_links">Various links</string>
+    <string name="about_category_credit">Credit</string>
+    <string name="pixel_parts_github_title" translatable="false">GitHub</string>
+    <string name="pixel_parts_github_summary">Check out the GitHub repository</string>
+    <string name="pixel_parts_xda_title" translatable="false">XDA</string>
+    <string name="pixel_parts_xda_summary">Check out the XDA thread</string>
+    <string name="pixel_parts_developer_title">Developer</string>
+    <string name="pixel_parts_developer_summary" translatable="false">Anierin Bliss</string>
     <string name="kernel_node_access_error">Kernel node access failed! Please ensure the provided path to the sysfs or procfs attribute is accurate, that it has appropriate permissions, and the SELinux policies are properly configured.</string>
     <string name="tile_on">On</string>
     <string name="tile_off">Off</string>
