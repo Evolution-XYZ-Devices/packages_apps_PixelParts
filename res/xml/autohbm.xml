@@ -15,6 +15,12 @@
             android:title="@string/auto_hbm_main_switch_title"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="current_lux_level"
+            android:title="@string/current_lux_level_title"
+            android:selectable="false"
+            android:persistent="false" />
+
         <org.evolution.pixelparts.preferences.CustomSeekBarPreference
             android:key="auto_hbm_threshold"
             android:title="@string/auto_hbm_threshold_title"
