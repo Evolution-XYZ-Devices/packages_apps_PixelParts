@@ -124,6 +124,42 @@
             </intent-filter>
         </activity>
 
+        <!-- PixelParts tile service -->
+        <service
+            android:name=".services.PixelPartsTileService"
+            android:label="@string/pixel_parts_title"
+            android:icon="@drawable/ic_pixel_parts_tile"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <!-- Battery info tile service -->
+        <service  
+            android:name=".services.BatteryInfoTileService"
+            android:label="@string/battery_info_title"
+            android:icon="@drawable/ic_battery_info_tile"
+            android:exported="true"  
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <!-- Saturation tile service -->
+        <service  
+            android:name=".services.SaturationTileService"
+            android:label="@string/saturation_title"
+            android:icon="@drawable/ic_saturation_tile"
+            android:exported="true"  
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
         <!-- PixelTorch tile service -->
         <service
             android:name=".services.PixelTorchTileService"
