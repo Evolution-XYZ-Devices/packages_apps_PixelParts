@@ -43,10 +43,6 @@ public class Constants {
     public static final String DEFAULT_STOP_CHARGING = "100";
     public static final String DEFAULT_START_CHARGING = "0";
 
-    // Power efficient workqueue switch
-    public static final String KEY_POWER_EFFICIENT_WORKQUEUE = "power_efficient_workqueue";
-    public static final String NODE_POWER_EFFICIENT_WORKQUEUE = "/sys/module/workqueue/parameters/power_efficient";
-
     // Flashlight
     public static final String KEY_TORCH_STRENGTH = "torch_strength";
     public static final String KEY_TORCH_STATE = "torch_state";

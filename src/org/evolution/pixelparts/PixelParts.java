@@ -42,9 +42,6 @@ public class PixelParts extends PreferenceFragment
     // Device intro preference
     private TopIntroPreference mIntroPreference;
 
-    // Power efficient workqueue switch
-    private SwitchPreference mPowerEfficientWorkqueueModeSwitch;
-
     // Stop/Start charging preferences
     private CustomSeekBarPreference mStopChargingPreference;
     private CustomSeekBarPreference mStartChargingPreference;
@@ -97,17 +94,6 @@ public class PixelParts extends PreferenceFragment
         } else {
             mStartChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
             mStartChargingPreference.setEnabled(false);
-        }
-
-        // Power efficient workqueue switch
-        mPowerEfficientWorkqueueModeSwitch = (SwitchPreference) findPreference(Constants.KEY_POWER_EFFICIENT_WORKQUEUE);
-        if (Utils.isFileWritable(Constants.NODE_POWER_EFFICIENT_WORKQUEUE)) {
-            mPowerEfficientWorkqueueModeSwitch.setEnabled(true);
-            mPowerEfficientWorkqueueModeSwitch.setChecked(sharedPrefs.getBoolean(Constants.KEY_POWER_EFFICIENT_WORKQUEUE, false));
-            mPowerEfficientWorkqueueModeSwitch.setOnPreferenceChangeListener(this);
-        } else {
-            mPowerEfficientWorkqueueModeSwitch.setSummary(getString(R.string.kernel_node_access_error));
-            mPowerEfficientWorkqueueModeSwitch.setEnabled(false);
         }
 
         // High brightness mode preferences/switches
@@ -187,13 +173,6 @@ public class PixelParts extends PreferenceFragment
             sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, value).commit();
             Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
             return true;
-          // Power efficient workqueue switch
-        } else if (preference == mPowerEfficientWorkqueueModeSwitch) {
-            boolean enabled = (Boolean) newValue;
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-            sharedPrefs.edit().putBoolean(Constants.KEY_POWER_EFFICIENT_WORKQUEUE, enabled).commit();
-            Utils.writeValue(Constants.NODE_POWER_EFFICIENT_WORKQUEUE, enabled ? "1" : "0");
-            return true;
           // High brightness mode switch
         } else if (preference == mHBMSwitch) {
             boolean enabled = (Boolean) newValue;
@@ -236,15 +215,6 @@ public class PixelParts extends PreferenceFragment
             int value = sharedPrefs.getInt(Constants.KEY_START_CHARGING,
                     Integer.parseInt(Utils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING)));
             Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
-        }
-    }
-
-    // Power efficient workqueue switch
-    public static void restorePowerEfficientWorkqueueSetting(Context context) {
-        if (Utils.isFileWritable(Constants.NODE_POWER_EFFICIENT_WORKQUEUE)) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-            boolean value = sharedPrefs.getBoolean(Constants.KEY_POWER_EFFICIENT_WORKQUEUE, false);
-            Utils.writeValue(Constants.NODE_POWER_EFFICIENT_WORKQUEUE, value ? "1" : "0");
         }
     }
 

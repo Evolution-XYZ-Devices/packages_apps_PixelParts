@@ -172,18 +172,6 @@
             </intent-filter>
         </service>
 
-        <!-- Power efficient workqueue tile service -->
-        <service
-            android:name=".services.PEWQTileSerice"
-            android:label="@string/power_efficient_workqueue_title"
-            android:icon="@drawable/ic_power_efficient_workqueue_tile"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
         <!-- HBM tile service -->
         <service
             android:name=".services.HBMTileService"

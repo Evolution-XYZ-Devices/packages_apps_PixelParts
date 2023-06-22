@@ -141,11 +141,6 @@
     <string name="torch_strength_title">Torch strength</string>
     <string name="torch_strength_summary">Adjust the brightness of the Pixel Torch QS-Tile</string>
 
-    <!-- CPU -->
-    <string name="category_cpu">CPU</string>
-    <string name="power_efficient_workqueue_title">Power efficient workqueue</string>
-    <string name="power_efficient_workqueue_summary">Save power by rescheduling work to a core that is already awake</string>
-
     <!-- Display -->
     <string name="category_display">Display</string>
     <string name="hbm_title">High brightness mode (HBM)</string>

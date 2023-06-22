@@ -61,17 +61,6 @@
             android:defaultValue="45" />
     </PreferenceCategory>
 
-    <!-- Start of CPU category -->
-    <PreferenceCategory  
-        android:key="category_cpu"
-        android:title="@string/category_cpu">
-
-        <SwitchPreference
-            android:key="power_efficient_workqueue"
-            android:title="@string/power_efficient_workqueue_title"
-            android:summary="@string/power_efficient_workqueue_summary" />
-    </PreferenceCategory>
-
     <!-- Start of display category -->
     <PreferenceCategory  
         android:key="category_display"

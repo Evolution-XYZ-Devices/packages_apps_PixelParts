@@ -25,7 +25,6 @@ public class Startup extends BroadcastReceiver {
             // PixelParts
             PixelParts.restoreStopChargingSetting(context);
             PixelParts.restoreStartChargingSetting(context);
-            PixelParts.restorePowerEfficientWorkqueueSetting(context);
             PixelParts.restoreHBMSetting(context);
             PixelParts.restoreUSB2FastChargeSetting(context);
             AutoHBMUtils.enableAutoHBM(context);

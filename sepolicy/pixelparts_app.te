@@ -32,7 +32,6 @@ allow pixelparts_app {
   sysfs_batteryinfo
   sysfs_fastcharge
   sysfs_leds
-  sysfs_workqueue
 }:file rw_file_perms;
 
 allow pixelparts_app {
