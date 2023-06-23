@@ -82,13 +82,6 @@
         </Preference>
 
         <Preference
-            android:key="hbm_info"
-            android:icon="@drawable/ic_info_outline"
-            android:summary="@string/hbm_info"
-            android:selectable="false"
-            android:persistent="false" />
-
-        <Preference
             android:key="saturation_settings"
             android:title="@string/saturation_title"
             android:summary="@string/saturation_summary"
@@ -125,11 +118,9 @@
             android:title="@string/usb2_fast_charge_title"
             android:summary="@string/usb2_fast_charge_summary" />
 
-        <Preference
-            android:key="usb2_fast_charge_info"
-            android:icon="@drawable/ic_info_outline"
-            android:summary="@string/usb2_fast_charge_info"
-            android:selectable="false"   
-            android:persistent="false" />
+        <com.android.settingslib.widget.FooterPreference
+            android:key="usb2_fast_charge_footer"
+            android:title="@string/usb2_fast_charge_footer_summary"
+            android:selectable="false" />
     </PreferenceCategory>
 </PreferenceScreen>
