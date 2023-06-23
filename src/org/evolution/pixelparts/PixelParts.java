@@ -33,7 +33,7 @@ import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.services.HBMService;
-import org.evolution.pixelparts.utils.Utils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class PixelParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -76,9 +76,9 @@ public class PixelParts extends PreferenceFragment
 
         // Stop charging preference
         mStopChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_STOP_CHARGING);
-        if (Utils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
+        if (FileUtils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
             mStopChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
-                    Integer.parseInt(Utils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING))));
+                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING))));
             mStopChargingPreference.setOnPreferenceChangeListener(this);
         } else {
             mStopChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
@@ -87,9 +87,9 @@ public class PixelParts extends PreferenceFragment
 
         // Start charging preference
         mStartChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_START_CHARGING);
-        if (Utils.isFileWritable(Constants.NODE_START_CHARGING)) {
+        if (FileUtils.isFileWritable(Constants.NODE_START_CHARGING)) {
             mStartChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_START_CHARGING,
-                    Integer.parseInt(Utils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING))));
+                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING))));
             mStartChargingPreference.setOnPreferenceChangeListener(this);
         } else {
             mStartChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
@@ -99,7 +99,7 @@ public class PixelParts extends PreferenceFragment
         // High brightness mode preferences/switches
         mHBMSwitch = (SwitchPreference) findPreference(Constants.KEY_HBM);
         mAutoHBMPreference = (Preference) findPreference(Constants.KEY_AUTO_HBM_SETTINGS);
-        if (Utils.isFileWritable(Constants.NODE_HBM)) {
+        if (FileUtils.isFileWritable(Constants.NODE_HBM)) {
             mHBMSwitch.setEnabled(true);
             mAutoHBMPreference.setEnabled(true);
             mHBMSwitch.setChecked(sharedPrefs.getBoolean(Constants.KEY_HBM, false));
@@ -113,7 +113,7 @@ public class PixelParts extends PreferenceFragment
 
         // USB 2.0 fast charge switch
         mUSB2FastChargeSwitch = (SwitchPreference) findPreference(Constants.KEY_USB2_FAST_CHARGE);
-        if (Utils.isFileWritable(Constants.NODE_USB2_FAST_CHARGE)) {
+        if (FileUtils.isFileWritable(Constants.NODE_USB2_FAST_CHARGE)) {
             mUSB2FastChargeSwitch.setEnabled(true);
             mUSB2FastChargeSwitch.setChecked(sharedPrefs.getBoolean(Constants.KEY_USB2_FAST_CHARGE, false));
             mUSB2FastChargeSwitch.setOnPreferenceChangeListener(this);
@@ -150,12 +150,12 @@ public class PixelParts extends PreferenceFragment
             if (startLevel >= stopLevel) {
                 startLevel = stopLevel - 1;
                 sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, startLevel).commit();
-                Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(startLevel));
+                FileUtils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(startLevel));
                 mStartChargingPreference.refresh(startLevel);
                 Toast.makeText(getContext(), R.string.stop_below_start_error, Toast.LENGTH_SHORT).show();
             }
             sharedPrefs.edit().putInt(Constants.KEY_STOP_CHARGING, value).commit();
-            Utils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
+            FileUtils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
             return true;
           // Start charging preference
         } else if (preference == mStartChargingPreference) {
@@ -166,19 +166,19 @@ public class PixelParts extends PreferenceFragment
             if (stopLevel <= startLevel) {
                 stopLevel = startLevel + 1;
                 sharedPrefs.edit().putInt(Constants.KEY_STOP_CHARGING, stopLevel).commit();
-                Utils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(stopLevel));
+                FileUtils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(stopLevel));
                 mStopChargingPreference.refresh(stopLevel);
                 Toast.makeText(getContext(), R.string.start_above_stop_error, Toast.LENGTH_SHORT).show();
             }
             sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, value).commit();
-            Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
+            FileUtils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
             return true;
           // High brightness mode switch
         } else if (preference == mHBMSwitch) {
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
             sharedPrefs.edit().putBoolean(Constants.KEY_HBM, enabled).commit();
-            Utils.writeValue(Constants.NODE_HBM, enabled ? "1" : "0");
+            FileUtils.writeValue(Constants.NODE_HBM, enabled ? "1" : "0");
             Intent hbmServiceIntent = new Intent(this.getContext(), HBMService.class);
             if (enabled) {
                 this.getContext().startService(hbmServiceIntent);
@@ -191,7 +191,7 @@ public class PixelParts extends PreferenceFragment
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
             sharedPrefs.edit().putBoolean(Constants.KEY_USB2_FAST_CHARGE, enabled).commit();
-            Utils.writeValue(Constants.NODE_USB2_FAST_CHARGE, enabled ? "1" : "0");
+            FileUtils.writeValue(Constants.NODE_USB2_FAST_CHARGE, enabled ? "1" : "0");
             return true;
         }
 
@@ -200,39 +200,39 @@ public class PixelParts extends PreferenceFragment
 
     // Stop charging preference
     public static void restoreStopChargingSetting(Context context) {
-        if (Utils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
+        if (FileUtils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
             int value = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
-                    Integer.parseInt(Utils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING)));
-            Utils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
+                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING)));
+            FileUtils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
         }
     }
 
     // Start charging preference
     public static void restoreStartChargingSetting(Context context) {
-        if (Utils.isFileWritable(Constants.NODE_START_CHARGING)) {
+        if (FileUtils.isFileWritable(Constants.NODE_START_CHARGING)) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
             int value = sharedPrefs.getInt(Constants.KEY_START_CHARGING,
-                    Integer.parseInt(Utils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING)));
-            Utils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
+                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING)));
+            FileUtils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
         }
     }
 
     // High brightness mode switch
     public static void restoreHBMSetting(Context context) {
-        if (Utils.isFileWritable(Constants.NODE_HBM)) {
+        if (FileUtils.isFileWritable(Constants.NODE_HBM)) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
             boolean value = sharedPrefs.getBoolean(Constants.KEY_HBM, false);
-            Utils.writeValue(Constants.NODE_HBM, value ? "1" : "0");
+            FileUtils.writeValue(Constants.NODE_HBM, value ? "1" : "0");
         }
     }
 
     // USB 2.0 fast charge switch
     public static void restoreUSB2FastChargeSetting(Context context) {
-        if (Utils.isFileWritable(Constants.NODE_USB2_FAST_CHARGE)) {
+        if (FileUtils.isFileWritable(Constants.NODE_USB2_FAST_CHARGE)) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
             boolean value = sharedPrefs.getBoolean(Constants.KEY_USB2_FAST_CHARGE, false);
-            Utils.writeValue(Constants.NODE_USB2_FAST_CHARGE, value ? "1" : "0");
+            FileUtils.writeValue(Constants.NODE_USB2_FAST_CHARGE, value ? "1" : "0");
         }
     }
 

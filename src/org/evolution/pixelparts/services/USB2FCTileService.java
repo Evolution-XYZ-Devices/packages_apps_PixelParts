@@ -12,7 +12,7 @@ import androidx.preference.PreferenceManager;
 
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.R;
-import org.evolution.pixelparts.utils.Utils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class USB2FCTileService extends TileService {
 
@@ -41,7 +41,7 @@ public class USB2FCTileService extends TileService {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         final boolean enabled = !(sharedPrefs.getBoolean(Constants.KEY_USB2_FAST_CHARGE, false));
-        Utils.writeValue(Constants.NODE_USB2_FAST_CHARGE, enabled ? "1" : "0");
+        FileUtils.writeValue(Constants.NODE_USB2_FAST_CHARGE, enabled ? "1" : "0");
         sharedPrefs.edit().putBoolean(Constants.KEY_USB2_FAST_CHARGE, enabled).commit();
         updateTile(enabled);
     }

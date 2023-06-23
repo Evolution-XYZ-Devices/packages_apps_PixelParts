@@ -19,9 +19,9 @@ import org.evolution.pixelparts.R;
 
 import android.util.Log;
 
-public class Utils {
+public class FileUtils {
 
-    private static final String TAG = Utils.class.getSimpleName();
+    private static final String TAG = FileUtils.class.getSimpleName();
 
     /**
      * Reads the first line of text from the given file.

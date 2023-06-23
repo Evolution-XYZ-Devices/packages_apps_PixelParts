@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.evolution.pixelparts.misc.Constants;
-import org.evolution.pixelparts.utils.Utils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class AutoHBMService extends Service {
 
@@ -50,14 +50,14 @@ public class AutoHBMService extends Service {
 
     private void enableHBM(boolean enable) {
         if (enable) {
-            Utils.writeValue(Constants.NODE_HBM, "1");
+            FileUtils.writeValue(Constants.NODE_HBM, "1");
         } else {
-            Utils.writeValue(Constants.NODE_HBM, "0");
+            FileUtils.writeValue(Constants.NODE_HBM, "0");
         }
     }
 
     private boolean isCurrentlyEnabled() {
-        String fileValue = Utils.getFileValue(Constants.NODE_HBM, "0");
+        String fileValue = FileUtils.getFileValue(Constants.NODE_HBM, "0");
         return fileValue.equals("1") ? true : false;
     }
 

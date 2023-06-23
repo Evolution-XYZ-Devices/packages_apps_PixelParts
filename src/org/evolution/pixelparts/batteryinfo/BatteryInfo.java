@@ -24,7 +24,7 @@ import androidx.preference.SwitchPreference;
 
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.R;
-import org.evolution.pixelparts.utils.Utils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class BatteryInfo extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -134,8 +134,8 @@ public class BatteryInfo extends PreferenceFragment
 
     private void updatePreferenceSummaries() {
         // Technology preference
-        if (Utils.isFileReadable(Constants.NODE_TECHNOLOGY)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_TECHNOLOGY, null);
+        if (FileUtils.isFileReadable(Constants.NODE_TECHNOLOGY)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_TECHNOLOGY, null);
             mTechnologyPreference.setSummary(fileValue);
 
             mTechnologyPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -156,8 +156,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Status preference
-        if (Utils.isFileReadable(Constants.NODE_STATUS)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_STATUS, null);
+        if (FileUtils.isFileReadable(Constants.NODE_STATUS)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_STATUS, null);
             int statusStringResourceId = getStatusStringResourceId(fileValue);
             mStatusPreference.setSummary(getString(statusStringResourceId));
 
@@ -179,8 +179,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // USB type preference
-        if (Utils.isFileReadable(Constants.NODE_USB_TYPE)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_USB_TYPE, null);
+        if (FileUtils.isFileReadable(Constants.NODE_USB_TYPE)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_USB_TYPE, null);
             int usbTypeStringResourceId = getUSBTypeStringResourceId(fileValue);
             mUSBTypePreference.setSummary(getString(usbTypeStringResourceId));
 
@@ -202,8 +202,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Temperature preference
-        if (Utils.isFileReadable(Constants.NODE_TEMPERATURE)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_TEMPERATURE, null);
+        if (FileUtils.isFileReadable(Constants.NODE_TEMPERATURE)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_TEMPERATURE, null);
             int temperature = Integer.parseInt(fileValue);
             float temperatureCelsius = temperature / 10.0f;
             float temperatureFahrenheit = temperatureCelsius * 1.8f + 32;
@@ -233,8 +233,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Capacity preference
-        if (Utils.isFileReadable(Constants.NODE_CAPACITY)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY, null);
+        if (FileUtils.isFileReadable(Constants.NODE_CAPACITY)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_CAPACITY, null);
             mCapacityPreference.setSummary(fileValue + "%");
 
             mCapacityPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -255,8 +255,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Capacity level preference
-        if (Utils.isFileReadable(Constants.NODE_CAPACITY_LEVEL)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_CAPACITY_LEVEL, null);
+        if (FileUtils.isFileReadable(Constants.NODE_CAPACITY_LEVEL)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_CAPACITY_LEVEL, null);
             int capacityLevelStringResourceId = geCapacityLevelStringResourceId(fileValue);
             mCapacityLevelPreference.setSummary(getString(capacityLevelStringResourceId));
 
@@ -278,8 +278,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Current preference
-        if (Utils.isFileReadable(Constants.NODE_CURRENT)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_CURRENT, null);
+        if (FileUtils.isFileReadable(Constants.NODE_CURRENT)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_CURRENT, null);
             int chargingCurrent = Integer.parseInt(fileValue);
             int absoluteChargingCurrent = Math.abs(chargingCurrent);
             String formattedChargingCurrent = (absoluteChargingCurrent / 1000) + "mA";
@@ -303,8 +303,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Voltage preference
-        if (Utils.isFileReadable(Constants.NODE_VOLTAGE)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_VOLTAGE, null);
+        if (FileUtils.isFileReadable(Constants.NODE_VOLTAGE)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_VOLTAGE, null);
             float chargingVoltage = Float.parseFloat(fileValue);
             String formattedChargingVoltage = String.format("%.1f", (chargingVoltage / 1000000)) + "V";
             mVoltagePreference.setSummary(formattedChargingVoltage);
@@ -327,9 +327,9 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Wattage preference
-        if (Utils.isFileReadable(Constants.NODE_VOLTAGE) && Utils.isFileReadable(Constants.NODE_CURRENT)) {
-            String voltageFileValue = Utils.getFileValue(Constants.NODE_VOLTAGE, null);
-            String currentFileValue = Utils.getFileValue(Constants.NODE_CURRENT, null);
+        if (FileUtils.isFileReadable(Constants.NODE_VOLTAGE) && FileUtils.isFileReadable(Constants.NODE_CURRENT)) {
+            String voltageFileValue = FileUtils.getFileValue(Constants.NODE_VOLTAGE, null);
+            String currentFileValue = FileUtils.getFileValue(Constants.NODE_CURRENT, null);
             float chargingCurrent = Integer.parseInt(currentFileValue) / 1000.0f;
             float chargingVoltage = Float.parseFloat(voltageFileValue) / 1000000.0f;
             float wattage = (chargingVoltage * chargingCurrent) / 1000.0f;
@@ -355,8 +355,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Health preference
-        if (Utils.isFileReadable(Constants.NODE_HEALTH)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_HEALTH, null);
+        if (FileUtils.isFileReadable(Constants.NODE_HEALTH)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_HEALTH, null);
             int healthStringResourceId = getHealthStringResourceId(fileValue);
             mHealthPreference.setSummary(getString(healthStringResourceId));
 
@@ -378,8 +378,8 @@ public class BatteryInfo extends PreferenceFragment
         }
 
         // Cycle count preference
-        if (Utils.isFileReadable(Constants.NODE_CYCLE_COUNT)) {
-            String fileValue = Utils.getFileValue(Constants.NODE_CYCLE_COUNT, null);
+        if (FileUtils.isFileReadable(Constants.NODE_CYCLE_COUNT)) {
+            String fileValue = FileUtils.getFileValue(Constants.NODE_CYCLE_COUNT, null);
             mCycleCountPreference.setSummary(fileValue);
 
             mCycleCountPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

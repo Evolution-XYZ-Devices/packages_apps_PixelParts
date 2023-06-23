@@ -16,7 +16,7 @@ import androidx.preference.PreferenceManager;
 
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.R;
-import org.evolution.pixelparts.utils.Utils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class HBMTileService extends TileService {
 
@@ -71,7 +71,7 @@ public class HBMTileService extends TileService {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         final boolean enabled = !(sharedPrefs.getBoolean(Constants.KEY_HBM, false));
-        Utils.writeValue(Constants.NODE_HBM, enabled ? "1" : "0");
+        FileUtils.writeValue(Constants.NODE_HBM, enabled ? "1" : "0");
         sharedPrefs.edit().putBoolean(Constants.KEY_HBM, enabled).commit();
         updateTile(enabled);
     }
