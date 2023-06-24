@@ -148,7 +148,6 @@
     <string name="auto_hbm_title">Automatic HBM</string>
     <string name="auto_hbm_main_switch_title">Use automatic HBM</string>
     <string name="auto_hbm_summary">Automatically enable high brightness mode based on sunlight intensity (lux)</string>
-    <string name="current_lux_level_title">Current lux level</string>
     <string name="auto_hbm_threshold_title">Light threshold</string>
     <string name="auto_hbm_threshold_summary">Define the light intensity threshold in lux units at which HBM is activated</string>
     <string name="auto_hbm_enable_time_title">Enable time</string>
