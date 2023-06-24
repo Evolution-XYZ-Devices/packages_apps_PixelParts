@@ -23,10 +23,9 @@ public class SaturationActivity extends CollapsingToolbarBaseActivity {
 
     private static final String TAG = "Saturation";
 
-    private ViewPager viewPager;
-    private LinearLayout sliderDotspanel;
-    private int dotscount;
-    private ImageView[] dots;
+    private ViewPager mPreviewViewPager;
+    private LinearLayout mSliderDotsPanel;
+    private ImageView[] mDots;
 
     private Saturation mSaturationFragment;
 
@@ -41,35 +40,38 @@ public class SaturationActivity extends CollapsingToolbarBaseActivity {
         if (fragment == null) {
             mSaturationFragment = new Saturation();
             getFragmentManager().beginTransaction()
-                .add(R.id.saturation, mSaturationFragment)
-                .commit();
+                    .add(R.id.saturation, mSaturationFragment)
+                    .commit();
         } else {
             mSaturationFragment = (Saturation) fragment;
         }
     }
 
     private void setupImageSlider() {
-        viewPager = (ViewPager) findViewById(R.id.preview);
-        sliderDotspanel = (LinearLayout) findViewById(R.id.SliderDots);
+        mPreviewViewPager = findViewById(R.id.preview);
+        mSliderDotsPanel = findViewById(R.id.SliderDots);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getApplicationContext());
-        viewPager.setAdapter(viewPagerAdapter);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        mPreviewViewPager.setAdapter(viewPagerAdapter);
 
-        dotscount = viewPagerAdapter.getCount();
-        dots = new ImageView[dotscount];
+        int dotCount = viewPagerAdapter.getCount();
+        mDots = new ImageView[dotCount];
 
-        for(int i = 0; i < dotscount; i++) {
-            dots[i] = new ImageView(getApplicationContext());
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.inactive_dot));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.setMargins(8, 0, 8, 0);
 
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(8, 0, 8, 0);
-            sliderDotspanel.addView(dots[i], params);
+        for (int i = 0; i < dotCount; i++) {
+            ImageView dot = new ImageView(this);
+            dot.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.inactive_dot));
+            mSliderDotsPanel.addView(dot, params);
+            mDots[i] = dot;
         }
 
-        dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
+        if (dotCount > 0) {
+            mDots[0].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.active_dot));
+        }
 
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mPreviewViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -77,11 +79,12 @@ public class SaturationActivity extends CollapsingToolbarBaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-
-                for(int i = 0; i< dotscount; i++){
-                    dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.inactive_dot));
+                for (ImageView dot : mDots) {
+                    dot.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.inactive_dot));
                 }
-                dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
+                if (position >= 0 && position < dotCount) {
+                    mDots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
+                }
             }
 
             @Override
