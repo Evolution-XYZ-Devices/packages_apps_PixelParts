@@ -10,10 +10,10 @@ PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has
 | --- | --- | --- | --- | --- |
 | **Battery** | `Battery info` | View various battery information | N/A |N/A |
 | | `Start/Stop charging` | Start/stop charging at specific percentages | N/A | N/A |
-| **Camera** | `Torch strength` | Adjust the brightness of the PixelParts flashlight QS-Tile | PixelParts Flashlight QS | N/A |
 | **Display** | `High brightness mode (HBM)` | Enable peak luminance. | Yes | N/A |
 |  | `Automatic HBM` | Enable peak luminance based on sunlight | Yes | N/A |
 |  | `Saturation` | Control the saturation level of the display | N/A | N/A |
+| **Leds** | `Torch strength` | Adjust the brightness of the PixelParts flashlight QS-Tile | PixelParts Flashlight QS | N/A |
 | **Ui-Bench** | `Jitter` | Calculate rendering jitter. | N/A | N/A |
 | **USB** | `USB 2.0 fast charge` | Enable CDP mode for faster charging on USB 2.0 ports. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/dcbfcd76bdc5d72e16f85fd8a48de6afa8804b61) |
 

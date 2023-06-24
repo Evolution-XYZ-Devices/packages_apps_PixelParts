@@ -9,7 +9,7 @@
     <com.android.settingslib.widget.TopIntroPreference
         android:key="device_intro"/>
 
-    <!-- Start of Battery category -->
+    <!-- Start of battery category -->
     <PreferenceCategory  
         android:key="category_battery"
         android:title="@string/category_battery">
@@ -45,22 +45,6 @@
             android:defaultValue="0" />
     </PreferenceCategory>
 
-    <!-- Start of Camera category -->
-    <PreferenceCategory  
-        android:key="category_camera"
-        android:title="@string/category_camera">
-
-        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
-            android:key="torch_strength"
-            android:title="@string/torch_strength_title"
-            android:summary="@string/torch_strength_summary"
-            android:persistent="true"
-            android:max="45"
-            android:min="1"
-            settings:units=""
-            android:defaultValue="45" />
-    </PreferenceCategory>
-
     <!-- Start of display category -->
     <PreferenceCategory  
         android:key="category_display"
@@ -92,7 +76,23 @@
         </Preference>
     </PreferenceCategory>
 
-    <!-- Start of UiBench Category -->
+    <!-- Start of leds category -->
+    <PreferenceCategory  
+        android:key="category_leds"
+        android:title="@string/category_leds">
+
+        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
+            android:key="torch_strength"
+            android:title="@string/torch_strength_title"
+            android:summary="@string/torch_strength_summary"
+            android:persistent="true"
+            android:max="45"
+            android:min="1"
+            settings:units=""
+            android:defaultValue="45" />
+    </PreferenceCategory>
+
+    <!-- Start of uibench category -->
     <PreferenceCategory
         android:key="category_uibench"
         android:title="@string/category_uibench">

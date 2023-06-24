@@ -135,8 +135,8 @@
     <string name="stop_below_start_error">Stop level must be above start level!</string>
     <string name="start_above_stop_error">Start level must be below stop level!</string>
 
-    <!-- Camera -->
-    <string name="category_camera">Camera</string>
+    <!-- Leds -->
+    <string name="category_leds">LEDs</string>
     <string name="pixeltorch_tile_title">Pixel Torch</string>
     <string name="torch_strength_title">Torch strength</string>
     <string name="torch_strength_summary">Adjust the brightness of the Pixel Torch QS-Tile</string>
