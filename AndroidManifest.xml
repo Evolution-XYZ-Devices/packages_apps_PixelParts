@@ -32,6 +32,16 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".TileHandlerActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
         <!-- Auto HBM activity -->
         <activity
             android:name=".autohbm.AutoHbmActivity"
