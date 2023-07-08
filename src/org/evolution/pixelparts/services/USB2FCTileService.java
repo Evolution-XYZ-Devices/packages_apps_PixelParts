@@ -18,9 +18,14 @@ public class USB2FCTileService extends TileService {
 
     private void updateTile(boolean enabled) {
         final Tile tile = getQsTile();
-        tile.setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        String subtitle = enabled ? getString(R.string.tile_on) : getString(R.string.tile_off);
-        tile.setSubtitle(subtitle);
+        if (FileUtils.isFileWritable(Constants.NODE_USB2_FAST_CHARGE)) {
+            tile.setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+            String subtitle = enabled ? getString(R.string.tile_on) : getString(R.string.tile_off);
+            tile.setSubtitle(subtitle);
+            tile.updateTile();
+        } else {
+            tile.setState(Tile.STATE_UNAVAILABLE);
+        }
         tile.updateTile();
     }
 

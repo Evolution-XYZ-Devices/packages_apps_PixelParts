@@ -13,14 +13,20 @@ import androidx.preference.PreferenceManager;
 import org.evolution.pixelparts.misc.Constants;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.AutoHBMUtils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class AutoHBMTileService extends TileService {
 
     private void updateTile(boolean enabled) {
         final Tile tile = getQsTile();
-        tile.setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        String subtitle = enabled ? getString(R.string.tile_on) : getString(R.string.tile_off);
-        tile.setSubtitle(subtitle);
+        if (FileUtils.isFileWritable(Constants.NODE_HBM)) {
+            tile.setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+            String subtitle = enabled ? getString(R.string.tile_on) : getString(R.string.tile_off);
+            tile.setSubtitle(subtitle);
+            tile.updateTile();
+        } else {
+            tile.setState(Tile.STATE_UNAVAILABLE);
+        }
         tile.updateTile();
     }
 
