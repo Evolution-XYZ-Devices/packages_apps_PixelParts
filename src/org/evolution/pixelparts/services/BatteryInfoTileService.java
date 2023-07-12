@@ -31,7 +31,12 @@ public class BatteryInfoTileService extends TileService {
         super.onClick();
         Intent intent = new Intent(this, BatteryInfoActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        );
         startActivityAndCollapse(pendingIntent);
     }
 }
