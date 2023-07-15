@@ -21,9 +21,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
-import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 
 import com.android.settingslib.widget.TopIntroPreference;
@@ -34,6 +36,7 @@ import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.services.HBMService;
 import org.evolution.pixelparts.utils.FileUtils;
+import org.evolution.pixelparts.utils.TorchUtils;
 
 public class PixelParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -109,6 +112,12 @@ public class PixelParts extends PreferenceFragment
             mAutoHBMPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHBMSwitch.setEnabled(false);
             mAutoHBMPreference.setEnabled(false);
+        }
+
+        // LEDs (PixelTorch)
+        PreferenceCategory categoryLEDS = findPreference("category_leds");
+        if (!TorchUtils.hasTorch(getContext())) {
+            getPreferenceScreen().removePreference(categoryLEDS);
         }
 
         // USB 2.0 fast charge switch
