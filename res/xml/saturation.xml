@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The Evolution X Project
+     Copyright (C) 2023-2024 The Evolution X Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:settings="http://schemas.android.com/apk/res/org.evolution.pixelparts">
 
-    <org.evolution.pixelparts.preferences.CustomSeekBarPreference
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+    <org.evolution.pixelparts.CustomSeekBarPreference
         android:key="saturation"
         android:persistent="true"
         android:max="200"

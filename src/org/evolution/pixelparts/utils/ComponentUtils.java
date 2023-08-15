@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Evolution X Project
+ * Copyright (C) 2023-2024 The Evolution X Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,7 +18,7 @@ public class ComponentUtils {
      * @param componentClass The class of the component to be enabled or disabled.
      * @param enable        If true, the component will be enabled; if false, it will be disabled.
      */
-    public static void setComponentEnabled(Context context, Class<?> componentClass, boolean enable) {
+    public static void toggleComponent(Context context, Class<?> componentClass, boolean enable) {
         ComponentName componentName = new ComponentName(context, componentClass);
         PackageManager packageManager = context.getPackageManager();
         int currentState = packageManager.getComponentEnabledSetting(componentName);

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="pixel_torch_intro"
+        android:title="@string/pixel_torch_summary" />
+
+    <org.evolution.pixelparts.CustomSeekBarPreference
+        android:key="pixel_torch_strength"
+        android:title="@string/pixel_torch_strength_title"
+        android:summary="@string/pixel_torch_strength_summary"
+        android:max="45"
+        android:min="1"
+        android:defaultValue="45" />
+</PreferenceScreen>

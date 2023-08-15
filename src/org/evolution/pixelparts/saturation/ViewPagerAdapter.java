@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2018 Havoc-OS
- *               2023 The Evolution X Project
+ *               2023-2024 The Evolution X Project
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 

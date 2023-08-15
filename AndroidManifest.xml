@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The Evolution X Project
+     Copyright (C) 2023-2024 The Evolution X Project
      SPDX-License-Identifier: Apache-2.0
 -->
 
@@ -8,11 +8,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           android:sharedUserId="android.uid.system"
           package="org.evolution.pixelparts"
-          android:versionCode="1"
-          android:versionName="1.0" >
-
-    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+          android:versionCode="2"
+          android:versionName="2.0" >
 
     <application
         android:icon="@drawable/ic_launcher_settings"
@@ -27,29 +24,6 @@
             android:authorities="${applicationId}.androidx-startup"
             tools:replace="android:authorities"/>
 
-        <!-- PixelParts -->
-        <activity
-            android:name=".PixelPartsActivity"
-            android:label="@string/pixel_parts_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.icon"
-                android:resource="@drawable/ic_pixel_parts" />
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.homepage" />
-            <meta-data android:name="com.android.settings.summary"
-                android:resource="@string/pixel_parts_summary" />
-        </activity>
-
-        <activity
-            android:name=".PixelParts"
-            android:exported="false" />
-
-        <!-- PixelParts boot completed receiver -->
         <receiver
             android:name=".Startup"
             android:exported="false">  
@@ -58,37 +32,41 @@
             </intent-filter>
         </receiver>
 
-        <!-- HBM service -->
-        <service
-            android:name=".services.HBMService"
-            android:exported="false" />
-
-        <!-- Auto HBM service -->
-        <service
-            android:name=".services.AutoHBMService"
-            android:exported="false" />
-
-        <!-- About activity -->
-        <activity
-            android:name=".about.AboutActivity"
-            android:label="@string/pixel_parts_about_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
         <!-- Auto HBM activity -->
         <activity
-            android:name=".autohbm.AutoHBMActivity"
+            android:name=".autohbm.AutoHbmActivity"
             android:label="@string/auto_hbm_title"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/auto_hbm_summary" />
         </activity>
+
+        <!-- Auto HBM service -->
+        <service
+            android:name=".autohbm.AutoHbmService"
+            android:exported="false" />
+
+        <!-- Auto HBM tile service -->
+        <service
+            android:name=".autohbm.AutoHbmTileService"
+            android:label="@string/auto_hbm_title"
+            android:icon="@drawable/ic_auto_hbm_tile"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+        </service>
 
         <!-- Battery info activity -->
         <activity
@@ -96,49 +74,19 @@
             android:label="@string/battery_info_title"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/battery_info_summary" />
         </activity>
-
-        <!-- Jitter test activity -->
-        <activity
-            android:name=".uibench.JitterTestActivity"
-            android:label="@string/jitter_test_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- Saturation activity -->
-        <activity
-            android:name=".saturation.SaturationActivity"
-            android:label="@string/saturation_title"
-            android:screenOrientation="portrait"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- PixelParts tile service -->
-        <service
-            android:name=".services.PixelPartsTileService"
-            android:label="@string/pixel_parts_title"
-            android:icon="@drawable/ic_pixel_parts_tile"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
 
         <!-- Battery info tile service -->
         <service  
-            android:name=".services.BatteryInfoTileService"
+            android:name=".batteryinfo.BatteryInfoTileService"
             android:label="@string/battery_info_title"
             android:icon="@drawable/ic_battery_info_tile"
             android:exported="true"  
@@ -148,9 +96,73 @@
             </intent-filter>
         </service>
 
+        <!-- Charge control activity -->
+        <activity
+            android:name=".chargecontrol.ChargeControlActivity"
+            android:label="@string/charge_control_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/charge_control_summary" />
+        </activity>
+
+        <!-- Pixel torch activity -->
+        <activity
+            android:name=".pixeltorch.PixelTorchActivity"
+            android:label="@string/pixel_torch_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.apps" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/pixel_torch_summary" />
+        </activity>
+
+        <!-- Pixel torch tile service -->
+        <service
+            android:name=".pixeltorch.PixelTorchTileService"
+            android:label="@string/pixel_torch_title"
+            android:icon="@drawable/ic_pixel_torch_tile"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+        </service>
+
+        <!-- Saturation activity -->
+        <activity
+            android:name=".saturation.SaturationActivity"
+            android:label="@string/saturation_title"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/saturation_summary" />
+        </activity>
+
         <!-- Saturation tile service -->
         <service  
-            android:name=".services.SaturationTileService"
+            android:name=".saturation.SaturationTileService"
             android:label="@string/saturation_title"
             android:icon="@drawable/ic_saturation_tile"
             android:exported="true"  
@@ -160,65 +172,35 @@
             </intent-filter>
         </service>
 
-        <!-- PixelTorch tile service -->
-        <service
-            android:name=".services.PixelTorchTileService"
-            android:label="@string/pixeltorch_tile_title"
-            android:icon="@drawable/ic_pixeltorch_tile"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <!-- HBM tile service -->
-        <service
-            android:name=".services.HBMTileService"
-            android:label="@string/hbm_title"
-            android:icon="@drawable/ic_hbm_tile"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <!-- Auto HBM tile service -->
-        <service
-            android:name=".services.AutoHBMTileService"
-            android:label="@string/auto_hbm_title"
-            android:icon="@drawable/ic_hbm_tile"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <!-- USB 2.0 Fastcharge tile service -->
-        <service
-            android:name=".services.USB2FCTileService"
-            android:label="@string/usb2_fast_charge_title"
-            android:icon="@drawable/ic_usb2_fc_tile"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-        <!-- Search Provider -->
-        <provider
-            android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="org.evolution.pixelparts"
-            android:multiprocess="false"
-            android:grantUriPermissions="true"
-            android:permission="android.permission.READ_SEARCH_INDEXABLES"
+        <!-- Fast charge activity-->
+        <activity
+            android:name=".fastcharge.FastChargeActivity"
+            android:label="@string/fast_charge_title"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
-        </provider>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/fast_charge_summary" />
+        </activity>
+
+        <!-- Fast charge tile service -->
+        <service
+            android:name=".fastcharge.FastChargeTileService"
+            android:label="@string/fast_charge_title"
+            android:icon="@drawable/ic_fast_charge_tile"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+        </service>
     </application>
 </manifest>

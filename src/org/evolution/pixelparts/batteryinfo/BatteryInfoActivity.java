@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Evolution X Project
+ * Copyright (C) 2023-2024 The Evolution X Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,6 +19,6 @@ public class BatteryInfoActivity extends CollapsingToolbarBaseActivity {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new BatteryInfo(), TAG).commit();
+                new BatteryInfoFragment(), TAG).commit();
     }
 }

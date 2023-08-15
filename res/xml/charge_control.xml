@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="charge_control_intro"
+        android:title="@string/charge_control_summary" />
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="charge_control"
+        android:title="@string/charge_control_main_switch_title"
+        android:defaultValue="false" />
+
+    <org.evolution.pixelparts.CustomSeekBarPreference
+        android:key="stop_charging"
+        android:title="@string/stop_charging_title"
+        android:persistent="true"
+        android:max="100"
+        android:min="1"
+        settings:units="%"
+        android:defaultValue="100" />
+
+    <org.evolution.pixelparts.CustomSeekBarPreference
+        android:key="start_charging"
+        android:title="@string/start_charging_title"
+        android:persistent="true"
+        android:max="99"
+        android:min="0"
+        settings:units="%"
+        android:defaultValue="0" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="charge_control_footer"
+        android:title="@string/charge_control_footer_summary"
+        android:selectable="false" />
+</PreferenceScreen>

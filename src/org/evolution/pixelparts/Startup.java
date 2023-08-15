@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2018-2022 crDroid Android Project
- *               2023 The Evolution X Project
+ * Copyright (C) 2023-2024 The Evolution X Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,33 +9,74 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import org.evolution.pixelparts.saturation.Saturation;
-import org.evolution.pixelparts.services.PixelTorchTileService;
-import org.evolution.pixelparts.utils.AutoHBMUtils;
+import org.evolution.pixelparts.autohbm.AutoHbmActivity;
+import org.evolution.pixelparts.autohbm.AutoHbmFragment;
+import org.evolution.pixelparts.autohbm.AutoHbmTileService;
+import org.evolution.pixelparts.chargecontrol.ChargeControlFragment;
+import org.evolution.pixelparts.fastcharge.FastChargeActivity;
+import org.evolution.pixelparts.fastcharge.FastChargeFragment;
+import org.evolution.pixelparts.fastcharge.FastChargeTileService;
+import org.evolution.pixelparts.pixeltorch.PixelTorchActivity;
+import org.evolution.pixelparts.pixeltorch.PixelTorchFragment;
+import org.evolution.pixelparts.pixeltorch.PixelTorchTileService;
+import org.evolution.pixelparts.saturation.SaturationFragment;
 import org.evolution.pixelparts.utils.ComponentUtils;
-import org.evolution.pixelparts.utils.TorchUtils;
+import org.evolution.pixelparts.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
-
-    private static final String TAG = Startup.class.getSimpleName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
 
-        // PixelParts
-        PixelParts.restoreStopChargingSetting(context);
-        PixelParts.restoreStartChargingSetting(context);
-        PixelParts.restoreHBMSetting(context);
-        PixelParts.restoreUSB2FastChargeSetting(context);
-        AutoHBMUtils.enableAutoHBM(context);
-        Saturation.restoreSaturationSetting(context);
+        // Auto hbm
+        AutoHbmFragment.toggleAutoHbmService(context);
 
-        // PixelTorchTileService
-        ComponentUtils.setComponentEnabled(
+        ComponentUtils.toggleComponent(
+                context,
+                AutoHbmActivity.class,
+                AutoHbmFragment.isHbmSupported(context)
+        );
+
+        ComponentUtils.toggleComponent(
+                context,
+                AutoHbmTileService.class,
+                AutoHbmFragment.isHbmSupported(context)
+        );
+
+        // Charge control
+        ChargeControlFragment.restoreStartChargingSetting(context);
+        ChargeControlFragment.restoreStopChargingSetting(context);
+
+        // Fast charge
+        FastChargeFragment.restoreFastChargeSetting(context);
+
+        ComponentUtils.toggleComponent(
+                context,
+                FastChargeActivity.class,
+                FileUtils.fileExists(Constants.NODE_FAST_CHARGE)
+        );
+
+        ComponentUtils.toggleComponent(
+                context,
+                FastChargeTileService.class,
+                FileUtils.fileExists(Constants.NODE_FAST_CHARGE)
+        );
+
+        // PixelTorch
+        ComponentUtils.toggleComponent(
+                context,
+                PixelTorchActivity.class,
+                PixelTorchFragment.hasTorch(context)
+        );
+
+        ComponentUtils.toggleComponent(
                 context,
                 PixelTorchTileService.class,
-                TorchUtils.hasTorch(context)
+                PixelTorchFragment.hasTorch(context)
         );
+
+        // Saturation
+        SaturationFragment.restoreSaturationSetting(context);
     }
 }

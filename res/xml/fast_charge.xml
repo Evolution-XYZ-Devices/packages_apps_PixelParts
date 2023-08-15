@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="fast_charge_intro"
+        android:title="@string/fast_charge_summary" />
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="fast_charge"
+        android:title="@string/fast_charge_main_switch_title"
+        android:defaultValue="false" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="fast_charge_footer"
+        android:title="@string/fast_charge_footer_summary"
+        android:selectable="false" />
+</PreferenceScreen>

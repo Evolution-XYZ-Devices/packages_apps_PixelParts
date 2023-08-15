@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Evolution X Project
+ * Copyright (C) 2023-2024 The Evolution X Project
  *               2018 Havoc-OS
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -27,8 +27,6 @@ public class SaturationActivity extends CollapsingToolbarBaseActivity {
     private LinearLayout mSliderDotsPanel;
     private ImageView[] mDots;
 
-    private Saturation mSaturationFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +34,8 @@ public class SaturationActivity extends CollapsingToolbarBaseActivity {
 
         setupImageSlider();
 
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.saturation);
-        if (fragment == null) {
-            mSaturationFragment = new Saturation();
-            getFragmentManager().beginTransaction()
-                    .add(R.id.saturation, mSaturationFragment)
-                    .commit();
-        } else {
-            mSaturationFragment = (Saturation) fragment;
-        }
+        getFragmentManager().beginTransaction().replace(R.id.saturation,
+                new SaturationFragment(), TAG).commit();
     }
 
     private void setupImageSlider() {

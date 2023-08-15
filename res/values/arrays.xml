@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <string-array name="unsupported_hbm_devices" translatable="false">
+        <item>tangorpro</item>
+        <item>felix</item>
+    </string-array>
+
+</resources>

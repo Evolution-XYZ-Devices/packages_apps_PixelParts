@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2023 The Evolution X Project
+// Copyright (C) 2023-2024 The Evolution X Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -8,28 +8,20 @@ android_app {
     defaults: [
         "SettingsLibDefaults",
     ],
-    srcs: [
-        "src/**/*.java",
-        "src/**/*.kt",
-    ],
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
     certificate: "platform",
     platform_apis: true,
     system_ext_specific: true,
     privileged: true,
+
     static_libs: [
         "androidx.core_core",
         "androidx.preference_preference",
-        "particles",
     ],
-    resource_dirs: ["res"],
+
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
-}
-
-java_import {
-    name: "particles",
-    jars: [
-        "libs/LeonidsLib.jar",
-    ],
 }

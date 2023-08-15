@@ -1,4 +1,4 @@
-![example](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/tiramisu/PixelParts.png)
+![example](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/udc/readme_resources/PixelParts.png)
 
 ## About the app
 
@@ -8,15 +8,12 @@ PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has
 
 | Category | Feature | Description | QS Tile | Required kernel changes |
 | --- | --- | --- | --- | --- |
-| **Battery** | `Battery info` | View various battery information | N/A |N/A |
-| | `Start/Stop charging` | Start/stop charging at specific percentages | N/A | N/A |
-| **Display** | `High brightness mode (HBM)` | Enable peak luminance. | Yes | N/A |
-|  | `Automatic HBM` | Enable peak luminance based on sunlight | Yes | N/A |
-|  | `Saturation` | Control the saturation level of the display | N/A | N/A |
-| **Leds** | `Torch strength` | Adjust the brightness of the PixelParts flashlight QS-Tile | PixelParts Flashlight QS | N/A |
-| **Ui-Bench** | `Jitter` | Calculate rendering jitter. | N/A | N/A |
-| **USB** | `USB 2.0 fast charge` | Enable CDP mode for faster charging on USB 2.0 ports. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/dcbfcd76bdc5d72e16f85fd8a48de6afa8804b61) |
-
+| **Battery** | `Battery information` | View various battery information | Yes |N/A |
+| | `Charge control` | Start/stop charging at specific percentages | N/A | N/A | 
+| | `Fast charge` | Enable CDP mode for faster charging on USB 2.0 ports. | Yes | [Commit 1/1](https://github.com/Evolution-X-Devices/kernel_google_gs101/commit/dcbfcd76bdc5d72e16f85fd8a48de6afa8804b61) |
+| **Display** | `Automatic high brightness mode (HBM)` | Enable peak luminance based on sunlight | Yes | N/A |
+|  | `Saturation` | Control the saturation level of the display | Yes | N/A |
+| **Leds** | `Pixel torch` | Adjust the brightness of the PixelParts flashlight QS-Tile | PixelParts Flashlight QS | N/A |
 
 ## Including PixelParts
 
@@ -41,7 +38,7 @@ croot && git clone https://github.com/Evolution-X-Devices/packages_apps_PixelPar
 include packages/apps/PixelParts/device.mk
 ```
 
-This line includes the [device.mk](https://github.com/Evolution-X-Devices/packages_apps_PixelParts/blob/tiramisu/device.mk) file from the PixelParts repository, which will add the PixelParts application, its initialization script (init.rc), and the necessary security policies (sepolicies) to your AOSP build during compilation.
+This line includes the [device.mk](https://github.com/Evolution-X-Devices/packages_apps_PixelParts/blob/udc/device.mk) file from the PixelParts repository, which will add the PixelParts application, its initialization script (init.rc), and the necessary security policies (sepolicies) to your AOSP build during compilation.
 
 ## Testing changes
 
@@ -54,19 +51,9 @@ m PixelParts
 ```
 - This also assumes you are already running an AOSP build including PixelParts as a priv-app in /system_ext.
 
-## Screenshots
-![screenshots_1](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/tiramisu/screenshots_1.png)
-
-![screenshots_2](https://raw.githubusercontent.com/Evolution-X-Devices/packages_apps_PixelParts/tiramisu/screenshots_2.png)
-
-
 ## Credits
 
-| Work                                                        | Author                                                                     |
+| Work                                                        | Author                                                                      |
 | ----------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Base preference fragment & CustomSeekBar preference         | [Neobuddy89](https://forum.xda-developers.com/m/neobuddy89.3795148/)        |
+| CustomSeekBar preference                                    | [Neobuddy89](https://forum.xda-developers.com/m/neobuddy89.3795148/)        |
 | Original AutoHBMService                                     | [Hikari no Tenshi](https://forum.xda-developers.com/m/hikari-no-tenshi.4337348/) & [maxwen](https://forum.xda-developers.com/m/maxwen.4683552/) |
-| ShakeUtils                                                  | [AmeChanRain](https://github.com/AmeChanRain)                               |
-| First launch warning dialog                                 | [Ramyski](https://forum.xda-developers.com/m/ramyski.8538037/)               |
-| Leonids particle system                                     | [Plattysoft](https://github.com/plattysoft)                                 |
-| Randomized color particle effect                            | [LorD ClockaN](https://forum.xda-developers.com/m/lord-clockan.1184673/)    |

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The Evolution X Project
+     Copyright (C) 2023-2024 The Evolution X Project
                    2016-2022 crDroid Android Project
      SPDX-License-Identifier: Apache-2.0
 -->
@@ -8,83 +8,33 @@
 
     <!-- PixelParts -->
     <string name="pixel_parts_title">Pixel Parts</string>
-    <string name="pixel_parts_summary">Configure device specific settings</string>
-    <string name="pixel_parts_warning_title">Warning</string>
-    <string name="pixel_parts_warning_text">Some of these features rely on specific kernel nodes in order to function. When flashing a custom kernel, you risk the possibility of losing access to some of these features. You have been warned!</string>
-    <string name="pixel_parts_dialog">OK</string>
-    <string name="pixel_parts_about_title">About</string>
-    <string name="pixel_parts_about_summary">PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has evolved to include a detailed battery information panel, a display saturation level adjuster, charging limiter and more. The app now offers a wide range of features, transitioning from its original function as an HBM tool to a hub for device tweaks and stats on customs, with a lot more planned going forward</string>   
-    <string name="about_category_links">Various links</string>
-    <string name="about_category_credit">Credit</string>
-    <string name="pixel_parts_github_title" translatable="false">GitHub</string>
-    <string name="pixel_parts_github_summary">Check out the GitHub repository</string>
-    <string name="pixel_parts_xda_title" translatable="false">XDA</string>
-    <string name="pixel_parts_xda_summary">Check out the XDA thread</string>
-    <string name="pixel_parts_developer_title">Developer</string>
-    <string name="pixel_parts_developer_summary" translatable="false">Anierin Bliss</string>
     <string name="kernel_node_access_error">Kernel node access failed! Please ensure the provided path to the sysfs or procfs attribute is accurate, that it has appropriate permissions, and the SELinux policies are properly configured.</string>
+    <string name="kernel_node_returned_value_unknown">No string resource found for the value returned by the node.</string>
     <string name="tile_on">On</string>
     <string name="tile_off">Off</string>
+    <string name="tile_camera_in_use">Camera in use</string>
 
-    <!-- Battery -->
-    <string name="category_battery">Battery</string>
-    <string name="battery_info_title">Battery info</string>
-    <string name="battery_info_summary">View various battery information</string>
+    <!-- Battery info -->
+    <string name="battery_info_title">Battery information</string>
+    <string name="battery_info_summary">View various information pertaining to the battery</string>
     <string name="battery_info_refresh_title">Refresh info every second</string>
     <string name="launch_battery_usage_title">Launch battery usage summary</string>
-    <string name="category_battery_info">Available info</string>
     <string name="technology_title">Technology</string>
-    <string name="technology_info_title">Technology information</string>
-    <string name="technology_info_message">
-    Li-ion (Lithium-ion):\n\nWidely used in smartphones and many electronic devices, Li-ion batteries provide high energy density, lightweight design, and relatively low self-discharge rate.\n\n
-    NiMH (Nickel Metal Hydride):\n\nOffering a good balance between capacity and cost, NiMH batteries are commonly used in certain devices.\n\n
-    Li-poly (Lithium Polymer):\n\nSimilar to Li-ion batteries, Li-poly batteries have a flexible and lightweight form factor. They are often used in slim devices where space is a concern.\n\n
-    LiFe (Lithium Iron Phosphate):\n\nProviding a longer lifespan, enhanced safety, and better temperature tolerance, LiFe batteries are commonly used in applications prioritizing durability and stability.\n\n
-    NiCd (Nickel Cadmium):\n\nAn older technology with lower energy density and higher self-discharge rate, NiCd batteries are less common nowadays due to environmental concerns.\n\n
-    LiMn (Lithium Manganese):\n\nA variant of Li-ion batteries, LiMn batteries offer high power output and stability, making them suitable for applications requiring high current.\n\n
-    In smartphones, Li-ion batteries are the most commonly used technology due to their optimal balance of performance, capacity, and safety.
-    </string>
     <string name="status_title">Status</string>
-    <string name="status_info_title">Status information</string>
-    <string name="status_info_message">
-    Unknown:\n\nThe status of the device is currently unknown.\n\n
-    Charging:\n\nThe device is currently being charged.\n\n
-    Discharging:\n\nThe device is currently discharging its battery.\n\n
-    Not charging:\n\nThe device is connected but not actively charging its battery.
-    </string>
     <string name="status_unknown">Unknown</string>
     <string name="status_charging">Charging</string>
     <string name="status_discharging">Discharging</string>
     <string name="status_not_charging">Not charging</string>
     <string name="status_full">Full</string>
     <string name="usb_type_title">USB type</string>
-    <string name="usb_type_info_title">USB type information</string>
-    <string name="usb_type_info_message">
-    Standard Downstream Port (SDP):\n\nThis is the most basic form of USB connection. It can be used for data transfer and also to supply power, but it doesn\'t have any special features for charging devices more quickly.\n\n
-    Charging Downstream Port (CDP):\n\nThis type of USB connection also supports data transfer, but it can supply more power than an SDP port. This means it can charge devices more quickly while still allowing for data transfer. CDPs were introduced in the USB Battery Charging Specification (Revision 1.2), to address the need of charging batteries of portable devices.\n\n
-    Dedicated Charging Port (DCP):\n\nThis type of USB connection doesn\'t support data transfer at all. It\'s only used for charging devices, and it can usually supply even more power than a CDP port. DCP is used when there is a need for more power to charge a device but no data transfer is needed.
-    </string>
     <string name="usb_type_unknown_or_not_connected">Not connected or unknown</string>
     <string name="usb_type_standard_downstream_port">Standard Downstream Port (SDP)</string>
     <string name="usb_type_charging_downstream_port">Charging Downstream Port (CDP)</string>
     <string name="usb_type_dedicated_charging_port">Dedicated Charging Port (DCP)</string>
     <string name="temperature_title">Temperature</string>
-    <string name="temperature_info_title">Temperature information</string>
-    <string name="temperature_info_message">Temperature refers to the degree of hotness or coldness, measured in Celsius (°C) or Fahrenheit (°F). High temperatures can impact device performance and lifespan. Recommended operating ranges for smartphones are typically between 0°C and 35°C (32°F and 95°F). Monitoring temperature ensures devices stay within the safe range, preventing overheating and damage. Maintaining suitable temperatures contributes to optimal performance and longevity.</string>
     <string name="temperature_unit_title">Use °F for temperature</string>
     <string name="capacity_title">Capacity now</string>
-    <string name="capacity_info_title">Capacity information</string>
-    <string name="capacity_info_message">Capacity refers to the current charge level of the battery, represented as a percentage of its overall capacity. It indicates how much charge is currently available compared to the maximum capacity. Monitoring the capacity level in percentage helps estimate the remaining battery power and plan power usage accordingly.</string>
     <string name="capacity_level_title">Capacity level</string>
-    <string name="capacity_level_info_title">Capacity level information</string>
-    <string name="capacity_level_info_message">
-    Unknown:\n\nThe current battery capacity level is unknown.\n\n
-    Critical:\n\nThe battery capacity is critically low. Immediate charging is recommended.\n\n
-    Low:\n\nThe battery capacity is low. Consider charging the device.\n\n
-    Normal:\n\nThe battery capacity is at a normal level.\n\n
-    High:\n\nThe battery capacity is relatively high. No immediate charging is required.\n\n
-    Full:\n\nThe battery capacity is at full capacity. The device is fully charged.
-    </string>
     <string name="capacity_level_unknown">Unknown</string>
     <string name="capacity_level_critical">Critical</string>
     <string name="capacity_level_low">Low</string>
@@ -92,25 +42,9 @@
     <string name="capacity_level_high">High</string>
     <string name="capacity_level_full">Full</string>
     <string name="current_title">Current</string>
-    <string name="current_info_title">Current information</string>
-    <string name="current_info_message">Current refers to the flow of electric charge in a circuit, measured in milliamperes (mA). It represents the rate at which electric charge is flowing. The current value indicates the amount of charge being charged or discharged by a device. Monitoring the current value helps track the flow of power and manage the charging or discharging process effectively.</string>
     <string name="voltage_title">Voltage</string>
-    <string name="voltage_info_title">Voltage information</string>
-    <string name="voltage_info_message">Voltage refers to the electrical potential difference in a circuit, measured in volts (V). It determines the behavior and functionality of electrical devices. Matching the required voltage ensures proper device operation, while incorrect voltage levels can cause damage or malfunction.</string>
     <string name="wattage_title">Wattage</string>
-    <string name="wattage_info_title">Wattage information</string>
-    <string name="wattage_info_message">Wattage refers to the amount of electrical power consumed or produced by a device. It is calculated by multiplying the voltage by the current (Wattage = Voltage × Current). Understanding wattage helps determine power requirements, device capabilities, and ensures safe operation of electrical devices.</string>
     <string name="health_title">Health</string>
-    <string name="health_info_title">Health information</string>
-    <string name="health_info_message">
-    Unknown:\n\nThe battery health status is currently unknown.\n\n
-    Good:\n\nThe battery is in good health and functioning properly.\n\n
-    Overheat:\n\nThe battery is experiencing overheat, which may affect its performance and lifespan.\n\n
-    Dead:\n\nThe battery is dead and no longer functional. Replacement is necessary.\n\n
-    Over voltage:\n\nThe battery is experiencing over voltage, which may pose a risk to the device.\n\n
-    Unspecified failure:\n\nThe battery has encountered an unspecified failure, affecting its performance.\n\n
-    Cold:\n\nThe battery is experiencing cold temperature conditions, which may affect its performance and capacity.
-    </string>
     <string name="health_unknown">Unknown</string>
     <string name="health_good">Good</string>
     <string name="health_overheat">Overheat</string>
@@ -126,25 +60,26 @@
     <string name="health_cool">Cool</string>
     <string name="health_hot">Hot</string>
     <string name="cycle_count_title">Cycle count</string>
-    <string name="cycle_count_info_title">Cycle count information</string>
-    <string name="cycle_count_info_message">Cycle count refers to the number of charge-discharge cycles a rechargeable battery has undergone. It indicates the usage and aging of the battery. Monitoring the cycle count helps estimate battery lifespan and helps determine if a replacement is needed.</string>
+
+    <!-- Charge control -->
+    <string name="charge_control_title">Charge control</string>
+    <string name="charge_control_summary">Control when the device stops and starts charging</string>
+    <string name="charge_control_main_switch_title">Use Charge control</string>
     <string name="stop_charging_title">Stop charging level</string>
-    <string name="stop_charging_summary">Prevent the device from charging over a specific percentage</string>
+    <string name="stop_charging_summary">Stop charging when the set percentage is reached</string>
     <string name="start_charging_title">Start charging level</string>
-    <string name="start_charging_summary">Resume charging at a specific percentage</string>
+    <string name="start_charging_summary">Resume charging when the set percentage is reached</string>
     <string name="stop_below_start_error">Stop level must be above start level!</string>
     <string name="start_above_stop_error">Start level must be below stop level!</string>
+    <string name="charge_control_footer_summary">Charge control may interfere with adaptive charging.</string>
 
-    <!-- Leds -->
-    <string name="category_leds">LEDs</string>
-    <string name="pixeltorch_tile_title">Pixel Torch</string>
-    <string name="torch_strength_title">Torch strength</string>
-    <string name="torch_strength_summary">Adjust the brightness of the Pixel Torch QS-Tile</string>
+    <!-- Pixel torch -->
+    <string name="pixel_torch_title">Pixel torch</string>
+    <string name="pixel_torch_summary">Adjust the brightness of the Pixel Torch QS-Tile</string>
+    <string name="pixel_torch_strength_title">Strength</string>
+    <string name="pixel_torch_strength_summary">The brightness level used by Pixel torch</string>
 
-    <!-- Display -->
-    <string name="category_display">Display</string>
-    <string name="hbm_title">High brightness mode (HBM)</string>
-    <string name="hbm_summary">Directly enable high brightness mode</string>
+    <!-- Auto hbm -->
     <string name="auto_hbm_title">Automatic HBM</string>
     <string name="auto_hbm_main_switch_title">Use automatic HBM</string>
     <string name="auto_hbm_summary">Automatically enable high brightness mode based on sunlight intensity (lux)</string>
@@ -154,25 +89,21 @@
     <string name="auto_hbm_enable_time_summary">Duration in seconds that the light threshold must be continuously met to activate HBM</string>
     <string name="auto_hbm_disable_time_title">Disable time</string>
     <string name="auto_hbm_disable_time_summary">Duration in seconds for which HBM is deactivated if the light threshold falls below the set level</string>
+
+    <!-- Saturation -->
     <string name="saturation_title">Saturation</string>
     <string name="saturation_summary">Control the saturation level of the display</string>
     <string name="saturation_footer_summary">Changing the color mode in display settings will override the saturation level, requiring it to be reapplied.</string>
 
-    <!-- UiBench -->
-    <string name="category_uibench">UiBench</string>
-    <string name="jitter_test_title">Jitter</string>
-    <string name="jitter_test_summary">Calculate rendering jitter</string>
-
-    <!-- USB -->
-    <string name="category_usb">USB</string>
-    <string name="usb2_fast_charge_title">USB 2.0 fast charge</string>
-    <string name="usb2_fast_charge_summary">Enable CDP mode for fast charging on USB 2.0 ports</string>
-    <string name="usb2_fast_charge_footer_summary">Caution: Not all USB 2.0 ports support CDP mode. For changes to take effect, disconnect and reconnect the device after enabling or disabling this mode.</string>
+    <!-- Fast charge -->
+    <string name="fast_charge_title">Fast charge</string>
+    <string name="fast_charge_summary">Enable CDP mode for fast charging on USB 2.0 ports</string>
+    <string name="fast_charge_main_switch_title">Use Fast charge</string>
+    <string name="fast_charge_footer_summary">Caution: Not all USB 2.0 ports support CDP mode. For changes to take effect, disconnect and reconnect the device after enabling or disabling this mode.</string>
 
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">by default</string>
     <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
     <string name="custom_seekbar_default_value_is_set">Default value is set</string>
-
 </resources>
