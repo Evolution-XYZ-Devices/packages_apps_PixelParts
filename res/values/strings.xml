@@ -59,6 +59,8 @@
     <string name="health_warm">Warm</string>
     <string name="health_cool">Cool</string>
     <string name="health_hot">Hot</string>
+    <string name="manufacturing_date_title">Manufacture date</string>
+    <string name="first_usage_date_title">Date of first use</string>
     <string name="cycle_count_title">Cycle count</string>
     <string name="battery_cycle_count_footer">Due to quality inspections before shipping, the cycle count may not be zero on first use</string>
 

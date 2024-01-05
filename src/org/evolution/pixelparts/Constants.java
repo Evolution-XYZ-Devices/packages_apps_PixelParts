@@ -20,6 +20,8 @@ public class Constants {
     public static final String KEY_VOLTAGE = "voltage";
     public static final String KEY_WATTAGE = "wattage";
     public static final String KEY_HEALTH = "health";
+    public static final String KEY_MANUFACTURING_DATE = "manufacturing_date";
+    public static final String KEY_FIRST_USAGE_DATE = "first_usage_date";
     public static final String KEY_CYCLE_COUNT = "cycle_count";
     public static final String NODE_TECHNOLOGY = "/sys/class/power_supply/battery/technology";
     public static final String NODE_STATUS = "/sys/class/power_supply/battery/status";
@@ -30,6 +32,8 @@ public class Constants {
     public static final String NODE_CURRENT = "/sys/class/power_supply/battery/current_now";
     public static final String NODE_VOLTAGE = "/sys/class/power_supply/battery/voltage_now";
     public static final String NODE_HEALTH = "/sys/class/power_supply/battery/health";
+    public static final String NODE_MANUFACTURING_DATE = "/sys/class/power_supply/battery/manufacturing_date";
+    public static final String NODE_FIRST_USAGE_DATE = "/sys/class/power_supply/battery/first_usage_date";
     public static final String NODE_CYCLE_COUNT = "/sys/class/power_supply/battery/cycle_count";
 
     // Charge control

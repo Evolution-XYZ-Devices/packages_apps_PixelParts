@@ -20,6 +20,10 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import org.evolution.pixelparts.Constants;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.FileUtils;
@@ -42,6 +46,8 @@ public class BatteryInfoFragment extends PreferenceFragment
     private Preference mVoltagePreference;
     private Preference mWattagePreference;
     private Preference mHealthPreference;
+    private Preference mManufacturingDatePreference;
+    private Preference mFirstUsageDatePreference;
     private Preference mCycleCountPreference;
 
     @Override
@@ -73,6 +79,8 @@ public class BatteryInfoFragment extends PreferenceFragment
         mVoltagePreference = findPreference(Constants.KEY_VOLTAGE);
         mWattagePreference = findPreference(Constants.KEY_WATTAGE);
         mHealthPreference = findPreference(Constants.KEY_HEALTH);
+        mManufacturingDatePreference = findPreference(Constants.KEY_MANUFACTURING_DATE);
+        mFirstUsageDatePreference = findPreference(Constants.KEY_FIRST_USAGE_DATE);
         mCycleCountPreference = findPreference(Constants.KEY_CYCLE_COUNT);
 
         updatePreferenceSummaries();
@@ -235,6 +243,27 @@ public class BatteryInfoFragment extends PreferenceFragment
         } else {
             mHealthPreference.setSummary(getString(R.string.kernel_node_access_error));
             mHealthPreference.setEnabled(false);
+        }
+
+        // Manufacturing date preference
+        if (FileUtils.isFileReadable(Constants.NODE_MANUFACTURING_DATE)) {
+            long timestamp = Long.parseLong(FileUtils.getFileValue(Constants.NODE_MANUFACTURING_DATE, null)) * 1000L;
+            Date date = new Date(timestamp);
+            SimpleDateFormat sdf = new SimpleDateFormat("MMMM d, yyyy", Locale.getDefault());
+            mManufacturingDatePreference.setSummary(sdf.format(date));
+        } else {
+            mManufacturingDatePreference.setSummary(getString(R.string.kernel_node_access_error));
+            mManufacturingDatePreference.setEnabled(false);
+        }
+
+        // First usage date preference
+        if (FileUtils.isFileReadable(Constants.NODE_FIRST_USAGE_DATE)) {
+            Date date = new Date(Long.parseLong(FileUtils.getFileValue(Constants.NODE_FIRST_USAGE_DATE, null)) * 1000L);
+            SimpleDateFormat sdf = new SimpleDateFormat("MMMM d, yyyy", Locale.getDefault());
+            mFirstUsageDatePreference.setSummary(sdf.format(date));
+        } else {
+            mFirstUsageDatePreference.setSummary(getString(R.string.kernel_node_access_error));
+            mFirstUsageDatePreference.setEnabled(false);
         }
 
         // Cycle count preference
