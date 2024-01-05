@@ -20,6 +20,8 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 
+import com.android.settingslib.widget.UsageProgressBarPreference;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -36,11 +38,11 @@ public class BatteryInfoFragment extends PreferenceFragment
     private SharedPreferences mSharedPrefs;
 
     // Battery info
+    private UsageProgressBarPreference mCapacityStatusPreference;
+
     private Preference mTechnologyPreference;
-    private Preference mStatusPreference;
     private Preference mUSBTypePreference;
     private Preference mTemperaturePreference;
-    private Preference mCapacityPreference;
     private Preference mCapacityLevelPreference;
     private Preference mCurrentPreference;
     private Preference mVoltagePreference;
@@ -69,11 +71,11 @@ public class BatteryInfoFragment extends PreferenceFragment
             }
         };
 
+        mCapacityStatusPreference = findPreference(Constants.KEY_CAPACITY_STATUS);
+
         mTechnologyPreference = findPreference(Constants.KEY_TECHNOLOGY);
-        mStatusPreference = findPreference(Constants.KEY_STATUS);
         mUSBTypePreference = findPreference(Constants.KEY_USB_TYPE);
         mTemperaturePreference = findPreference(Constants.KEY_TEMPERATURE);
-        mCapacityPreference = findPreference(Constants.KEY_CAPACITY);
         mCapacityLevelPreference = findPreference(Constants.KEY_CAPACITY_LEVEL);
         mCurrentPreference = findPreference(Constants.KEY_CURRENT);
         mVoltagePreference = findPreference(Constants.KEY_VOLTAGE);
@@ -131,6 +133,22 @@ public class BatteryInfoFragment extends PreferenceFragment
     }
 
     private void updatePreferenceSummaries() {
+        // Capacity & status preference
+        if (FileUtils.isFileReadable(Constants.NODE_CAPACITY) && FileUtils.isFileReadable(Constants.NODE_STATUS)) {
+            String capacityFileValue = FileUtils.getFileValue(Constants.NODE_CAPACITY, null);
+            String statusFileValue = FileUtils.getFileValue(Constants.NODE_STATUS, null);
+            int capacityFileIntValue = Integer.parseInt(capacityFileValue);
+            int statusStringResourceId = getStatusStringResourceId(statusFileValue);
+            mCapacityStatusPreference.setUsageSummary(capacityFileValue);
+            mCapacityStatusPreference.setTotalSummary("%");
+            mCapacityStatusPreference.setPercent(capacityFileIntValue, 100);
+            mCapacityStatusPreference.setBottomSummary(getString(statusStringResourceId));
+        } else {
+            mCapacityStatusPreference.setUsageSummary("0");
+            mCapacityStatusPreference.setTotalSummary("%");
+            mCapacityStatusPreference.setBottomSummary(getString(R.string.kernel_node_access_error));
+        }
+
         // Technology preference
         if (FileUtils.isFileReadable(Constants.NODE_TECHNOLOGY)) {
             String fileValue = FileUtils.getFileValue(Constants.NODE_TECHNOLOGY, null);
@@ -138,16 +156,6 @@ public class BatteryInfoFragment extends PreferenceFragment
         } else {
             mTechnologyPreference.setSummary(getString(R.string.kernel_node_access_error));
             mTechnologyPreference.setEnabled(false);
-        }
-
-        // Status preference
-        if (FileUtils.isFileReadable(Constants.NODE_STATUS)) {
-            String fileValue = FileUtils.getFileValue(Constants.NODE_STATUS, null);
-            int statusStringResourceId = getStatusStringResourceId(fileValue);
-            mStatusPreference.setSummary(getString(statusStringResourceId));
-        } else {
-            mStatusPreference.setSummary(getString(R.string.kernel_node_access_error));
-            mStatusPreference.setEnabled(false);
         }
 
         // USB type preference
@@ -176,15 +184,6 @@ public class BatteryInfoFragment extends PreferenceFragment
         } else {
             mTemperaturePreference.setSummary(getString(R.string.kernel_node_access_error));
             mTemperaturePreference.setEnabled(false);
-        }
-
-        // Capacity preference
-        if (FileUtils.isFileReadable(Constants.NODE_CAPACITY)) {
-            String fileValue = FileUtils.getFileValue(Constants.NODE_CAPACITY, null);
-            mCapacityPreference.setSummary(fileValue + "%");
-        } else {
-            mCapacityPreference.setSummary(getString(R.string.kernel_node_access_error));
-            mCapacityPreference.setEnabled(false);
         }
 
         // Capacity level preference

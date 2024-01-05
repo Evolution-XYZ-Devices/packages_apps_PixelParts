@@ -9,12 +9,11 @@ public class Constants {
 
     // Battery info
     public static final String KEY_BATTERY_INFO_REFRESH = "battery_info_refresh";
+    public static final String KEY_CAPACITY_STATUS = "capacity_status";
     public static final String KEY_TECHNOLOGY = "technology";
-    public static final String KEY_STATUS = "status";
     public static final String KEY_USB_TYPE = "usb_type";
     public static final String KEY_TEMPERATURE = "temperature";
     public static final String KEY_TEMPERATURE_UNIT = "temperature_unit";
-    public static final String KEY_CAPACITY = "capacity";
     public static final String KEY_CAPACITY_LEVEL = "capacity_level";
     public static final String KEY_CURRENT = "current";
     public static final String KEY_VOLTAGE = "voltage";

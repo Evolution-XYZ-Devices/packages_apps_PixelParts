@@ -20,7 +20,6 @@
     <string name="battery_info_refresh_title">Refresh info every second</string>
     <string name="launch_battery_usage_title">Launch battery usage summary</string>
     <string name="technology_title">Technology</string>
-    <string name="status_title">Status</string>
     <string name="status_unknown">Unknown</string>
     <string name="status_charging">Charging</string>
     <string name="status_discharging">Discharging</string>
@@ -33,7 +32,6 @@
     <string name="usb_type_dedicated_charging_port">Dedicated Charging Port (DCP)</string>
     <string name="temperature_title">Temperature</string>
     <string name="temperature_unit_title">Use °F for temperature</string>
-    <string name="capacity_title">Capacity now</string>
     <string name="capacity_level_title">Capacity level</string>
     <string name="capacity_level_unknown">Unknown</string>
     <string name="capacity_level_critical">Critical</string>

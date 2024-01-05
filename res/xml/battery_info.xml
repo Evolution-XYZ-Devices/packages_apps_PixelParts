@@ -8,14 +8,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
-    <Preference
-        android:key="technology"
-        android:title="@string/technology_title"
+    <com.android.settingslib.widget.UsageProgressBarPreference
+        android:key="capacity_status"
         android:selectable="false" />
 
     <Preference
-        android:key="status"
-        android:title="@string/status_title"
+        android:key="technology"
+        android:title="@string/technology_title"
         android:selectable="false" />
 
     <Preference
@@ -26,11 +25,6 @@
     <Preference
         android:key="temperature"
         android:title="@string/temperature_title"
-        android:selectable="false" />
-
-    <Preference
-        android:key="capacity"
-        android:title="@string/capacity_title"
         android:selectable="false" />
 
     <Preference
