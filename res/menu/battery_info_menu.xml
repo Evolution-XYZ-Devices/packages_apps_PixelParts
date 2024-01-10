@@ -17,4 +17,8 @@
         android:id="@+id/battery_info_refresh"
         android:title="@string/battery_info_refresh_title"
         android:checkable="true" />
+
+    <item
+        android:id="@+id/add_tile"
+        android:title="@string/tile_add" />
 </menu>

@@ -18,6 +18,7 @@ allow pixelparts_app {
   netstats_service
   permission_checker_service
   sensorservice_service
+  statusbar_service
   surfaceflinger_service
   thermal_service
   trust_service

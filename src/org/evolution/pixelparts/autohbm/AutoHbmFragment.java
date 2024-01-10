@@ -16,6 +16,9 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Switch;
 
 import androidx.preference.Preference;
@@ -29,6 +32,7 @@ import com.android.settingslib.widget.UsageProgressBarPreference;
 import org.evolution.pixelparts.Constants;
 import org.evolution.pixelparts.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
+import org.evolution.pixelparts.utils.TileUtils;
 
 public class AutoHbmFragment extends PreferenceFragment
         implements OnMainSwitchChangeListener, SensorEventListener, Preference.OnPreferenceChangeListener {
@@ -52,6 +56,7 @@ public class AutoHbmFragment extends PreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.auto_hbm);
+        setHasOptionsMenu(true);
 
         Context context = getContext();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -69,6 +74,26 @@ public class AutoHbmFragment extends PreferenceFragment
         mLightSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
         toggleAutoHbmPreferencesVisibility(mAutoHbmSwitch.isChecked());
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.auto_hbm_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.add_tile) {
+            TileUtils.requestAddTileService(
+                    getContext(),
+                    AutoHbmTileService.class,
+                    R.string.auto_hbm_title,
+                    R.drawable.ic_auto_hbm_tile
+            );
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

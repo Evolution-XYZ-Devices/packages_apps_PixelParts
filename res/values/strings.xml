@@ -10,6 +10,10 @@
     <string name="pixel_parts_title">Pixel Parts</string>
     <string name="kernel_node_access_error">Kernel node access failed! Please ensure the provided path to the sysfs or procfs attribute is accurate, that it has appropriate permissions, and the SELinux policies are properly configured.</string>
     <string name="kernel_node_returned_value_unknown">No string resource found for the value returned by the node.</string>
+    <string name="tile_add">Add tile</string>
+    <string name="tile_added">Tile added</string>
+    <string name="tile_not_added">Tile not added</string>
+    <string name="tile_already_added">Tile already added</string>
     <string name="tile_on">On</string>
     <string name="tile_off">Off</string>
     <string name="tile_camera_in_use">Camera in use</string>
