@@ -80,9 +80,13 @@
 
     <!-- Pixel torch -->
     <string name="pixel_torch_title">Pixel torch</string>
-    <string name="pixel_torch_summary">Adjust the brightness of the Pixel Torch QS-Tile</string>
-    <string name="pixel_torch_strength_title">Strength</string>
-    <string name="pixel_torch_strength_summary">The brightness level used by Pixel torch</string>
+    <string name="pixel_torch_summary">Configure the Pixel torch Quick Settings tile</string>
+    <string name="pixel_torch_cycle_modes_title">Cycle modes</string>
+    <string name="pixel_torch_cycle_modes_summary">Cycle between predefined strength levels</string>
+    <string name="pixel_torch_state">State: %d</string>
+    <string name="pixel_torch_first_click_title">First click</string>
+    <string name="pixel_torch_second_click_title">Second click</string>
+    <string name="pixel_torch_third_click_title">Third click</string>
 
     <!-- Auto hbm -->
     <string name="auto_hbm_title">Automatic HBM</string>

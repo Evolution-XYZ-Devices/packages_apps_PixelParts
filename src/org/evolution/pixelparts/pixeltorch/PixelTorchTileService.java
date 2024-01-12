@@ -22,6 +22,7 @@ public class PixelTorchTileService extends TileService {
     private SharedPreferences sharedPrefs;
     private CameraManager cameraManager;
     private CameraManager.TorchCallback torchCallback;
+    private int currentState = 0;
 
     @Override
     public void onStartListening() {
@@ -38,6 +39,12 @@ public class PixelTorchTileService extends TileService {
 
     @Override
     public void onClick() {
+        boolean cycleModes = sharedPrefs.getBoolean(Constants.KEY_PIXEL_TORCH_CYCLE_MODES, false);
+        if (cycleModes) {
+            currentState = (currentState + 1) % 4;
+        } else {
+            currentState = (currentState == 0) ? 1 : 0;
+        }
         toggleTorch();
     }
 
@@ -46,6 +53,9 @@ public class PixelTorchTileService extends TileService {
             @Override
             public void onTorchModeChanged(String cameraId, boolean enabled) {
                 super.onTorchModeChanged(cameraId, enabled);
+                if (!enabled) {
+                    currentState = 0;
+                }
                 updateTile(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
             }
 
@@ -62,10 +72,19 @@ public class PixelTorchTileService extends TileService {
         try {
             String outCameraId = cameraManager.getCameraIdList()[0];
 
-            if (getQsTile().getState() == Tile.STATE_ACTIVE) {
-                turnOffTorch(outCameraId);
-            } else {
-                turnOnTorch(outCameraId);
+            switch (currentState) {
+                case 0:
+                    turnOffTorch(outCameraId);
+                    break;
+                case 1:
+                    turnOnTorch(Constants.KEY_PIXEL_TORCH_STRENGTH_1, outCameraId);
+                    break;
+                case 2:
+                    turnOnTorch(Constants.KEY_PIXEL_TORCH_STRENGTH_2, outCameraId);
+                    break;
+                case 3:
+                    turnOnTorch(Constants.KEY_PIXEL_TORCH_STRENGTH_3, outCameraId);
+                    break;
             }
         } catch (CameraAccessException e) {
             e.printStackTrace();
@@ -81,9 +100,13 @@ public class PixelTorchTileService extends TileService {
         updateTile(Tile.STATE_INACTIVE);
     }
 
-    private void turnOnTorch(String outCameraId) {
+    private void turnOnTorch(String strengthKey, String outCameraId) {
         try {
-            int torchStrength = sharedPrefs.getInt(Constants.KEY_PIXEL_TORCH_STRENGTH, 45);
+            int torchStrength = sharedPrefs.getInt(strengthKey,
+                    (strengthKey.equals(Constants.KEY_PIXEL_TORCH_STRENGTH_1)) ? 45 :
+                            (strengthKey.equals(Constants.KEY_PIXEL_TORCH_STRENGTH_2)) ? 25 :
+                                    (strengthKey.equals(Constants.KEY_PIXEL_TORCH_STRENGTH_3)) ? 10 : 45);
+
             if (torchStrength != 0) {
                 cameraManager.turnOnTorchWithStrengthLevel(outCameraId, torchStrength);
             }
@@ -95,17 +118,24 @@ public class PixelTorchTileService extends TileService {
 
     private void updateTile(int state) {
         Tile qsTile = getQsTile();
-        if (qsTile != null) {
-            if (state == Tile.STATE_UNAVAILABLE) {
-                qsTile.setSubtitle(getString(R.string.tile_camera_in_use));
-            } else {
-                String subtitle = state == Tile.STATE_ACTIVE ?
-                        getString(R.string.tile_on) :
-                        getString(R.string.tile_off);
-                qsTile.setSubtitle(subtitle);
+        if (qsTile == null) {
+            return;
             }
-            qsTile.setState(state);
-            qsTile.updateTile();
+
+        String subtitle;
+        if (state == Tile.STATE_UNAVAILABLE) {
+            subtitle = getString(R.string.tile_camera_in_use);
+        } else if (sharedPrefs.getBoolean(Constants.KEY_PIXEL_TORCH_CYCLE_MODES, false)) {
+            subtitle = (currentState == 0) ?
+                    getString(R.string.tile_off) :
+                    String.format(getString(R.string.pixel_torch_state), currentState);
+        } else {
+            subtitle = (state == Tile.STATE_ACTIVE) ?
+                    getString(R.string.tile_on) :
+                    getString(R.string.tile_off);
         }
+        qsTile.setSubtitle(subtitle);
+        qsTile.setState(state);
+        qsTile.updateTile();
     }
 }

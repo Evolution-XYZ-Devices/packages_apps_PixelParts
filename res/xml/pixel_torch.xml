@@ -12,11 +12,32 @@
         android:key="pixel_torch_intro"
         android:title="@string/pixel_torch_summary" />
 
+    <SwitchPreference
+        android:key="pixel_torch_cycle_modes"
+        android:title="@string/pixel_torch_cycle_modes_title"
+        android:summary="@string/pixel_torch_cycle_modes_summary"
+        android:defaultValue="false" />
+
     <org.evolution.pixelparts.CustomSeekBarPreference
-        android:key="pixel_torch_strength"
-        android:title="@string/pixel_torch_strength_title"
-        android:summary="@string/pixel_torch_strength_summary"
+        android:key="pixel_torch_strength_1"
+        android:title="@string/pixel_torch_first_click_title"
         android:max="45"
         android:min="1"
         android:defaultValue="45" />
+
+    <org.evolution.pixelparts.CustomSeekBarPreference
+        android:key="pixel_torch_strength_2"
+        android:title="@string/pixel_torch_second_click_title"
+        android:dependency="pixel_torch_cycle_modes"
+        android:max="45"
+        android:min="1"
+        android:defaultValue="25" />
+
+    <org.evolution.pixelparts.CustomSeekBarPreference
+        android:key="pixel_torch_strength_3"
+        android:title="@string/pixel_torch_third_click_title"
+        android:dependency="pixel_torch_cycle_modes"
+        android:max="45"
+        android:min="1"
+        android:defaultValue="10" />
 </PreferenceScreen>
