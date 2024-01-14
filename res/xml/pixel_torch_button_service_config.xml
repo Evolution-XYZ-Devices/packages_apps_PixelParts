@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagRequestFilterKeyEvents"
+    android:canRequestFilterKeyEvents="true"
+    android:description="@string/pixel_torch_button_service_description"
+    android:settingsActivity="org.evolution.pixelparts.pixeltorch.PixelTorchActivity"
+    android:summary="@string/pixel_torch_button_service_summary" />

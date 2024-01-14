@@ -40,4 +40,9 @@
         android:max="45"
         android:min="1"
         android:defaultValue="10" />
+
+    <Preference
+        android:key="pixel_torch_button_service"
+        android:title="@string/pixel_torch_button_service_title"
+        android:summary="@string/pixel_torch_button_service_summary" />
 </PreferenceScreen>

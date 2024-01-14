@@ -80,13 +80,16 @@
 
     <!-- Pixel torch -->
     <string name="pixel_torch_title">Pixel torch</string>
-    <string name="pixel_torch_summary">Configure the Pixel torch Quick Settings tile</string>
+    <string name="pixel_torch_summary">A configurable flashlight tile and volume button service</string>
     <string name="pixel_torch_cycle_modes_title">Cycle modes</string>
     <string name="pixel_torch_cycle_modes_summary">Cycle between predefined strength levels</string>
     <string name="pixel_torch_state">State: %d</string>
     <string name="pixel_torch_first_click_title">First click</string>
     <string name="pixel_torch_second_click_title">Second click</string>
     <string name="pixel_torch_third_click_title">Third click</string>
+    <string name="pixel_torch_button_service_title">Volume button service</string>
+    <string name="pixel_torch_button_service_summary">Toggle Pixel torch when pressing both volume buttons simultaneously</string>
+    <string name="pixel_torch_button_service_description">This accessibility service listens to key events, specifically volume up and down buttons, to toggle Pixel torch. This service does not collect any data from your device.\n\nEnabling the \"Hold Volume Key\" shortcut on this page will override the key event, causing the service to not work.\n\nThis service will not work when the screen is off while audio is playing (regardless of the output device).</string>
 
     <!-- Auto hbm -->
     <string name="auto_hbm_title">Automatic HBM</string>
