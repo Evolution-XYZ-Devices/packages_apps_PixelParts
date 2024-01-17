@@ -6,14 +6,11 @@
 
 package org.evolution.pixelparts.saturation;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.core.content.ContextCompat;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.PreferenceManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
@@ -34,7 +31,7 @@ public class SaturationActivity extends CollapsingToolbarBaseActivity {
 
         setupImageSlider();
 
-        getFragmentManager().beginTransaction().replace(R.id.saturation,
+        getSupportFragmentManager().beginTransaction().replace(R.id.saturation,
                 new SaturationFragment(), TAG).commit();
     }
 

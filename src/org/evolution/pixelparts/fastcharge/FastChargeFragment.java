@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.widget.Switch;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -25,14 +25,14 @@ import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.FileUtils;
 import org.evolution.pixelparts.utils.TileUtils;
 
-public class FastChargeFragment extends PreferenceFragment
+public class FastChargeFragment extends PreferenceFragmentCompat
         implements OnMainSwitchChangeListener {
 
     private MainSwitchPreference mFastChargeSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.fast_charge);
+        setPreferencesFromResource(R.xml.fast_charge, rootKey);
         setHasOptionsMenu(true);
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());

@@ -12,7 +12,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -23,7 +23,7 @@ import org.evolution.pixelparts.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.FileUtils;
 
-public class ChargeControlFragment extends PreferenceFragment
+public class ChargeControlFragment extends PreferenceFragmentCompat
         implements OnMainSwitchChangeListener, Preference.OnPreferenceChangeListener {
 
     // Charge control preference
@@ -35,7 +35,7 @@ public class ChargeControlFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.charge_control);
+        setPreferencesFromResource(R.xml.charge_control, rootKey);
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 

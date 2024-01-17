@@ -22,7 +22,7 @@ import android.view.MenuItem;
 import android.widget.Switch;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -34,7 +34,7 @@ import org.evolution.pixelparts.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.TileUtils;
 
-public class AutoHbmFragment extends PreferenceFragment
+public class AutoHbmFragment extends PreferenceFragmentCompat
         implements OnMainSwitchChangeListener, SensorEventListener, Preference.OnPreferenceChangeListener {
 
     private static final String[] AUTO_HBM_PREFERENCES = {
@@ -55,7 +55,7 @@ public class AutoHbmFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.auto_hbm);
+        setPreferencesFromResource(R.xml.auto_hbm, rootKey);
         setHasOptionsMenu(true);
 
         Context context = getContext();

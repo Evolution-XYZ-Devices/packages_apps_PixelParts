@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
@@ -31,7 +31,7 @@ import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.FileUtils;
 import org.evolution.pixelparts.utils.TileUtils;
 
-public class BatteryInfoFragment extends PreferenceFragment
+public class BatteryInfoFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
 
     private Handler mHandler;
@@ -55,7 +55,7 @@ public class BatteryInfoFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.battery_info);
+        setPreferencesFromResource(R.xml.battery_info, rootKey);
 
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         Context context = getContext();

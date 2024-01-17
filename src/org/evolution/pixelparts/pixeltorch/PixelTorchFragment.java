@@ -16,21 +16,21 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import org.evolution.pixelparts.Constants;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.TileUtils;
 
-public class PixelTorchFragment extends PreferenceFragment
+public class PixelTorchFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
 
     private Preference mButtonServicePreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.pixel_torch);
+        setPreferencesFromResource(R.xml.pixel_torch, rootKey);
         setHasOptionsMenu(true);
 
         mButtonServicePreference = findPreference(Constants.KEY_PIXEL_TORCH_BUTTON_SERVICE);

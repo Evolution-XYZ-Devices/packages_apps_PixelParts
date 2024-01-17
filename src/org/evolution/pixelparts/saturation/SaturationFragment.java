@@ -14,7 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ import org.evolution.pixelparts.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.TileUtils;
 
-public class SaturationFragment extends PreferenceFragment
+public class SaturationFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
 
     // Saturation preference
@@ -32,7 +32,7 @@ public class SaturationFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.saturation);
+        setPreferencesFromResource(R.xml.saturation, rootKey);
         setHasOptionsMenu(true);
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
