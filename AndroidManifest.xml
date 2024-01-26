@@ -170,7 +170,6 @@
         <activity
             android:name=".saturation.SaturationActivity"
             android:label="@string/saturation_title"
-            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
