@@ -10,10 +10,10 @@
 
     <org.evolution.pixelparts.CustomSeekBarPreference
         android:key="saturation"
-        android:persistent="true"
         android:max="200"
         android:min="0"
-        android:defaultValue="100" />
+        android:defaultValue="100"
+        settings:continuousUpdates="true" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="saturation_footer"  

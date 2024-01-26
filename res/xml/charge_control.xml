@@ -20,7 +20,6 @@
     <org.evolution.pixelparts.CustomSeekBarPreference
         android:key="stop_charging"
         android:title="@string/stop_charging_title"
-        android:persistent="true"
         android:max="100"
         android:min="1"
         settings:units="%"
@@ -29,7 +28,6 @@
     <org.evolution.pixelparts.CustomSeekBarPreference
         android:key="start_charging"
         android:title="@string/start_charging_title"
-        android:persistent="true"
         android:max="99"
         android:min="0"
         settings:units="%"
