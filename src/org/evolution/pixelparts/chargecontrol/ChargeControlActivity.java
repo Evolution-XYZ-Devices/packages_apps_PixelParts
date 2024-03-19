@@ -8,7 +8,6 @@ package org.evolution.pixelparts.chargecontrol;
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 
 public class ChargeControlActivity extends CollapsingToolbarBaseActivity {
 
@@ -18,7 +17,7 @@ public class ChargeControlActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getSupportFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                 new ChargeControlFragment(), TAG).commit();
     }
 }

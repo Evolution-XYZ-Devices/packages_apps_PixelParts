@@ -8,7 +8,6 @@ package org.evolution.pixelparts.batteryinfo;
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 
 public class BatteryInfoActivity extends CollapsingToolbarBaseActivity {
 
@@ -18,7 +17,7 @@ public class BatteryInfoActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getSupportFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                 new BatteryInfoFragment(), TAG).commit();
     }
 }
