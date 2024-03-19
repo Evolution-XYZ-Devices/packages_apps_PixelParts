@@ -8,7 +8,8 @@ package org.evolution.pixelparts.chargecontrol;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
@@ -16,7 +17,6 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.evolution.pixelparts.Constants;
 import org.evolution.pixelparts.CustomSeekBarPreference;
@@ -24,7 +24,7 @@ import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.FileUtils;
 
 public class ChargeControlFragment extends PreferenceFragmentCompat
-        implements OnMainSwitchChangeListener, Preference.OnPreferenceChangeListener {
+        implements OnCheckedChangeListener, Preference.OnPreferenceChangeListener {
 
     // Charge control preference
     private MainSwitchPreference mChargeControlSwitch;
@@ -70,7 +70,7 @@ public class ChargeControlFragment extends PreferenceFragmentCompat
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
 
         prefChange.putBoolean(Constants.KEY_CHARGE_CONTROL, isChecked).apply();

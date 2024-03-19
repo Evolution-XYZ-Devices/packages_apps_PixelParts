@@ -11,14 +11,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.evolution.pixelparts.Constants;
 import org.evolution.pixelparts.R;
@@ -26,7 +26,7 @@ import org.evolution.pixelparts.utils.FileUtils;
 import org.evolution.pixelparts.utils.TileUtils;
 
 public class FastChargeFragment extends PreferenceFragmentCompat
-        implements OnMainSwitchChangeListener {
+        implements OnCheckedChangeListener {
 
     private MainSwitchPreference mFastChargeSwitch;
 
@@ -48,7 +48,7 @@ public class FastChargeFragment extends PreferenceFragmentCompat
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
         prefChange.putBoolean(Constants.KEY_FAST_CHARGE, isChecked).apply();
         if (FileUtils.isFileWritable(Constants.NODE_FAST_CHARGE)) {

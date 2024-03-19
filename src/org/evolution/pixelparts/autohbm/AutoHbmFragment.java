@@ -19,14 +19,14 @@ import android.os.UserHandle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 import com.android.settingslib.widget.UsageProgressBarPreference;
 
 import org.evolution.pixelparts.Constants;
@@ -35,7 +35,7 @@ import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.TileUtils;
 
 public class AutoHbmFragment extends PreferenceFragmentCompat
-        implements OnMainSwitchChangeListener, SensorEventListener, Preference.OnPreferenceChangeListener {
+        implements OnCheckedChangeListener, SensorEventListener, Preference.OnPreferenceChangeListener {
 
     private static final String[] AUTO_HBM_PREFERENCES = {
             Constants.KEY_AUTO_HBM_THRESHOLD,
@@ -113,7 +113,7 @@ public class AutoHbmFragment extends PreferenceFragmentCompat
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         sharedPrefs.edit().putBoolean(Constants.KEY_AUTO_HBM, isChecked).apply();
         toggleAutoHbmService(getContext());
